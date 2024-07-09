@@ -354,7 +354,7 @@ MonoBehaviour:
   maxHealth: 100
   isDead: 0
   isVulnerable: 1
-  faction: 2
+  faction: 1
   itemInHand: {fileID: 0}
   hand: {fileID: 0}
   curveWhenNearTarget:
@@ -402,8 +402,8 @@ MonoBehaviour:
   visionRange: 30
   fieldOfView: 120
   chaseSpeed: 6
-  alertDuration: 3
-  assumingTime: 3
+  alertDuration: 5
+  assumingTime: 4
   wanderDistance: 4
   wanderSpeed: 4
   wanderPauseDuration: 1

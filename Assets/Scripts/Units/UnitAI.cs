@@ -30,14 +30,15 @@ public class UnitAI : Unit
     public float wanderPauseVariation = .5f;
 
     public Targetable target;
+    protected Vector3 targetLastSeenPosition;
 
     [ShowInInspector, ReadOnly]
     protected UnitState state;
     protected bool firstFrameInCurrentState;
     private UnitState lastFrameState;
 
-    protected float assumingTimer;
-    protected float alertTimer;
+    protected float assumeUntil;
+    protected float alertUntil;
     protected float wanderPauseTimer;
     protected Vector2 wanderDestination;
     protected Vector2 startPosition;
@@ -53,6 +54,10 @@ public class UnitAI : Unit
     protected void Update()
     {
         UpdateTargetIfNotValid();
+
+        if (target)
+            targetLastSeenPosition = target.transform.position;
+
         UpdateState();
         
         firstFrameInCurrentState = state != lastFrameState;
@@ -103,14 +108,15 @@ public class UnitAI : Unit
                 state = UnitState.Chasing;
             }
 
-            alertTimer = alertDuration;
+            alertUntil = Time.time + alertDuration;
         }
         else
         {
-            if (alertTimer >= 0)
+            if(this is PatrollingUnit)
+                Debug.Log("? " + alertUntil + " / " + Time.time);
+            if (alertUntil >= Time.time)
             {
-                state = UnitState.Alert;
-                alertTimer -= Time.deltaTime;
+                state = UnitState.Alert;            
             }
             else
             {
@@ -127,7 +133,17 @@ public class UnitAI : Unit
 
     public virtual void Alert()
     {
-        Wander(transform.position);
+        Debug.Log("Alert");
+        if (assumeUntil >= Time.time)
+        {
+            Debug.Log("Assume " + targetLastSeenPosition);
+            MoveTowards(targetLastSeenPosition, chaseSpeed);
+            
+            //postpone alert state (probably bad programming practice, but it is what it is, and it is 3am)
+            alertUntil = Time.time + alertDuration; 
+        }
+        else 
+            Wander(transform.position);
     }
 
     public virtual void Idle()
@@ -202,14 +218,13 @@ public class UnitAI : Unit
     {
         if (target && IsValidTarget(target))
         {
-            assumingTimer = assumingTime;
             return;
         }
 
-        if(target && !target.isDead && assumingTimer > 0)
+        if(target && !target.isDead /*&& assumeUntil > 0*/)
         {
-            assumingTimer -= Time.deltaTime;
-            return;
+            assumeUntil = Time.time + assumingTime;
+            //return;
         }
 
         target = null;

@@ -240,11 +240,11 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  visionRange: 20
+  visionRange: 30
   fieldOfView: 120
   chaseSpeed: 5
   alertDuration: 5
-  assumingTime: 3
+  assumingTime: 4
   wanderDistance: 10
   wanderSpeed: 4
   wanderPauseDuration: 1
