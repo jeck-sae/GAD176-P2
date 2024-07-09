@@ -1,0 +1,265 @@
+fileFormatVersion: 2
+guid: f8c98471e6bd91544ba4339d4c1d776c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Portrets_0
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 675
+        width: 399
+        height: 381
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e0aca09b96d84746b39b3a87c8c3698
+      internalID: 1099595605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrets_3
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 624
+        width: 446
+        height: 435
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8a808f149e19bb49a82e12f86a07cff
+      internalID: -1907912413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrets_4
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 213
+        width: 463
+        height: 467
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01abf88c5484c68489a6a76dcf4f22b8
+      internalID: 2049898377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrets_16
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 201
+        width: 513
+        height: 475
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a936120f197e0e489b964e4891b701e
+      internalID: 1384494457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrets_21
+      rect:
+        serializedVersion: 2
+        x: 1222
+        y: 256
+        width: 378
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f494f2cf6edb614f946bf591ec19331
+      internalID: -941766043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Portrets_0: 1099595605
+      Portrets_1: 1499525773
+      Portrets_10: -2090784850
+      Portrets_11: 1563484929
+      Portrets_12: 1834952350
+      Portrets_13: 1233426213
+      Portrets_14: 2117822571
+      Portrets_15: -428664910
+      Portrets_16: 1384494457
+      Portrets_17: 1427293431
+      Portrets_18: -276207557
+      Portrets_19: 1547326621
+      Portrets_2: 261224792
+      Portrets_20: 1730821923
+      Portrets_21: -941766043
+      Portrets_22: -1540988499
+      Portrets_23: -1404148833
+      Portrets_24: 1913242383
+      Portrets_25: -1564795474
+      Portrets_26: -1500035092
+      Portrets_27: 1568434241
+      Portrets_28: 1762182783
+      Portrets_29: -1258151488
+      Portrets_3: -1907912413
+      Portrets_30: 1562412927
+      Portrets_31: 1914096997
+      Portrets_32: -1011782186
+      Portrets_33: -1389290577
+      Portrets_34: -662125293
+      Portrets_35: 112367431
+      Portrets_36: 2021911049
+      Portrets_37: 389131329
+      Portrets_38: 1382718766
+      Portrets_39: 1860574198
+      Portrets_4: 2049898377
+      Portrets_40: -600682973
+      Portrets_41: -490841452
+      Portrets_42: 1015054950
+      Portrets_43: 677097564
+      Portrets_44: -1904156610
+      Portrets_45: 781994268
+      Portrets_5: -917681988
+      Portrets_6: -843115598
+      Portrets_7: 1956384574
+      Portrets_8: -1716845391
+      Portrets_9: -1138150904
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
