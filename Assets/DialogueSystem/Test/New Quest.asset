@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b826646f07a1d334d9c18582d8d6d1b5, type: 3}
   m_Name: New Quest
   m_EditorClassIdentifier: 
-  questName: Kill the crab kilng
+  questName: Kill the crab king
   questDescription: 
   memory: []
   tasks:

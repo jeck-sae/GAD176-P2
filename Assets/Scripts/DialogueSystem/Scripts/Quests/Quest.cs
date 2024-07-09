@@ -36,7 +36,7 @@ public class Quest : ScriptableObject
         }
         else
         {
-            Debug.Log("Quest" + questName + " is completed!");
+            Debug.Log("Quest " + questName + " is completed!");
             // Handle quest completion (e.g., reward the player, remove the quest, etc.)
             QuestManager.QuestInstance.RemoveQuest(this);
         }

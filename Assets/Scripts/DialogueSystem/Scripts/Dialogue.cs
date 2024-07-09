@@ -7,7 +7,7 @@ public class Dialogue : ScriptableObject
     [Header("Dialogue")]
     public string DialogueID;
     public string DialogueName;
-    public bool isCompleted;
+    public bool isCompleted = false;
     [HideInInspector]public Quest Dialoguequest;
     public List<DialogueNode> dialogueNodes;
 
