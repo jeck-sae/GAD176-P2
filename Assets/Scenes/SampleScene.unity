@@ -2440,6 +2440,18 @@ PrefabInstance:
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 796189154416483252, guid: 09ad37edc11314e46aa8a1da80e46e54, type: 3}
+      propertyPath: WhatToSee.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 796189154416483252, guid: 09ad37edc11314e46aa8a1da80e46e54, type: 3}
+      propertyPath: enemyLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 796189154416483252, guid: 09ad37edc11314e46aa8a1da80e46e54, type: 3}
+      propertyPath: whatIsCover.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 796189154416483252, guid: 09ad37edc11314e46aa8a1da80e46e54, type: 3}
       propertyPath: waypoints.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -6268,6 +6280,18 @@ PrefabInstance:
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 796189154416483252, guid: 09ad37edc11314e46aa8a1da80e46e54, type: 3}
+      propertyPath: WhatToSee.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 796189154416483252, guid: 09ad37edc11314e46aa8a1da80e46e54, type: 3}
+      propertyPath: enemyLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 796189154416483252, guid: 09ad37edc11314e46aa8a1da80e46e54, type: 3}
+      propertyPath: whatIsCover.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 796189154416483252, guid: 09ad37edc11314e46aa8a1da80e46e54, type: 3}
       propertyPath: waypoints.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -7776,11 +7800,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 796189154416483252, guid: 09ad37edc11314e46aa8a1da80e46e54, type: 3}
       propertyPath: WhatToSee.m_Bits
-      value: 23040
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 796189154416483252, guid: 09ad37edc11314e46aa8a1da80e46e54, type: 3}
       propertyPath: enemyLayers.m_Bits
-      value: 22528
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 796189154416483252, guid: 09ad37edc11314e46aa8a1da80e46e54, type: 3}
+      propertyPath: whatIsCover.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 796189154416483252, guid: 09ad37edc11314e46aa8a1da80e46e54, type: 3}
       propertyPath: waypoints.Array.size
@@ -8993,11 +9021,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8715537406269088111, guid: 74880c48eeb288b4bb8ad255f5dbcb6a, type: 3}
       propertyPath: WhatToSee.m_Bits
-      value: 23040
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8715537406269088111, guid: 74880c48eeb288b4bb8ad255f5dbcb6a, type: 3}
       propertyPath: enemyLayers.m_Bits
-      value: 22528
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8715537406269088111, guid: 74880c48eeb288b4bb8ad255f5dbcb6a, type: 3}
       propertyPath: waypoints.Array.size

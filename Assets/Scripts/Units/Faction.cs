@@ -1,0 +1,1 @@
+public enum Faction { Faction1, Faction2, Faction3 };

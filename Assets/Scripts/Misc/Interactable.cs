@@ -1,144 +1,45 @@
-using System;
 using UnityEngine;
 
-public class Interactable : ManagedBehaviour
+[RequireComponent(typeof(Collider2D))]
+public abstract class Interactable : MonoBehaviour
 {
-    private Collider coll;
+    public float InteractionDistance = 5f;
 
-    private Collider2D coll2D;
-
-    public bool CollisionEnabled
+    Transform player;
+    void Awake()
     {
-        get
-        {
-            if (CollisionIs2D)
-            {
-                return GetComponent<Collider2D>().enabled;
-            }
-            return GetComponent<Collider>().enabled;
-        }
+        player = FindObjectOfType<Player>()?.transform;
+
+        Initialize();
     }
 
-    public Action<Interactable> CursorEntered { get; set; }
+    protected virtual void Initialize() { }
 
-    public Action<Interactable> CursorExited { get; set; }
 
-    public Action<Interactable> CursorSelectStarted { get; set; }
-
-    public Action<Interactable> CursorSelectEnded { get; set; }
-
-    protected virtual bool CollisionIs2D => false;
-
-    protected bool CursorHovering { get; private set; }
-
-    protected virtual void Start()
+    public virtual void Interact()
     {
+        //Can be overwriten
+        Debug.Log("Interacting with " + transform.name);
     }
 
-    public void SetCollisionEnabled(bool enabled)
+    //radius for editor
+    /*void OnDrawGizmosSelected()
     {
-        if (!enabled || CanEnable())
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, InteractionDistance);
+    }*/
+
+
+    //Check for interaction
+    void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(0) && !Input.GetMouseButton(1))
         {
-            if (coll2D == null && CollisionIs2D)
+            float distance = Vector2.Distance(player.position, transform.position);
+            if (distance <= InteractionDistance)
             {
-                coll2D = GetComponent<Collider2D>();
-            }
-            if (coll == null && !CollisionIs2D)
-            {
-                coll = GetComponent<Collider>();
-            }
-            if (coll != null)
-            {
-                coll.enabled = enabled;
-            }
-            if (coll2D != null)
-            {
-                coll2D.enabled = enabled;
-            }
-            if (enabled)
-            {
-                OnInteractionEnabled();
-            }
-            else
-            {
-                OnInteractionDisabled();
+                Interact();
             }
         }
-    }
-
-    public void CursorSelectStart()
-    {
-        CursorSelectStarted?.Invoke(this);
-        OnCursorSelectStart();
-    }
-
-    public void CursorSelectEnd()
-    {
-        CursorSelectEnded?.Invoke(this);
-        OnCursorSelectEnd();
-    }
-
-    public void CursorEnter()
-    {
-        CursorEntered?.Invoke(this);
-        OnCursorEnter();
-    }
-
-    public void CursorStay()
-    {
-        CursorHovering = true;
-        OnCursorStay();
-    }
-
-    public void CursorExit()
-    {
-        CursorExited?.Invoke(this);
-        CursorHovering = false;
-        OnCursorExit();
-    }
-
-    public void CursorDragOff()
-    {
-    }
-
-    public virtual void ClearDelegates()
-    {
-    }
-
-    protected virtual bool CanEnable()
-    {
-        return true;
-    }
-
-    protected virtual void OnInteractionEnabled()
-    {
-    }
-
-    protected virtual void OnInteractionDisabled()
-    {
-    }
-
-    protected virtual void OnCursorEnter()
-    {
-    }
-
-    protected virtual void OnCursorStay()
-    {
-    }
-
-    protected virtual void OnCursorExit()
-    {
-    }
-
-    protected virtual void OnCursorSelectStart()
-    {
-    }
-
-    protected virtual void OnCursorSelectEnd()
-    {
-    }
-
-    protected virtual void OnCursorDrag()
-    {
     }
 }

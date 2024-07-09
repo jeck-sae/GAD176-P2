@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DestroyAfterDelay : ManagedBehaviour
+public class DestroyAfterDelay : MonoBehaviour
 {
     [SerializeField] float delay;
 
