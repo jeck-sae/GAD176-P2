@@ -46,6 +46,7 @@ public class Targetable : MonoBehaviour
 
     public virtual void Die()
     {
+        isDead = true;
         //play SFX
         Destroy(gameObject);
     }

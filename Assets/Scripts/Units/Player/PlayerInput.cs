@@ -32,7 +32,7 @@ public class PlayerInput : MonoBehaviour
         if (m_isSprinting)
             moveSpeed += PlayerStats.Instance.Dexterity.GetValue() / 10;
 
-        unit.MoveBy(m_movement.normalized * moveSpeed * Time.deltaTime);
+        unit.MoveBy(m_movement.normalized * moveSpeed * Time.fixedDeltaTime);
 
         //attacking
         if (Input.GetButton("Fire1"))

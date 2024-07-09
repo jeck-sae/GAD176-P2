@@ -19,6 +19,8 @@ public class UnitAI : Unit
 
     [Tooltip("How long should it stay alert after losing sight of an enemy")]
     public float alertDuration = 5;
+    [Tooltip("How long should it chase the target even after it's out of vision")]
+    public float assumingTime = 3;
 
     [Tooltip("How far should the unit wander")]
     public float wanderDistance = 4;
@@ -31,12 +33,12 @@ public class UnitAI : Unit
 
     public Targetable target;
 
-
     [ShowInInspector, ReadOnly]
     protected UnitState state;
     protected bool firstFrameInCurrentState;
     private UnitState lastFrameState;
 
+    protected float assumingTimer;
     protected float alertTimer;
     protected float wanderPauseTimer;
     protected Vector2 wanderDestination;
@@ -209,7 +211,16 @@ public class UnitAI : Unit
     public void UpdateTargetIfNotValid()
     {
         if (target && IsValidTarget(target))
+        {
+            assumingTimer = assumingTime;
             return;
+        }
+
+        if(target && !target.isDead && assumingTimer > 0)
+        {
+            assumingTimer -= Time.deltaTime;
+            return;
+        }
 
         target = null;
         FindNewTarget();
