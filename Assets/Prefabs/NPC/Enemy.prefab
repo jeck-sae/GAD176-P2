@@ -198,11 +198,53 @@ MonoBehaviour:
   faction: 1
   itemInHand: {fileID: 0}
   hand: {fileID: 3803462398648931590}
+  curveWhenNearTarget:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 3.407505
+      outSlope: 3.407505
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.10517225
+    - serializedVersion: 3
+      time: 0.23325539
+      value: 0.39318645
+      inSlope: 1.0194064
+      outSlope: 1.0194064
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.25502047
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.77156556
+      value: 0.75680596
+      inSlope: 0.43179673
+      outSlope: 0.43179673
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.27219233
+      outWeight: 0.046432495
+    - serializedVersion: 3
+      time: 2
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   visionRange: 20
   fieldOfView: 120
   chaseSpeed: 5
-  slowWhenNearTarget: 3.5
   alertDuration: 5
+  assumingTime: 3
   wanderDistance: 10
   wanderSpeed: 4
   wanderPauseDuration: 1

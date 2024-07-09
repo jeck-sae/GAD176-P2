@@ -14,8 +14,6 @@ public class UnitAI : Unit
     public float fieldOfView = 10;
     [Tooltip("Speed when chasing the target")]
     public float chaseSpeed = 6f;
-    [Tooltip("How close to the target before the unit starts slowing down")]
-    public float slowWhenNearTarget = 3.5f;
 
     [Tooltip("How long should it stay alert after losing sight of an enemy")]
     public float alertDuration = 5;
@@ -199,14 +197,6 @@ public class UnitAI : Unit
     }
 
 
-    public void MoveTowards(Vector3 targetPosition, float moveSpeed)
-    {
-        Vector3 direction = (targetPosition - transform.position).normalized;
-        float distance = Vector2.Distance(targetPosition, transform.position);
-        float speed = moveSpeed * Mathf.Clamp01(distance/slowWhenNearTarget);
-        Vector3 velocity = direction * speed;
-        MoveBy(velocity * Time.deltaTime);
-    }
 
     public void UpdateTargetIfNotValid()
     {
