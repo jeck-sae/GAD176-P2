@@ -52,11 +52,11 @@ MonoBehaviour:
   icon: {fileID: 0}
   owner: {fileID: 0}
   attackDistance: 15
-  attackDelay: 0.3
-  damage: 5
+  attackSpeed: 0.5
+  damage: 25
   projectilePrefab: {fileID: 2427048261281759586, guid: e1c7c16057ad8ee48a6733dcefc36f48, type: 3}
   projectileSpawnpoint: {fileID: 7139740121453513471}
-  projectileSpeed: 30
+  projectileSpeed: 50
   projectilesPerShot: 1
   projectileLifetime: 3
   projectileSpeedVariation: 1
