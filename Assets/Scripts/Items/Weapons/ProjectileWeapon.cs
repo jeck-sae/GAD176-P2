@@ -7,7 +7,7 @@ public class ProjectileWeapon : Weapon
     [Header("Projectiles Info")]
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] Transform projectileSpawnpoint;
-    public float projectileSpeed = 10;
+    public float projectileSpeed = 50;
     public int projectilesPerShot = 1;
     public float projectileLifetime = 3;
     public float projectileSpeedVariation = 1;

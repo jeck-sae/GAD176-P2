@@ -931,15 +931,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Strength:
-    baseValue: 0
+    baseValue: 5
   Dexterity:
-    baseValue: 0
+    baseValue: 5
   Constitution:
-    baseValue: 0
+    baseValue: 5
   Intelligence:
-    baseValue: 0
+    baseValue: 5
   Charisma:
-    baseValue: 0
+    baseValue: 5
 --- !u!114 &910683693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1390,6 +1390,11 @@ Transform:
   - {fileID: 2006814763}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1582283793 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 1302678152887333534, guid: 5b29b5a492ffce749b42b606709f34d8, type: 3}
+  m_PrefabInstance: {fileID: 1282396562587337569}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1686887504 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3803462398648931590, guid: 367cb37fd53cb7a44865916345c9e234, type: 3}
@@ -1563,6 +1568,18 @@ PrefabInstance:
     - target: {fileID: 6211895856635340000, guid: 5b29b5a492ffce749b42b606709f34d8, type: 3}
       propertyPath: projectileSpawnpoint
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316343542589830805, guid: 5b29b5a492ffce749b42b606709f34d8, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 1582283793}
+    - target: {fileID: 6316343542589830805, guid: 5b29b5a492ffce749b42b606709f34d8, type: 3}
+      propertyPath: CamMove
+      value: 
+      objectReference: {fileID: 129090884}
+    - target: {fileID: 6316343542589830805, guid: 5b29b5a492ffce749b42b606709f34d8, type: 3}
+      propertyPath: SprintKey
+      value: 304
       objectReference: {fileID: 0}
     - target: {fileID: 8008446064602896781, guid: 5b29b5a492ffce749b42b606709f34d8, type: 3}
       propertyPath: m_LocalPosition.x
