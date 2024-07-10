@@ -5,19 +5,25 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue tdialogue;
-    // A way to trigger dialogue
-    void Start()
+    public float InteractionDistance = 5f; // does nothing for now
+    public virtual void Interact()
     {
-        
+        DialogueManager.DialogueInstance.dialogue = tdialogue;
+        DialogueManager.DialogueInstance.StartDialogue();
+        Debug.Log("Interacting with " + transform.name);
     }
-
-    // Update is called once per frame
-    void Update()
+    //radious for editor
+    void OnDrawGizmosSelected()
     {
-        if (Input.GetKeyDown(KeyCode.D))
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, InteractionDistance);
+    }
+    //Check for interaction
+    void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(0) && !Input.GetMouseButton(1))
         {
-            DialogueManager.DialogueInstance.dialogue = tdialogue;
-            DialogueManager.DialogueInstance.StartDialogue();
+            Interact();
         }
     }
 }
