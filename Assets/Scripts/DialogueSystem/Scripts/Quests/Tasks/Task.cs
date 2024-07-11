@@ -33,14 +33,21 @@ public class KillEnemyTask : Task
         var createdNPC = Instantiate(NPC[r]);
         base.Initialize();
         currentKillCount = 0;*/
+        GameEvents.OnTargetableKilled += OnEnemyKilled;
     }
-    public void OnEnemyKilled(string killedEnemyName)
+    public void OnEnemyKilled(Targetable killed, Unit attacker)
     {
-        if (killedEnemyName == enemyName)
+        if (killed.ID == enemyName && attacker is Player)
         {
             currentKillCount++;
             CheckProgress();
         }
+
+        /*if (killedEnemyName == enemyName)
+        {
+            currentKillCount++;
+            CheckProgress();
+        }*/
     }
     public override void CheckProgress()
     {
@@ -54,5 +61,6 @@ public class KillEnemyTask : Task
     public override void CompleteTask()
     {
         base.CompleteTask();
+        GameEvents.OnTargetableKilled -= OnEnemyKilled;
     }
 }

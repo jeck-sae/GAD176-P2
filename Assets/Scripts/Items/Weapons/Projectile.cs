@@ -7,10 +7,10 @@ public partial class Projectile : MonoBehaviour
     //these values are set by the weapon shooting them
     [ReadOnly] public float damage;
     [ReadOnly] public float speed;
-    [ReadOnly] public Targetable shotBy;
+    [ReadOnly] public Unit shotBy;
     [SerializeField] GameObject impactEffect;
 
-    public virtual void Initialize(Targetable shotBy, float damage, float speed, float duration)
+    public virtual void Initialize(Unit shotBy, float damage, float speed, float duration)
     {
         this.damage = damage;
         this.speed = speed;
@@ -47,7 +47,7 @@ public partial class Projectile : MonoBehaviour
             return;
         }
 
-        targetable.Damage(damage);
+        targetable.Damage(damage, shotBy);
         Impact(collision, true);
     }
 

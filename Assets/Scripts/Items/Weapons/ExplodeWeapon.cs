@@ -16,7 +16,7 @@ public class ExplodeWeapon : Weapon
             
             if(targetable != null && targetable != owner)
             {
-                targetable.Damage(damage);
+                targetable.Damage(damage, owner);
                 Debug.Log(targetable.name + " " + damage);
             }
         }

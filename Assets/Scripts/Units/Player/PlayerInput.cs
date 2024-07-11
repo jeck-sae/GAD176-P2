@@ -38,10 +38,10 @@ public class PlayerInput : MonoBehaviour
         }
 
         //attacking
-        if (Input.GetButton("Fire1"))
+        if (Input.GetMouseButton(0))
             unit.TryAttacking();
 
-        if (Input.GetButton("Fire2"))
+        if (Input.GetMouseButton(1))
             unit.itemInHand?.TryUsing();
 
         //reloading

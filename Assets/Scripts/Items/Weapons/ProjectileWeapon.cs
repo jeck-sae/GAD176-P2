@@ -96,7 +96,11 @@ public class ProjectileWeapon : Weapon
 
     protected Quaternion GetProjectileDirection()
     {
-        var variation = Random.Range(0, projectileDirectionVariation) - projectileDirectionVariation / 2;
+        float dexterity = 0;
+        if (owner is Player)
+            dexterity = PlayerStats.Instance.Dexterity.GetValue();
+
+        var variation = Random.Range(0, Mathf.Clamp(projectileDirectionVariation - dexterity, 0, float.MaxValue)) - projectileDirectionVariation / 2;
         return Quaternion.Euler(projectileSpawnpoint.rotation.eulerAngles + Vector3.forward * variation);
     }
 

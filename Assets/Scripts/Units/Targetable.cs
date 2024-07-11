@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Targetable : MonoBehaviour
 {
+    public string ID;
+
     [DisableInEditorMode] public float currentHealth;
     public float maxHealth = 100;
     public bool isDead;
@@ -19,16 +21,21 @@ public class Targetable : MonoBehaviour
     }
 
     //deals damage to this unit and checks if it's dead
-    public void Damage(float amount)
+    public void Damage(float amount, Unit attacker)
     {
         if (isDead || !isVulnerable || amount <= 0)
             return;
+
 
         currentHealth -= amount;
         //play SFX
 
         if (currentHealth <= 0)
+        {
+            GameEvents.TargetableKilled(this, attacker);
             Die();
+
+        }
     }
 
     public void Heal(float amount)
