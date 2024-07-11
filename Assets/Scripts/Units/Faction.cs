@@ -1,1 +1,1 @@
-public enum Faction { Faction1, Faction2, Faction3 };
+public enum Faction { KaiserReich, Republic, Commonwealth, Outlaw, Neutral };
