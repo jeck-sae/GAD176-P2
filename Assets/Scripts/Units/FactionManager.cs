@@ -10,7 +10,7 @@ public class FactionManager : Singleton<FactionManager>
         switch (faction1)
         {
             case Faction.KaiserReich:
-                return faction2 == Faction.KaiserReich 
+                return faction2 == Faction.Republic
                     || faction2 == Faction.Outlaw;
 
             case Faction.Republic:
@@ -24,7 +24,7 @@ public class FactionManager : Singleton<FactionManager>
                 return faction2 == Faction.KaiserReich 
                     || faction2 == Faction.Republic 
                     || faction2 == Faction.Commonwealth 
-                    || faction2==Faction.Neutral;
+                    || faction2 == Faction.Neutral;
 
             case Faction.Neutral:
                 return faction2 == Faction.Outlaw;
