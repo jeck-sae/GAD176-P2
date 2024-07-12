@@ -137,7 +137,7 @@ public abstract class Item : Interactable
     //(for example a healing item being used)
 
     /// <summary>
-    /// Equivalent of Awake()
+    /// Equivalent of Awake(). Before any logic, call base.Initialize()
     /// </summary>
     protected override void Initialize() 
     {

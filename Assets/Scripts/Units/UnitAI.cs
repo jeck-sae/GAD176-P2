@@ -179,10 +179,9 @@ public class UnitAI : Unit
     {
         if (!target) return false;
 
-        //checks if it's from an enemy faction. For more complex logic,
-        //we could make a Faction Manager (e.g.: FactionManager.instance.IsEnemyOf(faction1, faction2) )
-        if (target is Unit && (target as Unit).faction == faction)
-            return false;
+        if (target is Unit && !FactionManager.Instance
+            .IsEnemyOf(faction, (target as Unit).faction))
+             return false;
 
         return CanSee(target);
     }

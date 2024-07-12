@@ -26,7 +26,6 @@ public class HealingItem : Item
 
         if (instant)
         {
-            Debug.Log("A1");
             Heal();
         }
         else
@@ -37,14 +36,10 @@ public class HealingItem : Item
     }
     protected override void OnUsing()
     {
-        if (!instant)
+        if (!instant && Time.time >= healAtTime)
         {
-            if (Time.time >= healAtTime)
-            {
-                Heal();
-                healAtTime = Time.time + timeToHeal; 
-                Debug.Log("A2");
-            }
+            Heal();
+            healAtTime = Time.time + timeToHeal; 
         }
     }
 

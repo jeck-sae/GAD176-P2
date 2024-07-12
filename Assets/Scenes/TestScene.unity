@@ -350,6 +350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aecefb05d3f3a5d41adef9fb35b73be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ID: 
   currentHealth: 0
   maxHealth: 100
   isDead: 0
@@ -745,6 +746,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3628185956909414287, guid: 367cb37fd53cb7a44865916345c9e234, type: 3}
+      propertyPath: faction
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7985065478184316853, guid: 367cb37fd53cb7a44865916345c9e234, type: 3}
       propertyPath: m_Name
       value: Enemy (4)
@@ -956,6 +961,7 @@ GameObject:
   - component: {fileID: 910683690}
   - component: {fileID: 910683692}
   - component: {fileID: 910683693}
+  - component: {fileID: 910683694}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1031,6 +1037,18 @@ MonoBehaviour:
   levelLayer:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &910683694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910683689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aaf88c0732583444b875629444824d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &930374177
 GameObject:
   m_ObjectHideFlags: 0
