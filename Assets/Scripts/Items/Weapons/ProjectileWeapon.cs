@@ -17,11 +17,10 @@ public class ProjectileWeapon : Weapon
     public float reloadSpeed = .7f;
     public int maxAmmo = 15;
 
-    [Header("Sound Effects")] 
-    [SerializeField] AudioClip shootSound;
-    [SerializeField] AudioClip reloadSound;
-    [SerializeField] AudioClip noAmmoSound;
-
+    [Header("Sound Effects")]
+    public bool RifleSound = true;
+    public bool PistolSound = false;
+    public bool ShotGunSound = false;
     [Header("Debug")]
     //these are shown in the inspector, but cannot be modified while the game is not running
     [SerializeField, DisableInEditorMode] protected int currentAmmo;
@@ -73,14 +72,20 @@ public class ProjectileWeapon : Weapon
 
     public override void Attack()
     {
-        for(int i = 0; i < projectilesPerShot; i++)
+        if (RifleSound)
+            AudioManager.PlaySoundAtPoint(SoundType.RifleShot, projectileSpawnpoint.position, 1f);
+        if (ShotGunSound)
+            AudioManager.PlaySound(SoundType.ShotGunShot, 0.6f);
+        if (PistolSound)
+            AudioManager.PlaySound(SoundType.PistolShot, 0.6f);
+        for (int i = 0; i < projectilesPerShot; i++)
         {
             var go = Instantiate(projectilePrefab, projectileSpawnpoint.position, GetProjectileDirection());
             var proj = go.GetComponent<Projectile>();
             InitializeProjectile(proj);
         }
         nextShotMinTime = Time.time + attackSpeed;
-        currentAmmo--; 
+        currentAmmo--;
     }
 
     //inheriting classes can override this to make it easier to have different types of projectiles

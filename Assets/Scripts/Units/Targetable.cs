@@ -29,6 +29,7 @@ public class Targetable : MonoBehaviour
 
         currentHealth -= amount;
         //play SFX
+        AudioManager.PlaySoundAtPoint(SoundType.Damage, gameObject.transform.position, 0.8f);
 
         if (currentHealth <= 0)
         {
