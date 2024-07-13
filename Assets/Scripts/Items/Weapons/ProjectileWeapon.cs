@@ -21,6 +21,11 @@ public class ProjectileWeapon : Weapon
     public bool RifleSound = true;
     public bool PistolSound = false;
     public bool ShotGunSound = false;
+
+    [Header("Visual Effects")]
+    public ParticleSystem GunSmoke;
+    public ParticleSystem MuzleFlash;
+
     [Header("Debug")]
     //these are shown in the inspector, but cannot be modified while the game is not running
     [SerializeField, DisableInEditorMode] protected int currentAmmo;
@@ -83,6 +88,10 @@ public class ProjectileWeapon : Weapon
             var go = Instantiate(projectilePrefab, projectileSpawnpoint.position, GetProjectileDirection());
             var proj = go.GetComponent<Projectile>();
             InitializeProjectile(proj);
+            if (GunSmoke != null)
+                GunSmoke.Play();
+            if (MuzleFlash != null)
+                MuzleFlash.Play();
         }
         nextShotMinTime = Time.time + attackSpeed;
         currentAmmo--;

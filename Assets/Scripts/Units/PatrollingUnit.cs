@@ -1,3 +1,4 @@
+using NavMeshPlus.Extensions;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,6 @@ public class PatrollingUnit : UnitAI
 {
     public List<PatrolWaypoint> waypoints;
     public int firstWaypoint = 0;
-    public float patrolWalkSpeed = 5;
 
     protected int currentWaypointIndex;
     protected float patrolWaitTimer;
@@ -39,7 +39,8 @@ public class PatrollingUnit : UnitAI
         }
 
         LookAt(currentWaypoint.destination.position);
-        MoveTowards(currentWaypoint.destination.position, patrolWalkSpeed);
+        agent.speed = wanderSpeed;
+        agent.SetDestination(currentWaypoint.destination.position);
     }
 
     [Serializable]

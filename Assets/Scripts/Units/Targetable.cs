@@ -10,6 +10,9 @@ public class Targetable : MonoBehaviour
     public bool isDead;
     public bool isVulnerable = true;
 
+    [Header("Visual Effects")]
+    public GameObject Remains;
+
     protected void Awake()
     {
         Initialize();

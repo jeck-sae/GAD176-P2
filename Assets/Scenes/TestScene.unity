@@ -975,6 +975,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5311644006169796418, guid: 978fccdb733083d44a0d690ce81683e1, type: 3}
+      propertyPath: GunSmoke
+      value: 
+      objectReference: {fileID: 7809365649544535073, guid: d349b95c5af02be42870f8e7514b8f6f, type: 3}
+    - target: {fileID: 5311644006169796418, guid: 978fccdb733083d44a0d690ce81683e1, type: 3}
       propertyPath: projectilesPerShot
       value: 1
       objectReference: {fileID: 0}

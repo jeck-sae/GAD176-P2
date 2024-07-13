@@ -28,21 +28,6 @@ public class Unit : Targetable
         base.Initialize();
     }
 
-    public void MoveTowards(Vector3 targetPosition, float moveSpeed)
-    {
-        Vector3 direction = (targetPosition - transform.position).normalized;
-        float distance = Vector2.Distance(targetPosition, transform.position);
-        float speed = moveSpeed * curveWhenNearTarget.Evaluate(distance);
-        Vector3 velocity = direction * speed;
-        MoveBy(velocity * Time.deltaTime);
-    }
-
-    public void MoveBy(Vector2 movement)
-    {
-        Vector2 currentPos = new Vector2(transform.position.x, transform.position.y);
-        m_rigidbody.MovePosition(currentPos + movement);
-    }
-
     public virtual void TryAttacking()
     {
         if(itemInHand is Weapon)

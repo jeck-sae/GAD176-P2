@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class UnitAI : Unit
 {
@@ -31,6 +32,7 @@ public class UnitAI : Unit
 
     public Targetable target;
     protected Vector3 targetLastSeenPosition;
+    [HideInInspector]public NavMeshAgent agent;
 
     [ShowInInspector, ReadOnly]
     protected UnitState state;
@@ -43,6 +45,12 @@ public class UnitAI : Unit
     protected Vector2 wanderDestination;
     protected Vector2 startPosition;
 
+    private void Start()
+    {
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+    }
     protected override void Initialize()
     {
         if(startPosition == null) 
@@ -137,7 +145,8 @@ public class UnitAI : Unit
         if (assumeUntil >= Time.time)
         {
             Debug.Log("Assume " + targetLastSeenPosition);
-            MoveTowards(targetLastSeenPosition, chaseSpeed);
+            agent.speed = chaseSpeed;
+            agent.SetDestination(targetLastSeenPosition);
             
             //postpone alert state (probably bad programming practice, but it is what it is, and it is 3am)
             alertUntil = Time.time + alertDuration; 
@@ -155,7 +164,8 @@ public class UnitAI : Unit
     public virtual void ChaseTarget()
     {
         LookAt(target.transform.position);
-        MoveTowards(target.transform.position, chaseSpeed);
+        agent.speed = chaseSpeed;
+        agent.SetDestination(target.transform.position);
     }
 
     //Default: closest unit. Can be overridden (e.g. prioritizing enemis with higher armor or less HP) 
@@ -208,7 +218,8 @@ public class UnitAI : Unit
             return;
 
         LookAt(wanderDestination);
-        MoveTowards(wanderDestination, wanderSpeed);
+        agent.speed = wanderSpeed;
+        agent.SetDestination(wanderDestination);
     }
 
 
