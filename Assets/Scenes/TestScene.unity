@@ -355,6 +355,7 @@ MonoBehaviour:
   maxHealth: 250
   isDead: 0
   isVulnerable: 1
+  Remains: {fileID: 0}
   faction: 0
   itemInHand: {fileID: 0}
   hand: {fileID: 0}
@@ -410,6 +411,7 @@ MonoBehaviour:
   wanderPauseDuration: 1
   wanderPauseVariation: 0.5
   target: {fileID: 0}
+  agent: {fileID: 0}
   waypoints:
   - destination: {fileID: 673827560}
     waitBeforeContinuing: 0.5
@@ -420,7 +422,6 @@ MonoBehaviour:
   - destination: {fileID: 2006814763}
     waitBeforeContinuing: 1
   firstWaypoint: 0
-  patrolWalkSpeed: 5
 --- !u!1001 &245418134
 PrefabInstance:
   m_ObjectHideFlags: 0
