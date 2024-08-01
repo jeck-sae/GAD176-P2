@@ -5,6 +5,6 @@ public class ButtonNumber : MonoBehaviour
     public int  buttonNumber;
     public void PresButton()
     {
-        DialogueManager.DialogueInstance.ChooseOption(buttonNumber);
+        DialogueManager.Instance.ChooseOption(buttonNumber);
     }
 }

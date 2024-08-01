@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94a01b194d99cb44fa9fcb4f69ed689c, type: 3}
+  m_Name: DefaultCompleted
+  m_EditorClassIdentifier: 
+  DialogueID: 
+  DialogueName: For finished dialogues
+  isCompleted: 0
+  Dialoguequest: {fileID: 0}
+  dialogueNodes:
+  - dialogueNodeID: 0
+    characterName: 
+    dialogueText: "\rI've already said everything"
+    options:
+    - optionID: 0
+      optionText: '|Leave|'
+      nextDialogueNode: 0
+      additionalFunctions:
+        StartQuest: 0
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 1
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+  - dialogueNodeID: 1
+    characterName: 
+    dialogueText: It's you again
+    options:
+    - optionID: 0
+      optionText: '|Leave|'
+      nextDialogueNode: 0
+      additionalFunctions:
+        StartQuest: 0
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 1
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+  - dialogueNodeID: 2
+    characterName: 
+    dialogueText: Isn't it time for you to go?
+    options:
+    - optionID: 0
+      optionText: '|Leave|'
+      nextDialogueNode: 0
+      additionalFunctions:
+        StartQuest: 0
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 1
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0

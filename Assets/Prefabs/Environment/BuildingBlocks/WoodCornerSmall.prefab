@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5160724139367413243}
   - component: {fileID: 1956656871769075772}
   - component: {fileID: 7937845408799095940}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: WoodCornerSmall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

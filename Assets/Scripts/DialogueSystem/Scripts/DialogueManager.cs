@@ -1,31 +1,18 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class DialogueManager : MonoBehaviour
+public class DialogueManager : Singleton<DialogueManager>
 {
-    #region Singleton
-
-    public static DialogueManager DialogueInstance;
-
-    private void Awake()
-    {
-        if (DialogueInstance != null)
-        {
-            Debug.LogWarning("More than one instance");
-            return;
-        }
-        DialogueInstance = this;
-    }
-    #endregion
     public Dialogue dialogue;
+    public Dialogue DefaultCompletedDialogue;
     private DialogueNode currentNode;
 
     public void StartDialogue()
     {
-        DialogueUI.DialogueUIInstance.DisplayDialogueMenu();
+        DialogueUI.Instance.DisplayDialogueMenu();
         if (dialogue.isCompleted)
         {
-            currentNode = dialogue.dialogueNodes[100];
+            currentNode = DefaultCompletedDialogue.dialogueNodes[Random.Range(0,4)];
         }
         else
         {
@@ -46,7 +33,7 @@ public class DialogueManager : MonoBehaviour
             }
 
             // Call the UI to update
-            DialogueUI.DialogueUIInstance.DisplayNode(currentNode);
+            DialogueUI.Instance.DisplayNode(currentNode);
         }
     }
 
@@ -64,6 +51,11 @@ public class DialogueManager : MonoBehaviour
                 int check = modifier + PlayerStats.Instance.Charisma.GetValue();
                 if (check >= chosenOption.additionalFunctions.Charisma)
                 {
+                    if (chosenOption.additionalFunctions.StartQuest)
+                    {
+                        if (chosenOption.additionalFunctions.quest != null)
+                        QuestManager.Instance.InitializeQuest(chosenOption.additionalFunctions.quest);
+                    }
                     if (chosenOption.additionalFunctions.finishTask)
                     {
                         dialogue.Dialoguequest.OnTaskCompleted();
@@ -87,6 +79,11 @@ public class DialogueManager : MonoBehaviour
             }
             else
             {
+                if (chosenOption.additionalFunctions.StartQuest)
+                {
+                    if (chosenOption.additionalFunctions.quest != null)
+                    QuestManager.Instance.InitializeQuest(chosenOption.additionalFunctions.quest);
+                }
                 if (chosenOption.additionalFunctions.finishTask)
                 {
                     dialogue.Dialoguequest.OnTaskCompleted();
@@ -110,6 +107,6 @@ public class DialogueManager : MonoBehaviour
     }
     public void FinishDialogue()
     {
-        DialogueUI.DialogueUIInstance.CloseDialogueMenu();
+        DialogueUI.Instance.CloseDialogueMenu();
     }
 }

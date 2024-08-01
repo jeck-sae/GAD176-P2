@@ -8,8 +8,8 @@ public class DialogueTrigger : MonoBehaviour
     public float InteractionDistance = 5f; // does nothing for now
     public virtual void Interact()
     {
-        DialogueManager.DialogueInstance.dialogue = tdialogue;
-        DialogueManager.DialogueInstance.StartDialogue();
+        DialogueManager.Instance.dialogue = tdialogue;
+        DialogueManager.Instance.StartDialogue();
         Debug.Log("Interacting with " + transform.name);
     }
     //radious for editor

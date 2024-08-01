@@ -10,7 +10,7 @@ public class QuestTrigger : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            QuestManager.QuestInstance.InitializeQuest(quest);
+            QuestManager.Instance.InitializeQuest(quest);
         }
     }
 }

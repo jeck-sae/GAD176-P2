@@ -14,7 +14,7 @@ public class SpeakToNPCTask : Task
     {
         if (NPC == null || NPC.Count == 0 || dialogue == null)
         {
-            Debug.LogError("NPC list or dialogue is not set up");
+            Debug.Log("NPC list or dialogue is not set up");
             return;
         }
 
@@ -39,7 +39,7 @@ public class SpeakToNPCTask : Task
         }
         else
         {
-            Debug.LogError("NPC does not have a DialogueTrigger");
+            Debug.Log("NPC does not have a DialogueTrigger");
         }
 
         base.Initialize();

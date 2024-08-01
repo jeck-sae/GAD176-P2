@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5906271010069506204}
   - component: {fileID: 3807796185234400887}
   - component: {fileID: 6788785227067435744}
+  - component: {fileID: -6153249090571458617}
   m_Layer: 5
   m_Name: questObj
   m_TagString: Untagged
@@ -120,7 +121,32 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3807796185234400887}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -6153249090571458617}
+        m_TargetAssemblyTypeName: QuestDescription, Assembly-CSharp
+        m_MethodName: SeeTheDescription
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-6153249090571458617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3102964292921604403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9ad4006495915f4b9274594a4e489d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StoredDescription: 
 --- !u!1 &9185445818140449672
 GameObject:
   m_ObjectHideFlags: 0

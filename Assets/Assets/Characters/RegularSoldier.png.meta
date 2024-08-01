@@ -105,7 +105,7 @@ TextureImporter:
         width: 209
         height: 142
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -126,7 +126,7 @@ TextureImporter:
         width: 140
         height: 118
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -147,7 +147,7 @@ TextureImporter:
         width: 67
         height: 103
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,48 +155,6 @@ TextureImporter:
       bones: []
       spriteID: 4c20a41d4b28eff43af8643ec2bb0aba
       internalID: 1750581803
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RegularSoldier_3
-      rect:
-        serializedVersion: 2
-        x: 595
-        y: 870
-        width: 4
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 20e998205ff65e042b195e093a5f5713
-      internalID: -539827458
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RegularSoldier_4
-      rect:
-        serializedVersion: 2
-        x: 642
-        y: 872
-        width: 5
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1bfe8ec179fe4df42a415682dfb80a9d
-      internalID: -1534418755
       vertices: []
       indices: 
       edges: []
@@ -210,7 +168,7 @@ TextureImporter:
         width: 68
         height: 101
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -218,27 +176,6 @@ TextureImporter:
       bones: []
       spriteID: 1ac3339e4caae594daeddd427aedf492
       internalID: 1208059839
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RegularSoldier_6
-      rect:
-        serializedVersion: 2
-        x: 593
-        y: 842
-        width: 4
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 006c6233ccfd8f048b8acbab48b8fd85
-      internalID: -626354928
       vertices: []
       indices: 
       edges: []
@@ -252,7 +189,7 @@ TextureImporter:
         width: 85
         height: 95
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -273,7 +210,7 @@ TextureImporter:
         width: 77
         height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -281,27 +218,6 @@ TextureImporter:
       bones: []
       spriteID: 3c9ac5e981defb14ab1556c45c26121d
       internalID: 1881088752
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RegularSoldier_9
-      rect:
-        serializedVersion: 2
-        x: 848
-        y: 750
-        width: 41
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b643815a020272a4c8291252d4c8d960
-      internalID: -1770971762
       vertices: []
       indices: 
       edges: []
@@ -315,7 +231,7 @@ TextureImporter:
         width: 224
         height: 132
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -336,7 +252,7 @@ TextureImporter:
         width: 240
         height: 202
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -357,7 +273,7 @@ TextureImporter:
         width: 43
         height: 59
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -378,7 +294,7 @@ TextureImporter:
         width: 39
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -386,27 +302,6 @@ TextureImporter:
       bones: []
       spriteID: 07c69d445a2de2e4c8a453737590d828
       internalID: -496454482
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RegularSoldier_14
-      rect:
-        serializedVersion: 2
-        x: 781
-        y: 680
-        width: 5
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 571b4859783f43449acd494b03c63d4f
-      internalID: 1990002523
       vertices: []
       indices: 
       edges: []
@@ -420,7 +315,7 @@ TextureImporter:
         width: 60
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -428,69 +323,6 @@ TextureImporter:
       bones: []
       spriteID: 0a463ad78e43b5e4297caccd459af655
       internalID: -293241818
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RegularSoldier_16
-      rect:
-        serializedVersion: 2
-        x: 903
-        y: 675
-        width: 5
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0c4013baf63f6d543b2c14dcada43904
-      internalID: 1878128458
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RegularSoldier_17
-      rect:
-        serializedVersion: 2
-        x: 111
-        y: 650
-        width: 5
-        height: 4
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6bd2d28e1d8c74a4a88a56a5bb382e2b
-      internalID: 145438510
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RegularSoldier_18
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 650
-        width: 5
-        height: 4
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 78872ac52d0c093439461fd8250f3a7a
-      internalID: -1638564356
       vertices: []
       indices: 
       edges: []
@@ -504,7 +336,7 @@ TextureImporter:
         width: 34
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -512,27 +344,6 @@ TextureImporter:
       bones: []
       spriteID: 889191c3605919b45b40bc5bcd49add7
       internalID: 606481179
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RegularSoldier_20
-      rect:
-        serializedVersion: 2
-        x: 719
-        y: 557
-        width: 5
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 441043ba5d7639f4abe24a4f86b38a60
-      internalID: -900235069
       vertices: []
       indices: 
       edges: []
@@ -546,7 +357,7 @@ TextureImporter:
         width: 39
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -567,7 +378,7 @@ TextureImporter:
         width: 65
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -588,7 +399,7 @@ TextureImporter:
         width: 73
         height: 228
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -609,7 +420,7 @@ TextureImporter:
         width: 81
         height: 235
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -630,7 +441,7 @@ TextureImporter:
         width: 123
         height: 112
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -651,7 +462,7 @@ TextureImporter:
         width: 123
         height: 111
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -672,7 +483,7 @@ TextureImporter:
         width: 338
         height: 195
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -680,90 +491,6 @@ TextureImporter:
       bones: []
       spriteID: 84cb870b62f9e8a408efa879dd234086
       internalID: 2015421155
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RegularSoldier_28
-      rect:
-        serializedVersion: 2
-        x: 616
-        y: 249
-        width: 10
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8defc93bf38b5c04fa18cd2be635606f
-      internalID: 437927626
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RegularSoldier_29
-      rect:
-        serializedVersion: 2
-        x: 328
-        y: 98
-        width: 17
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 06ed7032f63990d4aafd862c5ad8eaab
-      internalID: 2004092528
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RegularSoldier_30
-      rect:
-        serializedVersion: 2
-        x: 157
-        y: 77
-        width: 16
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 08232d57e7b9155438dfd892d9a5b593
-      internalID: 1484203836
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RegularSoldier_31
-      rect:
-        serializedVersion: 2
-        x: 804
-        y: 65
-        width: 20
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5881aadc8a303df41a4455d7daebb2d1
-      internalID: 1341042377
       vertices: []
       indices: 
       edges: []

@@ -3,28 +3,13 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
 
-public class DialogueUI : MonoBehaviour
+public class DialogueUI : Singleton<DialogueUI>
 {
     public GameObject DialogueMenu;
     public TextMeshProUGUI characterNameText;
     public TextMeshProUGUI dialogueText;
     public List<Button> optionButtons;// List of buttons for options
 
-
-    #region Singleton
-
-    public static DialogueUI DialogueUIInstance;
-
-    private void Awake()
-    {
-        if (DialogueUIInstance != null)
-        {
-            Debug.LogWarning("More than one instance");
-            return;
-        }
-        DialogueUIInstance = this;
-    }
-    #endregion
     public void DisplayDialogueMenu()
     {
         DialogueMenu.SetActive(true);

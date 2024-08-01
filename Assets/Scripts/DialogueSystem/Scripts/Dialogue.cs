@@ -31,6 +31,7 @@ public class DialogueNode
 public class DialogueOption
 {
     public int optionID; // ID for the option
+    [TextArea(2, 10)]
     public string optionText;
     public int nextDialogueNode; // Reference to the next DialogueNode by ID
     public AdditionalFunctions additionalFunctions;
@@ -38,6 +39,8 @@ public class DialogueOption
 [System.Serializable]
 public class AdditionalFunctions
 {
+    public bool StartQuest;
+    public Quest quest;
     public bool finishTask; // Needs a way to notify the task
     public bool finishDialogue;
     [Header("SkillCheck")]
