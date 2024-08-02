@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueID: 
   DialogueName: DeliveryStart
-  isCompleted: 0
   Dialoguequest: {fileID: 0}
   dialogueNodes:
   - dialogueNodeID: 0
     characterName: 
     dialogueText: Hello, are you intrested in delivery?
+    replace: 0
+    dialogueText2: 
     options:
-    - optionID: 0
-      optionText: Yes, what do you have?
+    - optionText: Yes, what do you have?
       nextDialogueNode: 1
       additionalFunctions:
         StartQuest: 1
@@ -32,8 +32,7 @@ MonoBehaviour:
         SkillCheck: 0
         Charisma: 0
         failDialogueNode: 0
-    - optionID: 1
-      optionText: No, not today
+    - optionText: No, not today
       nextDialogueNode: 2
       additionalFunctions:
         StartQuest: 0
@@ -45,11 +44,12 @@ MonoBehaviour:
         failDialogueNode: 0
   - dialogueNodeID: 1
     characterName: 
-    dialogueText: You need to deliver tavern's income report, to owner. He is currently
-      in a diffrent in Eisehafen. Good luck.
+    dialogueText: 'You need to deliver tavern''s income report, to owner. He is currently
+      in '
+    replace: 1
+    dialogueText2: '''s tavern. Good luck.'
     options:
-    - optionID: 0
-      optionText: I'll be going then
+    - optionText: I'll be going then
       nextDialogueNode: 0
       additionalFunctions:
         StartQuest: 0

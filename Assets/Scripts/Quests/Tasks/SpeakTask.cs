@@ -25,6 +25,7 @@ public class SpeakToNPCTask : Task
         {
             selectedNPC = NPC[r];
             SpawnerManager.Instance.SpawnSpeakTargets(NPC[r]);
+
         }
         else
         {

@@ -6,8 +6,10 @@ public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue tdialogue;
     public float InteractionDistance = 5f; // does nothing for now
+    public bool Completed = false;
     public virtual void Interact()
     {
+        DialogueManager.Instance.trigger = this;
         DialogueManager.Instance.dialogue = tdialogue;
         DialogueManager.Instance.StartDialogue();
         Debug.Log("Interacting with " + transform.name);

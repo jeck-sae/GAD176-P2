@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueID: 
   DialogueName: DeliveryEnd
-  isCompleted: 0
-  Dialoguequest: {fileID: 0}
+  Dialoguequest: {fileID: 11400000, guid: 8d91713ef446ffa4ebdcb641b7d88653, type: 2}
   dialogueNodes:
   - dialogueNodeID: 0
     characterName: 
@@ -66,10 +65,10 @@ MonoBehaviour:
       additionalFunctions:
         StartQuest: 0
         quest: {fileID: 0}
-        finishTask: 1
+        finishTask: 0
         finishDialogue: 0
         SkillCheck: 1
-        Charisma: 5
+        Charisma: 6
         failDialogueNode: 4
   - dialogueNodeID: 2
     characterName: 
@@ -96,7 +95,7 @@ MonoBehaviour:
       additionalFunctions:
         StartQuest: 0
         quest: {fileID: 0}
-        finishTask: 0
+        finishTask: 1
         finishDialogue: 1
         SkillCheck: 0
         Charisma: 0
@@ -112,7 +111,7 @@ MonoBehaviour:
       additionalFunctions:
         StartQuest: 0
         quest: {fileID: 0}
-        finishTask: 0
+        finishTask: 1
         finishDialogue: 1
         SkillCheck: 0
         Charisma: 0

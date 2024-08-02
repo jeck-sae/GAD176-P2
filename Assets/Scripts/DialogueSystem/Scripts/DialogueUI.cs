@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.Experimental.GraphView;
+using System;
 
 public class DialogueUI : Singleton<DialogueUI>
 {
@@ -17,7 +19,6 @@ public class DialogueUI : Singleton<DialogueUI>
 
     public void DisplayNode(DialogueNode node)
     {
-        characterNameText.text = node.characterName;
         dialogueText.text = node.dialogueText;
 
         for (int i = 0; i < optionButtons.Count; i++)
@@ -36,6 +37,10 @@ public class DialogueUI : Singleton<DialogueUI>
                 optionButtons[i].gameObject.SetActive(false);
             }
         }
+    }
+    public void DisplayReplacment(DialogueNode node, string replacment)
+    {
+        dialogueText.text = node.dialogueText + replacment + node.dialogueText2;
     }
     public void CloseDialogueMenu()
     {

@@ -6,13 +6,17 @@ public class DialogueManager : Singleton<DialogueManager>
     public Dialogue dialogue;
     public Dialogue DefaultCompletedDialogue;
     private DialogueNode currentNode;
+    public DialogueTrigger trigger;
+    [Header("Random spawns")]
+    [HideInInspector] public bool replacement = false;
+    [HideInInspector] public string replacementText;
 
     public void StartDialogue()
     {
         DialogueUI.Instance.DisplayDialogueMenu();
-        if (dialogue.isCompleted)
+        if (trigger.Completed)
         {
-            currentNode = DefaultCompletedDialogue.dialogueNodes[Random.Range(0,4)];
+            currentNode = DefaultCompletedDialogue.dialogueNodes[Random.Range(0, 4)];
         }
         else
         {
@@ -26,7 +30,6 @@ public class DialogueManager : Singleton<DialogueManager>
         if (currentNode != null)
         {
             // Display the current dialogue node
-            Debug.Log(currentNode.characterName + ": " + currentNode.dialogueText);
             foreach (var option in currentNode.options)
             {
                 Debug.Log(option.optionText);
@@ -34,6 +37,16 @@ public class DialogueManager : Singleton<DialogueManager>
 
             // Call the UI to update
             DialogueUI.Instance.DisplayNode(currentNode);
+
+            if(replacement)
+            {
+                if (currentNode.replace)
+                {
+                    DialogueUI.Instance.DisplayReplacment(currentNode, replacementText);
+                    replacementText = null;
+                }
+                replacement = false;
+            }
         }
     }
 
@@ -54,12 +67,12 @@ public class DialogueManager : Singleton<DialogueManager>
                     if (chosenOption.additionalFunctions.StartQuest)
                     {
                         if (chosenOption.additionalFunctions.quest != null)
-                        QuestManager.Instance.InitializeQuest(chosenOption.additionalFunctions.quest);
+                            QuestManager.Instance.InitializeQuest(chosenOption.additionalFunctions.quest);
                     }
                     if (chosenOption.additionalFunctions.finishTask)
                     {
                         dialogue.Dialoguequest.OnTaskCompleted();
-                        dialogue.isCompleted = true;
+                        trigger.Completed = true;
                     }
                     if (chosenOption.additionalFunctions.finishDialogue)
                     {
@@ -82,12 +95,12 @@ public class DialogueManager : Singleton<DialogueManager>
                 if (chosenOption.additionalFunctions.StartQuest)
                 {
                     if (chosenOption.additionalFunctions.quest != null)
-                    QuestManager.Instance.InitializeQuest(chosenOption.additionalFunctions.quest);
+                        QuestManager.Instance.InitializeQuest(chosenOption.additionalFunctions.quest);
                 }
                 if (chosenOption.additionalFunctions.finishTask)
                 {
                     dialogue.Dialoguequest.OnTaskCompleted();
-                    dialogue.isCompleted = true;
+                    trigger.Completed = true;
                 }
                 if (chosenOption.additionalFunctions.finishDialogue)
                 {
@@ -108,5 +121,6 @@ public class DialogueManager : Singleton<DialogueManager>
     public void FinishDialogue()
     {
         DialogueUI.Instance.CloseDialogueMenu();
+        dialogue = null;
     }
 }

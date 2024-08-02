@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueID: 
   DialogueName: For finished dialogues
-  isCompleted: 0
   Dialoguequest: {fileID: 0}
   dialogueNodes:
   - dialogueNodeID: 0
@@ -50,6 +49,21 @@ MonoBehaviour:
   - dialogueNodeID: 2
     characterName: 
     dialogueText: Isn't it time for you to go?
+    options:
+    - optionID: 0
+      optionText: '|Leave|'
+      nextDialogueNode: 0
+      additionalFunctions:
+        StartQuest: 0
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 1
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+  - dialogueNodeID: 3
+    characterName: 
+    dialogueText: I think we're done
     options:
     - optionID: 0
       optionText: '|Leave|'
