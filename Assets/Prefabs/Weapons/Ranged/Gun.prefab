@@ -271,6 +271,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6171672743974208464, guid: 418470d07480e57469c3d58018f9ee33, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6171672743974208464, guid: 418470d07480e57469c3d58018f9ee33, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6171672743974208464, guid: 418470d07480e57469c3d58018f9ee33, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1195992959
+      objectReference: {fileID: 0}
     - target: {fileID: 7830848726147351345, guid: 418470d07480e57469c3d58018f9ee33, type: 3}
       propertyPath: m_Name
       value: MuzzleFlash

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questName: Delivery
   questDescription: "\rI was asked to deliver documents containing a report on the
-    tavern's income, to Rurk in Eisenhaven."
+    tavern's income, to it's owner."
   memory: []
   tasks:
   - {fileID: 11400000, guid: 8403a3229c0a71a4d8277905c6324e66, type: 2}
