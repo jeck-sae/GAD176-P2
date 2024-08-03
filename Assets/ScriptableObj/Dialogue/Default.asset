@@ -63,7 +63,7 @@ MonoBehaviour:
         failDialogueNode: 2
     - optionID: 0
       optionText: I hate your ugly face! (charisma)
-      nextDialogueNode: 0
+      nextDialogueNode: 5
       additionalFunctions:
         finishTask: 0
         finishDialogue: 0
@@ -72,7 +72,7 @@ MonoBehaviour:
         failDialogueNode: 2
     - optionID: 0
       optionText: Nothing
-      nextDialogueNode: 5
+      nextDialogueNode: 0
       additionalFunctions:
         finishTask: 0
         finishDialogue: 1
