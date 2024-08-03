@@ -51,8 +51,11 @@ public class PlayerInput : MonoBehaviour
         //attacking
         if (Input.GetMouseButton(1))
         {
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButtonDown(0))
+            {
                 unit.TryAttacking();
+                anim.SetTrigger("Shot");
+            }
             anim.SetBool("Aim", true);
         }
         else

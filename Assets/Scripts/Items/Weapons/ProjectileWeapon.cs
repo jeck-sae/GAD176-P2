@@ -1,5 +1,8 @@
 using Sirenix.OdinInspector;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
+
 
 public class ProjectileWeapon : Weapon
 {
@@ -25,6 +28,8 @@ public class ProjectileWeapon : Weapon
     [Header("Visual Effects")]
     public ParticleSystem GunSmoke;
     public ParticleSystem MuzleFlash;
+    public Light2D muzzleFlashLight;
+    public float flashDuration = 0.05f;
 
     [Header("Debug")]
     //these are shown in the inspector, but cannot be modified while the game is not running
@@ -37,6 +42,7 @@ public class ProjectileWeapon : Weapon
     {
         currentAmmo = maxAmmo;
         base.Initialize();
+        muzzleFlashLight.enabled = false;
     }
 
     public override void Reload()
@@ -88,11 +94,13 @@ public class ProjectileWeapon : Weapon
             var go = Instantiate(projectilePrefab, projectileSpawnpoint.position, GetProjectileDirection());
             var proj = go.GetComponent<Projectile>();
             InitializeProjectile(proj);
-            if (GunSmoke != null)
-                GunSmoke.Play();
-            if (MuzleFlash != null)
-                MuzleFlash.Play();
         }
+        if (GunSmoke != null)
+            GunSmoke.Play();
+        if (MuzleFlash != null)
+            MuzleFlash.Play();
+        // Trigger the flash
+        StartCoroutine(Flash());
         nextShotMinTime = Time.time + attackSpeed;
         currentAmmo--;
     }
@@ -117,5 +125,13 @@ public class ProjectileWeapon : Weapon
         var variation = Random.Range(0, Mathf.Clamp(projectileDirectionVariation - dexterity, 0, float.MaxValue)) - projectileDirectionVariation / 2;
         return Quaternion.Euler(projectileSpawnpoint.rotation.eulerAngles + Vector3.forward * variation);
     }
+    private IEnumerator Flash()
+    {
+        muzzleFlashLight.enabled = true;
 
+        // Wait for the flash duration
+        yield return new WaitForSeconds(flashDuration);
+
+        muzzleFlashLight.enabled = false;
+    }
 }
