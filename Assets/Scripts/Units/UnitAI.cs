@@ -30,6 +30,7 @@ public class UnitAI : Unit
     [Tooltip("Pause duration variation when wandering")]
     public float wanderPauseVariation = .5f;
 
+    public Animator anim;
     public Targetable target;
     protected Vector3 targetLastSeenPosition;
     [HideInInspector]public NavMeshAgent agent;
@@ -137,10 +138,13 @@ public class UnitAI : Unit
     {
         LookAt(target.transform.position);
         TryAttacking();
+        anim.SetBool("Aim", true);
     }
 
     public virtual void Alert()
     {
+        anim.SetBool("Aim", false);
+
         Debug.Log("Alert");
         if (assumeUntil >= Time.time)
         {
@@ -158,6 +162,7 @@ public class UnitAI : Unit
     public virtual void Idle()
     {
         Wander(startPosition);
+        anim.SetBool("Aim", false);
     }
 
     //moves towards the player and gets slower the closer it gets
@@ -166,6 +171,7 @@ public class UnitAI : Unit
         LookAt(target.transform.position);
         agent.speed = chaseSpeed;
         agent.SetDestination(target.transform.position);
+        anim.SetBool("Aim", false);
     }
 
     //Default: closest unit. Can be overridden (e.g. prioritizing enemis with higher armor or less HP) 

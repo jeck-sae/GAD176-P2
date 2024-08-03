@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEditor.Rendering.FilterWindow;
 
 public class PlayerInput : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PlayerInput : MonoBehaviour
     Vector2 movement;
     public KeyCode SprintKey;
     float modifier;
+    public Animator anim;
 
     protected void Awake()
     {
@@ -28,6 +30,15 @@ public class PlayerInput : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
         movement = movement.normalized;
 
+        if (movement.x > 0 || movement.y > 0 || movement.x < 0 || movement.y < 0)
+        {
+            anim.SetBool("Walk", true);
+        }
+        else
+        {
+            anim.SetBool("Walk", false);
+        }
+
         if (Input.GetKey(SprintKey))
         {
             modifier = 1f + PlayerStats.Instance.Dexterity.GetValue() / 10f;
@@ -38,11 +49,16 @@ public class PlayerInput : MonoBehaviour
         }
 
         //attacking
-        if (Input.GetMouseButton(0))
-            unit.TryAttacking();
-
         if (Input.GetMouseButton(1))
-            unit.itemInHand?.TryUsing();
+        {
+            if (Input.GetMouseButton(0))
+                unit.TryAttacking();
+            anim.SetBool("Aim", true);
+        }
+        else
+        {
+            anim.SetBool("Aim", false);
+        }
 
         //reloading
         if (Input.GetKeyDown(KeyCode.R))
