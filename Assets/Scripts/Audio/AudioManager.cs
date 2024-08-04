@@ -15,16 +15,19 @@ public enum SoundType
     Damage,
     Death,
     Item,
-    FootStep
+    FootStep,
+    CalmMusic,
+    BattleMusic
 }
 [RequireComponent(typeof(AudioSource))]
 public class AudioManager : Singleton<AudioManager>
 {
     [SerializeField] private SoundList[] soundList;
     public AudioSource audioSource;
+    public AudioSource MusicAudioSource;// for plaing music
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        PlayMusic(SoundType.CalmMusic, 0.3f);
     }
     public static void PlaySound(SoundType sound, float volume = 1)
     {
@@ -50,6 +53,40 @@ public class AudioManager : Singleton<AudioManager>
             Debug.LogWarning($"Sound not found for: {sound}");
         }
     }
+    public static void PlayMusic(SoundType sound, float volume = 1f)
+    {
+        AudioClip clip = Instance.soundList[(int)sound].Sound;
+        if (clip != null)
+        {
+            Instance.MusicAudioSource.clip = clip; // Assign the clip to the audio source
+            Instance.MusicAudioSource.volume = volume; // Set the volume
+            Instance.MusicAudioSource.loop = true; // Enable looping
+            Instance.MusicAudioSource.Play(); // Play the clip
+        }
+        else
+        {
+            Debug.LogWarning($"Music not found for: {sound}");
+        }
+    }
+    public static void StopMusicGradually(float fadeDuration)
+    {
+        Instance.StartCoroutine(FadeOutMusic(fadeDuration));
+    }
+    public static IEnumerator FadeOutMusic(float duration)
+    {
+        AudioSource audioSource = Instance.MusicAudioSource;
+        float startVolume = audioSource.volume;
+
+        while (audioSource.volume > 0)
+        {
+            audioSource.volume -= startVolume * Time.deltaTime / duration;
+            yield return null;
+        }
+
+        audioSource.Stop();
+        audioSource.volume = startVolume; // Resets the volume
+    }
+
 }
 [Serializable]
 public struct SoundList
