@@ -16,8 +16,11 @@ public enum SoundType
     Death,
     Item,
     FootStep,
+    Monstra,
     CalmMusic,
-    BattleMusic
+    BattleMusic,
+    WoodSmash,
+    Cracking
 }
 [RequireComponent(typeof(AudioSource))]
 public class AudioManager : Singleton<AudioManager>
@@ -27,7 +30,7 @@ public class AudioManager : Singleton<AudioManager>
     public AudioSource MusicAudioSource;// for plaing music
     private void Start()
     {
-        PlayMusic(SoundType.CalmMusic, 0.3f);
+        PlayMusic(SoundType.CalmMusic, 0.2f);
     }
     public static void PlaySound(SoundType sound, float volume = 1)
     {
@@ -68,7 +71,7 @@ public class AudioManager : Singleton<AudioManager>
             Debug.LogWarning($"Music not found for: {sound}");
         }
     }
-    public static void StopMusicGradually(float fadeDuration)
+    public static void StopMusicGradually(float fadeDuration = 2f)
     {
         Instance.StartCoroutine(FadeOutMusic(fadeDuration));
     }

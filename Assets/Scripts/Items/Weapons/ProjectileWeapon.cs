@@ -36,8 +36,6 @@ public class ProjectileWeapon : Weapon
     [SerializeField, DisableInEditorMode] protected int currentAmmo;
     [SerializeField, DisableInEditorMode] protected float nextShotMinTime = 0; //when can the next attack be fired
     [SerializeField, DisableInEditorMode] protected bool isReloading;
-    
-
     protected override void Initialize()
     {
         currentAmmo = maxAmmo;
@@ -84,11 +82,11 @@ public class ProjectileWeapon : Weapon
     public override void Attack()
     {
         if (RifleSound)
-            AudioManager.PlaySoundAtPoint(SoundType.RifleShot, projectileSpawnpoint.position, 1f);
+            AudioManager.PlaySoundAtPoint(SoundType.RifleShot, projectileSpawnpoint.position, 0.9f);
         if (ShotGunSound)
-            AudioManager.PlaySound(SoundType.ShotGunShot, 0.6f);
+            AudioManager.PlaySound(SoundType.ShotGunShot, 1f);
         if (PistolSound)
-            AudioManager.PlaySound(SoundType.PistolShot, 0.6f);
+            AudioManager.PlaySound(SoundType.PistolShot, 0.7f);
         for (int i = 0; i < projectilesPerShot; i++)
         {
             var go = Instantiate(projectilePrefab, projectileSpawnpoint.position, GetProjectileDirection());
@@ -103,6 +101,7 @@ public class ProjectileWeapon : Weapon
         StartCoroutine(Flash());
         nextShotMinTime = Time.time + attackSpeed;
         currentAmmo--;
+        GunShots.GunshotFired(transform.position);
     }
 
     //inheriting classes can override this to make it easier to have different types of projectiles

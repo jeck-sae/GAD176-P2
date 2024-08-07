@@ -51,6 +51,11 @@ public class UnitAI : Unit
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        GunShots.OnGunshotFired += RespondToGunshot;
+    }
+    void OnDestroy()
+    {
+        GunShots.OnGunshotFired -= RespondToGunshot;
     }
     protected override void Initialize()
     {
@@ -202,9 +207,6 @@ public class UnitAI : Unit
         return CanSee(target);
     }
 
-
-
-
     public void Wander(Vector2 wanderAroundPoint)
     {
         float distance = Vector2.Distance(transform.position, wanderDestination);
@@ -283,5 +285,20 @@ public class UnitAI : Unit
         Debug.DrawRay(transform.position, direction * distance, Color.red);
         return true;
     }
-
+    void RespondToGunshot(Vector2 gunshotPosition)
+    {
+        // Checks if the AI is within the range
+        float distance = Vector2.Distance(transform.position, gunshotPosition);
+        if (state != UnitState.Fighting || state != UnitState.Chasing)
+        {
+            if (distance <= visionRange)
+            {
+                // Move to the gunshot
+                agent.SetDestination(gunshotPosition);
+                LookAt(gunshotPosition);
+                state = UnitState.Alert; // Set AI to alert
+                alertUntil = Time.time + alertDuration; // Stay alert for a while
+            }
+        }
+    }
 }

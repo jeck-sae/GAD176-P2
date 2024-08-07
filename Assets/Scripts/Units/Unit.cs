@@ -5,6 +5,7 @@ using static UnityEngine.GraphicsBuffer;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Unit : Targetable
 {
+    [Header("Unit")]
     public Faction faction;
 
     public Item itemInHand;

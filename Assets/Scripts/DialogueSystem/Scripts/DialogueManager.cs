@@ -6,7 +6,7 @@ public class DialogueManager : Singleton<DialogueManager>
     public Dialogue dialogue;
     public Dialogue DefaultCompletedDialogue;
     private DialogueNode currentNode;
-    public DialogueTrigger trigger;
+    [HideInInspector] public DialogueTrigger trigger;
     [Header("Random spawns")]
     [HideInInspector] public bool replacement = false;
     [HideInInspector] public string replacementText;

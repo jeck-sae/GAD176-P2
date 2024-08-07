@@ -24,7 +24,7 @@ public class Targetable : MonoBehaviour
     }
 
     //deals damage to this unit and checks if it's dead
-    public void Damage(float amount, Unit attacker)
+    public virtual void Damage(float amount, Unit attacker = null)
     {
         if (isDead || !isVulnerable || amount <= 0)
             return;
@@ -36,9 +36,10 @@ public class Targetable : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            if (attacker != null)
             GameEvents.TargetableKilled(this, attacker);
-            Die();
 
+            Die();
         }
     }
 

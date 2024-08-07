@@ -245,10 +245,16 @@ MonoBehaviour:
     Sound: {fileID: 8300000, guid: ec5f70c98a67dc347a171eee47943d84, type: 3}
   - name: FootStep
     Sound: {fileID: 0}
+  - name: Monstra
+    Sound: {fileID: 8300000, guid: 046dd850afe7f3e4c944947a1464869b, type: 3}
   - name: CalmMusic
-    Sound: {fileID: 0}
+    Sound: {fileID: 8300000, guid: 067e9130cb0c65945a506e9e09cf2eb9, type: 3}
   - name: BattleMusic
-    Sound: {fileID: 0}
+    Sound: {fileID: 8300000, guid: 6036f0951978c1c47bd6805fd333e810, type: 3}
+  - name: WoodSmash
+    Sound: {fileID: 8300000, guid: 1be1cd0fe9ae53c4fbf79147fa7ec822, type: 3}
+  - name: Cracking
+    Sound: {fileID: 8300000, guid: 832450f6c3877d543894d075e1cbf719, type: 3}
   audioSource: {fileID: 7090417452753135816}
   MusicAudioSource: {fileID: 3861488019358115956}
 --- !u!82 &7090417452753135816

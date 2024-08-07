@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-public class DayNightCycle : MonoBehaviour
+public class DayNightCycle : Singleton<DayNightCycle>
 {
     public Light2D globalLight;
     public float dayDuration = 120f; // Duration of the day in seconds
@@ -18,63 +18,67 @@ public class DayNightCycle : MonoBehaviour
 
     private float time;
     private bool isDayTime = true;
+    public bool bloodyTime = false;
 
     void Update()
     {
-        time += Time.deltaTime;
-
-        if (isDayTime)
+        if (!bloodyTime)
         {
-            if (time >= dayDuration - TransitionTime)
-            {
-                float transitionProgress = (time - (dayDuration - TransitionTime)) / TransitionTime;
+            time += Time.deltaTime;
 
-                if (transitionProgress < 0.5f)
-                {
-                    // Day to Transition
-                    float subProgress = transitionProgress * 2f; // Normalize to [0, 1]
-                    globalLight.color = Color.Lerp(dayColor, transitionColor, subProgress);
-                }
-                else
-                {
-                    // Transition to Night
-                    float subProgress = (transitionProgress - 0.5f) * 2f; // Normalize to [0, 1]
-                    globalLight.color = Color.Lerp(transitionColor, nightColor, subProgress);
-                    globalLight.intensity = Mathf.Lerp(dayIntensity, nightIntensity, subProgress);
-                }
-            }
-
-            if (time >= dayDuration)
+            if (isDayTime)
             {
-                isDayTime = false;
-                time = 0f;
-            }
-        }
-        else
-        {
-            if (time >= nightDuration - TransitionTime)
-            {
-                float transitionProgress = (time - (nightDuration - TransitionTime)) / TransitionTime;
+                if (time >= dayDuration - TransitionTime)
+                {
+                    float transitionProgress = (time - (dayDuration - TransitionTime)) / TransitionTime;
 
-                if (transitionProgress < 0.5f)
-                {
-                    // Night to Transition
-                    float subProgress = transitionProgress * 2f; // Normalize to [0, 1]
-                    globalLight.color = Color.Lerp(nightColor, transitionColor, subProgress);
+                    if (transitionProgress < 0.5f)
+                    {
+                        // Day to Transition
+                        float subProgress = transitionProgress * 2f; // Normalize to [0, 1]
+                        globalLight.color = Color.Lerp(dayColor, transitionColor, subProgress);
+                    }
+                    else
+                    {
+                        // Transition to Night
+                        float subProgress = (transitionProgress - 0.5f) * 2f; // Normalize to [0, 1]
+                        globalLight.color = Color.Lerp(transitionColor, nightColor, subProgress);
+                        globalLight.intensity = Mathf.Lerp(dayIntensity, nightIntensity, subProgress);
+                    }
                 }
-                else
+
+                if (time >= dayDuration)
                 {
-                    // Transition to Day
-                    float subProgress = (transitionProgress - 0.5f) * 2f; // Normalize to [0, 1]
-                    globalLight.color = Color.Lerp(transitionColor, dayColor, subProgress);
-                    globalLight.intensity = Mathf.Lerp(nightIntensity, dayIntensity, subProgress);
+                    isDayTime = false;
+                    time = 0f;
                 }
             }
-
-            if (time >= nightDuration)
+            else
             {
-                isDayTime = true;
-                time = 0f;
+                if (time >= nightDuration - TransitionTime)
+                {
+                    float transitionProgress = (time - (nightDuration - TransitionTime)) / TransitionTime;
+
+                    if (transitionProgress < 0.5f)
+                    {
+                        // Night to Transition
+                        float subProgress = transitionProgress * 2f; // Normalize to [0, 1]
+                        globalLight.color = Color.Lerp(nightColor, transitionColor, subProgress);
+                    }
+                    else
+                    {
+                        // Transition to Day
+                        float subProgress = (transitionProgress - 0.5f) * 2f; // Normalize to [0, 1]
+                        globalLight.color = Color.Lerp(transitionColor, dayColor, subProgress);
+                        globalLight.intensity = Mathf.Lerp(nightIntensity, dayIntensity, subProgress);
+                    }
+                }
+
+                if (time >= nightDuration)
+                {
+                    isDayTime = true;
+                    time = 0f;
+                }
             }
         }
     }

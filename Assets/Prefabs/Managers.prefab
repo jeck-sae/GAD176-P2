@@ -170,6 +170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8291493427958121276}
   - component: {fileID: 668938592687792288}
+  - component: {fileID: 3528794804620222015}
   m_Layer: 0
   m_Name: WeatherManager
   m_TagString: Untagged
@@ -214,6 +215,28 @@ MonoBehaviour:
   transitionColor: {r: 1, g: 0.36078432, b: 0.3227696, a: 1}
   dayIntensity: 1
   nightIntensity: 0.6
+  bloodyTime: 0
+--- !u!114 &3528794804620222015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6277476789872904643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bae636312af529b488c9f36b90ac2833, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rainEffect: {fileID: 0}
+  bloodFogEffect: {fileID: 0}
+  MonstraPrefab: {fileID: 2510182939926086954, guid: cc341fa4b9716ec489755651b910b5d6, type: 3}
+  transitionDelay: 20
+  eventDuration: 120
+  endingDuration: 20
+  spawnDistance: 160
+  minTimeBetweenEvents: 10
+  maxTimeBetweenEvents: 30
 --- !u!1 &6932778378787235309
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,6 +333,7 @@ GameObject:
   - component: {fileID: 7931178656140542229}
   - component: {fileID: 2815798118754033526}
   - component: {fileID: 7418244451101915755}
+  - component: {fileID: 2675951181883041488}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -386,7 +410,7 @@ MonoBehaviour:
     m_Bits: 128
   shootThroughLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
 --- !u!114 &2815798118754033526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -422,3 +446,16 @@ MonoBehaviour:
     replacementText: Candlefire
   KillTaskTargets: []
   ExplorationTargets: []
+--- !u!114 &2675951181883041488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8292047173373171288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 270fb865511da1d4da068bf9b685d257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
