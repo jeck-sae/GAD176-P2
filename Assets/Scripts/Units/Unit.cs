@@ -12,6 +12,7 @@ public class Unit : Targetable
     public Transform hand; //where to show held items/weapons
 
     public AnimationCurve curveWhenNearTarget = AnimationCurve.Linear(0, 0, 2, 1);
+    public float rotationSpeed = 120f;
 
     internal Weapon weapon => itemInHand as Weapon;
     protected Rigidbody2D m_rigidbody;
@@ -39,7 +40,14 @@ public class Unit : Targetable
     //rotate towards a target
     public void LookAt(Vector2 target)
     {
+        // Calculate the direction
         Vector2 lookDirection = target - (Vector2)transform.position;
-        transform.up = lookDirection;
+
+        // Calculate the desired rotation
+        float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
+        Quaternion targetRotation = Quaternion.Euler(0, 0, angle);
+
+        // Smoothly rotates
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 }

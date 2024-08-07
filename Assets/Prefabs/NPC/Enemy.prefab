@@ -126,6 +126,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  rotationSpeed: 110
   visionRange: 30
   fieldOfView: 120
   chaseSpeed: 8

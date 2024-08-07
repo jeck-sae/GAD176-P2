@@ -344,6 +344,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  rotationSpeed: 120
   currentState: 0
   speed: 10
   scareDuration: 80
