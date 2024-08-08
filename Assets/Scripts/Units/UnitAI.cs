@@ -210,7 +210,7 @@ public class UnitAI : Unit
     public void Wander(Vector2 wanderAroundPoint)
     {
         float distance = Vector2.Distance(transform.position, wanderDestination);
-        if(firstFrameInCurrentState || distance < 0.2f || distance > wanderDistance)
+        if(firstFrameInCurrentState || distance < 0.3f || distance > wanderDistance)
         {
             //New destination
             float x = wanderAroundPoint.x + Random.Range(-wanderDistance, wanderDistance);
@@ -289,9 +289,9 @@ public class UnitAI : Unit
     {
         // Checks if the AI is within the range
         float distance = Vector2.Distance(transform.position, gunshotPosition);
-        if (state != UnitState.Fighting || state != UnitState.Chasing)
+        if (distance <= visionRange)
         {
-            if (distance <= visionRange)
+            if (target = null)
             {
                 // Move to the gunshot
                 agent.SetDestination(gunshotPosition);
