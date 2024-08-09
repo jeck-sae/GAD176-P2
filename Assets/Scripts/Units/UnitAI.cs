@@ -270,7 +270,7 @@ public class UnitAI : Unit
             return false;
 
         //Check line of sight (if there is something in the way)
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, distance, GameManager.LevelLayer);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, distance, GameManager.LevelLayer | GameManager.ShootThroughLayer);
         if (hit.collider)
             return false;
 

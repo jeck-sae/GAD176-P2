@@ -2,29 +2,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.Experimental.GraphView;
+using System;
 
-public class DialogueUI : MonoBehaviour
+public class DialogueUI : Singleton<DialogueUI>
 {
     public GameObject DialogueMenu;
     public TextMeshProUGUI characterNameText;
     public TextMeshProUGUI dialogueText;
     public List<Button> optionButtons;// List of buttons for options
 
-
-    #region Singleton
-
-    public static DialogueUI DialogueUIInstance;
-
-    private void Awake()
-    {
-        if (DialogueUIInstance != null)
-        {
-            Debug.LogWarning("More than one instance");
-            return;
-        }
-        DialogueUIInstance = this;
-    }
-    #endregion
     public void DisplayDialogueMenu()
     {
         DialogueMenu.SetActive(true);
@@ -32,7 +19,6 @@ public class DialogueUI : MonoBehaviour
 
     public void DisplayNode(DialogueNode node)
     {
-        characterNameText.text = node.characterName;
         dialogueText.text = node.dialogueText;
 
         for (int i = 0; i < optionButtons.Count; i++)
@@ -51,6 +37,10 @@ public class DialogueUI : MonoBehaviour
                 optionButtons[i].gameObject.SetActive(false);
             }
         }
+    }
+    public void DisplayReplacment(DialogueNode node, string replacment)
+    {
+        dialogueText.text = node.dialogueText + replacment + node.dialogueText2;
     }
     public void CloseDialogueMenu()
     {

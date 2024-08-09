@@ -1,27 +1,15 @@
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class QuestManager : MonoBehaviour
+public class QuestManager : Singleton<QuestManager>
 {
-    #region Singleton
-
-    public static QuestManager QuestInstance;
-
-    private void Awake()
-    {
-        if (QuestInstance != null)
-        {
-            Debug.LogWarning("More than one instance");
-            return;
-        }
-        QuestInstance = this;
-    }
-    #endregion
     public List<Quest> quests;
     public GameObject JornalUI;
+    public TextMeshProUGUI Description;
     public GameObject questListContainer; // Reference to the UI Content GameObject
-    public GameObject questEntryPrefab; // Reference to the Quest Entry Prefab
+    public GameObject questEntryPrefab; // Reference to the Quest Prefab
 
     private void Update()
     {
@@ -45,11 +33,15 @@ public class QuestManager : MonoBehaviour
         quests.Remove(quest);
         RemoveQuestUI(quest);
     }
+    public void ShowDescription(string descript)
+    {
+        Description.text = descript;
+    }
     private void AddQuestUI(Quest quest)
     {
         GameObject questObj = Instantiate(questEntryPrefab, questListContainer.transform);
         questObj.transform.Find("QuestName").GetComponent<TextMeshProUGUI>().text = quest.questName;
-        //questObj.transform.Find("QuestDescription").GetComponent<TextMeshProUGUI>().text = quest.questDescription;
+        questObj.GetComponent<QuestDescription>().StoredDescription = quest.questDescription;
         questObj.name = quest.questName; // Name the GameObject for easy reference
     }
     private void RemoveQuestUI(Quest quest)
