@@ -7,7 +7,7 @@ using UnityEngine.AI;
 
 public class UnitCivilian : Unit
 {
-    public enum UnitState { Idling, Wandering, Fleeing, Alert }
+    public enum UnitState { Idling, Wandering, Fleeing, Alert, Night }
 
     [Tooltip("How far the unit can see threats")]
     public float visionRange = 10;
@@ -30,7 +30,9 @@ public class UnitCivilian : Unit
 
     public Animator anim;
     public Targetable threat;
+    [HideInInspector] public Transform home;
     protected Vector3 threatLastSeenPosition;
+    protected bool activeAtNight;
     [HideInInspector] public NavMeshAgent agent;
 
     [ShowInInspector, ReadOnly]
@@ -90,6 +92,9 @@ public class UnitCivilian : Unit
             case UnitState.Alert:
                 Alert();
                 break;
+            case UnitState.Night:
+                Night();
+                break;
 
             default:
                 Debug.LogError("Invalid unit state");
@@ -99,21 +104,29 @@ public class UnitCivilian : Unit
 
     protected virtual void UpdateState()
     {
-        if (threat)
+        if (DayNightCycle.Instance.isDayTime)
         {
-            state = UnitState.Fleeing;
-            alertUntil = Time.time + alertDuration;
-        }
-        else
-        {
-            if (alertUntil >= Time.time)
+            activeAtNight = false;
+            if (threat)
             {
-                state = UnitState.Alert;
+                state = UnitState.Fleeing;
+                alertUntil = Time.time + alertDuration;
             }
             else
             {
-                state = UnitState.Idling;
+                if (alertUntil >= Time.time)
+                {
+                    state = UnitState.Alert;
+                }
+                else
+                {
+                    state = UnitState.Idling;
+                }
             }
+        }
+        else
+        {
+            state = UnitState.Night;
         }
     }
 
@@ -129,6 +142,11 @@ public class UnitCivilian : Unit
     public virtual void Idle()
     {
         Wander(startPosition);
+    }
+    public virtual void Night()
+    {
+        agent.speed = wanderSpeed;
+        agent.SetDestination(home.position);
     }
 
     public virtual void FleeFromThreat()

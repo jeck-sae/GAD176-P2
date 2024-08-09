@@ -77,7 +77,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: basic_enemy
   currentHealth: 0
-  maxHealth: 35
+  maxHealth: 100
   isDead: 0
   isVulnerable: 1
   Remains: {fileID: 0}

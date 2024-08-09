@@ -17,7 +17,7 @@ public class DayNightCycle : Singleton<DayNightCycle>
     public float nightIntensity = 0.6f;
 
     private float time;
-    private bool isDayTime = true;
+    [HideInInspector] public bool isDayTime = true;
     public bool bloodyTime = false;
 
     void Update()

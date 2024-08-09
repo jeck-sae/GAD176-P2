@@ -121,7 +121,7 @@ BoxCollider2D:
   m_Offset: {x: 0.2, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.0380043, y: 0.5}
     oldSize: {x: 2.857143, y: 1.0857143}
     newSize: {x: 2, y: 0.76}
     adaptiveTilingThreshold: 0.5
@@ -235,7 +235,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -1.35, y: 0}
+  m_ConnectedAnchor: {x: -1.3500006, y: 0}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
