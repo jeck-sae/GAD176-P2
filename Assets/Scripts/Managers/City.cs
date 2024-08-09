@@ -6,12 +6,19 @@ public class City : MonoBehaviour
     public string cityName;
     public float spawnRadius = 50f;
     public int cityPopulation = 10; // thats more like a village, but who cares
+    public int solders;
+    public GameObject factionSolder;
     public List<Transform> houses; // List of house
     public List<GameObject> NPC; // List of NPC prefabs to spawn
     private List<GameObject> spawnedNPCs = new List<GameObject>();
 
     public void SpawnNPCs()
     {
+        for(int i = 0; i < solders; i++)
+        {
+            GameObject spawnedNPC = Instantiate(factionSolder, RandomSpawn(), Quaternion.identity);
+            spawnedNPCs.Add(spawnedNPC);
+        }
         for (int i = 0; i < cityPopulation; i++)
         {
             int R = Random.Range(0, NPC.Count);

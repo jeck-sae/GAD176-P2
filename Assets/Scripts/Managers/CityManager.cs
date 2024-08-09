@@ -14,9 +14,9 @@ public class CityManager : MonoBehaviour
     {
         foreach (City city in cities)
         {
-            Debug.Log("Cheking");
-            if (Vector2.Distance(city.transform.position, PlayerManager.Instance.transform.position) < city.spawnRadius)
+            if (Vector2.Distance(city.transform.position, PlayerManager.Instance.player.position) < city.spawnRadius)
             {
+                Debug.Log("Cheking");
                 if (currentCity != city)
                 {
                     Debug.Log("Spawn");
