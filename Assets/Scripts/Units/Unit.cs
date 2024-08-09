@@ -15,6 +15,16 @@ public class Unit : Targetable
     internal Weapon weapon => itemInHand as Weapon;
     protected Rigidbody2D m_rigidbody;
 
+    public void HoldItem(Item item)
+    {
+        itemInHand = item;
+        itemInHand.owner = this;
+        itemInHand.gameObject.SetActive(true);
+        itemInHand.transform.parent = hand;
+        itemInHand.transform.position = hand.transform.position;
+        itemInHand.transform.rotation = hand.transform.rotation;
+    }
+
     protected override void Initialize()
     {
         if (!hand)
@@ -22,8 +32,10 @@ public class Unit : Targetable
 
         m_rigidbody = GetComponent<Rigidbody2D>();
 
-        if(!itemInHand)
-            itemInHand = GetComponentInChildren<Weapon>();
+        if (!itemInHand)
+            itemInHand = GetComponentInChildren<Item>();
+        if(itemInHand)
+            HoldItem(itemInHand);
 
         base.Initialize();
     }

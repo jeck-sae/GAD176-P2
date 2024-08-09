@@ -55,7 +55,7 @@ public class UnitAI : Unit
     {
         if(startPosition == null) 
             startPosition = transform.position;
-
+        
         base.Initialize();
     }
 
@@ -120,8 +120,6 @@ public class UnitAI : Unit
         }
         else
         {
-            if(this is PatrollingUnit)
-                Debug.Log("? " + alertUntil + " / " + Time.time);
             if (alertUntil >= Time.time)
             {
                 state = UnitState.Alert;            
@@ -141,10 +139,8 @@ public class UnitAI : Unit
 
     public virtual void Alert()
     {
-        Debug.Log("Alert");
         if (assumeUntil >= Time.time)
         {
-            Debug.Log("Assume " + targetLastSeenPosition);
             agent.speed = chaseSpeed;
             agent.SetDestination(targetLastSeenPosition);
             

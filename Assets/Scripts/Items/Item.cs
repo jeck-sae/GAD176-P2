@@ -1,17 +1,18 @@
 using Sirenix.OdinInspector;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public abstract class Item : Interactable
+public abstract class Item : Interactable, ICloneable
 {
+    public string ID;
     [Header("Item Info")]
     public int maxStack = 64;
     public Sprite icon;
 
-    [SerializeField] protected Unit owner;
-    [SerializeField] protected ItemSlot slot;
+    public ItemSlot slot;
 
     //protected bool isSelected => (slot == null) ? true : slot.isSelected;
     protected bool isSelected => debugSelected;
@@ -19,6 +20,7 @@ public abstract class Item : Interactable
     private bool m_usedLastFrame = false;
     private bool m_usingSinceBeforeConsuming = false;
 
+    public Unit owner;
 
     #region Debug Buttons
 
@@ -80,7 +82,6 @@ public abstract class Item : Interactable
     //should be handled by the unit script (will fix later)
     public void MoveTo(Unit newOwner/*ItemSlot*/) 
     {
-        owner = newOwner;
         transform.parent = owner.hand;
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
@@ -90,14 +91,13 @@ public abstract class Item : Interactable
     public override void Interact()
     {
         GetComponent<Collider2D>().enabled = false;
-        var p = FindObjectOfType<Player>();
-        p.itemInHand = this;
-        MoveTo(p);
+
+        PlayerInventory.Instance.PickUpItem(this, 1);
+
     }
 
     public void Drop()
     {
-        owner = null;
         transform.parent = null;
         //TODO: update itemSlot
     }
@@ -130,6 +130,15 @@ public abstract class Item : Interactable
             m_usingSinceBeforeConsuming = true; ;
     }
 
+    public bool CanStackWith(Item item)
+    {
+        return ID == item.ID && maxStack != 1;
+    }
+
+    public virtual object Clone()
+    {
+        return Instantiate(gameObject);
+    }
 
     //other scripts can override:
 
@@ -141,8 +150,7 @@ public abstract class Item : Interactable
     /// </summary>
     protected override void Initialize() 
     {
-        if (owner == null)
-            owner = GetComponentInParent<Unit>();
+
         if (owner)
             owner.itemInHand = this;
 
