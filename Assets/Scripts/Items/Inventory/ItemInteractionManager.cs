@@ -180,26 +180,4 @@ public class ItemInteractionManager : Singleton<ItemInteractionManager>
         interfaceOpen = false;
     }
 
-
-    /*public void OpenInventory()
-    {
-        if (interfaceOpen)
-            return;
-
-        playerInventory.gameObject.SetActive(true);
-        interfaceOpen = true;
-    }
-
-    public void CloseInventory()
-    {
-        if (!interfaceOpen)
-            return;
-        
-        int leftoverDragItem = playerInventory.LoadItems(dragItemSlot.item, dragItemSlot.GetAmount());
-        dragItemSlot.RemoveItems(dragItemSlot.GetAmount() - leftoverDragItem); //TODO: Drop leftover instead of keeping in drag slot
-        
-        playerInventory.gameObject.SetActive(false);
-        interfaceOpen = false;
-    }
-*/
 }
