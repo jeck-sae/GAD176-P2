@@ -20,6 +20,7 @@ public class HealingItem : Item
     protected override void OnStartUsing()
     {
         healAtTime = Time.time + timeToHeal;
+        Debug.Log("start"); 
         
         if (!CanUse())
             return;
@@ -32,8 +33,13 @@ public class HealingItem : Item
         {
             //start sfx
         }
-
     }
+
+    protected override void OnStopUsing()
+    {
+        Debug.Log("Stop");
+    }
+
     protected override void OnUsing()
     {
         if (!instant && Time.time >= healAtTime)

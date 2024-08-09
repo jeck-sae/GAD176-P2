@@ -50,9 +50,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractionDistance: 5
+  ID: rifle
   maxStack: 1
   icon: {fileID: 21300000, guid: 1b0fb72d3cd3569439ac175fa6b993c3, type: 3}
   owner: {fileID: 0}
+  slot:
+    item: {fileID: 0}
   attackDistance: 20
   attackSpeed: 0.7
   damage: 50

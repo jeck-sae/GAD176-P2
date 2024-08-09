@@ -126,8 +126,6 @@ public class UnitAI : Unit
         }
         else
         {
-            if(this is PatrollingUnit)
-                Debug.Log("? " + alertUntil + " / " + Time.time);
             if (alertUntil >= Time.time)
             {
                 state = UnitState.Alert;            
@@ -150,10 +148,8 @@ public class UnitAI : Unit
     {
         anim.SetBool("Aim", false);
 
-        Debug.Log("Alert");
         if (assumeUntil >= Time.time)
         {
-            Debug.Log("Assume " + targetLastSeenPosition);
             agent.speed = chaseSpeed;
             agent.SetDestination(targetLastSeenPosition);
             

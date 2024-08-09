@@ -215,6 +215,7 @@ MonoBehaviour:
   transitionColor: {r: 1, g: 0.36078432, b: 0.3227696, a: 1}
   dayIntensity: 1
   nightIntensity: 0.6
+  isDayTime: 1
   bloodyTime: 0
 --- !u!114 &3528794804620222015
 MonoBehaviour:
@@ -368,6 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd0c1096c055e6b44a03bb47bb0cfd06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  giveItemPrefab: {fileID: 1875261028184737229, guid: 978fccdb733083d44a0d690ce81683e1, type: 3}
 --- !u!114 &7685270829891309973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,6 +413,9 @@ MonoBehaviour:
   shootThroughLayer:
     serializedVersion: 2
     m_Bits: 256
+  inventoryLayer:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!114 &2815798118754033526
 MonoBehaviour:
   m_ObjectHideFlags: 0
