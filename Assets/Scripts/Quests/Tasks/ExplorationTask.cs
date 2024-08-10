@@ -8,7 +8,7 @@ public class ExplorationTask : Task
     public GameObject ExplorationObj;
     public bool randomSpawn = true;
     public Vector2 spawnPosition;
-    public override void Initialize()
+    public override void Initialize(Quest quest)
     {
 
         if (randomSpawn)
@@ -30,7 +30,7 @@ public class ExplorationTask : Task
             }
         }
 
-        base.Initialize();
+        base.Initialize(quest);
     }
 
     public override void CheckProgress()

@@ -10,18 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 94a01b194d99cb44fa9fcb4f69ed689c, type: 3}
-  m_Name: DeliveryEnd
+  m_Name: DeliveryTavernEnd
   m_EditorClassIdentifier: 
-  DialogueID: 
-  DialogueName: DeliveryEnd
+  DialogueName: DeliveryTavernEnd
   Dialoguequest: {fileID: 11400000, guid: 8d91713ef446ffa4ebdcb641b7d88653, type: 2}
   dialogueNodes:
   - dialogueNodeID: 0
-    characterName: 
     dialogueText: I'm busy, what do you need?
+    replace: 0
+    dialogueText2: 
     options:
-    - optionID: 0
-      optionText: I have income report of the Harmony Tavern
+    - optionText: I have income report of the Harmony Tavern
       nextDialogueNode: 1
       additionalFunctions:
         StartQuest: 0
@@ -31,8 +30,7 @@ MonoBehaviour:
         SkillCheck: 0
         Charisma: 0
         failDialogueNode: 0
-    - optionID: 1
-      optionText: Nothing
+    - optionText: Nothing
       nextDialogueNode: 0
       additionalFunctions:
         StartQuest: 0
@@ -43,12 +41,12 @@ MonoBehaviour:
         Charisma: 0
         failDialogueNode: 0
   - dialogueNodeID: 1
-    characterName: 
     dialogueText: "\rI asked them to hire a permanent courier... Oh fine, give me
       the papers"
+    replace: 0
+    dialogueText2: 
     options:
-    - optionID: 0
-      optionText: Here you go
+    - optionText: Here you go
       nextDialogueNode: 2
       additionalFunctions:
         StartQuest: 0
@@ -58,8 +56,7 @@ MonoBehaviour:
         SkillCheck: 0
         Charisma: 0
         failDialogueNode: 0
-    - optionID: 1
-      optionText: First, I would like to receive some additional compensation for
+    - optionText: First, I would like to receive some additional compensation for
         my work |Charisma|
       nextDialogueNode: 3
       additionalFunctions:
@@ -71,11 +68,11 @@ MonoBehaviour:
         Charisma: 6
         failDialogueNode: 4
   - dialogueNodeID: 2
-    characterName: 
     dialogueText: "\rHere's your payment, and now I need to teach someone a lesson"
+    replace: 0
+    dialogueText2: 
     options:
-    - optionID: 0
-      optionText: '|Leave|'
+    - optionText: '|Leave|'
       nextDialogueNode: 0
       additionalFunctions:
         StartQuest: 0
@@ -86,11 +83,11 @@ MonoBehaviour:
         Charisma: 0
         failDialogueNode: 0
   - dialogueNodeID: 3
-    characterName: 
     dialogueText: Fine here's your money, now give those papers
+    replace: 0
+    dialogueText2: 
     options:
-    - optionID: 0
-      optionText: Thank you, it was a pleasure doing business with you
+    - optionText: Thank you, it was a pleasure doing business with you
       nextDialogueNode: 0
       additionalFunctions:
         StartQuest: 0
@@ -101,12 +98,12 @@ MonoBehaviour:
         Charisma: 0
         failDialogueNode: 0
   - dialogueNodeID: 4
-    characterName: 
     dialogueText: "\rI won\u2019t give you anything! I don\u2019t really need these
       reports anyway"
+    replace: 0
+    dialogueText2: 
     options:
-    - optionID: 0
-      optionText: " Well, I didn\u2019t really need the money either..."
+    - optionText: " Well, I didn\u2019t really need the money either..."
       nextDialogueNode: 0
       additionalFunctions:
         StartQuest: 0

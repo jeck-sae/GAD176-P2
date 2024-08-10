@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7985065478184316853}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.07, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -140,7 +140,7 @@ MonoBehaviour:
   Remains: {fileID: 0}
   faction: 0
   itemInHand: {fileID: 0}
-  hand: {fileID: 0}
+  hand: {fileID: 9025620265514450700}
   curveWhenNearTarget:
     serializedVersion: 2
     m_Curve:
@@ -247,5 +247,10 @@ Transform:
 --- !u!95 &8103247816474089153 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 9044687391157693733, guid: 20a462bff92d7314db0d54e9b7cf1cc0, type: 3}
+  m_PrefabInstance: {fileID: 1004772990682758116}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &9025620265514450700 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8120230345368093928, guid: 20a462bff92d7314db0d54e9b7cf1cc0, type: 3}
   m_PrefabInstance: {fileID: 1004772990682758116}
   m_PrefabAsset: {fileID: 0}

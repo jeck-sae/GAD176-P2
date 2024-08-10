@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +9,8 @@ public class Quest : ScriptableObject
     public string questName;
     [TextArea(3, 10)]
     public string questDescription;
-    private int progress;
+    public bool startsWithDialoge;
+    [ShowInInspector]protected int progress;
     public List<string> memory;
     public List<Task> tasks;
 
@@ -17,7 +19,7 @@ public class Quest : ScriptableObject
         progress = 0;
         if (tasks.Count > 0)
         {
-            tasks[progress].Initialize();
+            tasks[progress].Initialize(this);
         }
     }
 
@@ -30,15 +32,20 @@ public class Quest : ScriptableObject
     public void OnTaskCompleted()
     {
         progress++;
+        Debug.Log("Progress increased " +  progress);
         if (progress < tasks.Count)
         {
-            tasks[progress].Initialize();
+            tasks[progress].Initialize(this);
         }
         else
         {
-            Debug.Log("Quest " + questName + " is completed!");
-            // Handle quest completion (e.g., reward the player, remove the quest, etc.)
-            QuestManager.Instance.RemoveQuest(this);
+            QuestCompleted();
         }
+    }
+    public void QuestCompleted()
+    {
+        Debug.Log("Quest " + questName + " is completed!");
+        // Handle quest completion (e.g., reward the player, remove the quest, etc.)
+        QuestManager.Instance.RemoveQuest(this);
     }
 }

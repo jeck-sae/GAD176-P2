@@ -634,6 +634,18 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.50980395
       objectReference: {fileID: 0}
+    - target: {fileID: 3340621094294569848, guid: d67ef2da439758b4bb64eb31aaff9bf9, type: 3}
+      propertyPath: m_Color.b
+      value: 0.645283
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340621094294569848, guid: d67ef2da439758b4bb64eb31aaff9bf9, type: 3}
+      propertyPath: m_Color.g
+      value: 0.56795233
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340621094294569848, guid: d67ef2da439758b4bb64eb31aaff9bf9, type: 3}
+      propertyPath: m_Color.r
+      value: 0.48578852
+      objectReference: {fileID: 0}
     - target: {fileID: 3534393884969511203, guid: d67ef2da439758b4bb64eb31aaff9bf9, type: 3}
       propertyPath: m_Color.b
       value: 0.827451
@@ -817,6 +829,10 @@ PrefabInstance:
     - target: {fileID: 8192740871682041567, guid: d67ef2da439758b4bb64eb31aaff9bf9, type: 3}
       propertyPath: m_Name
       value: RegularSolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 8804292233824167409, guid: d67ef2da439758b4bb64eb31aaff9bf9, type: 3}
+      propertyPath: m_Name
+      value: Sprite
       objectReference: {fileID: 0}
     - target: {fileID: 9046736407183790561, guid: d67ef2da439758b4bb64eb31aaff9bf9, type: 3}
       propertyPath: m_Color.b

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b826646f07a1d334d9c18582d8d6d1b5, type: 3}
+  m_Name: DeliveryQuestSupplies
+  m_EditorClassIdentifier: 
+  questName: ' Deliver supplies to the front line'
+  questDescription: "\rI was asked to deliver supplies to the front line"
+  memory: []
+  tasks:
+  - {fileID: 11400000, guid: 879c5715ba4ff1c4b8218ac7fd514b63, type: 2}

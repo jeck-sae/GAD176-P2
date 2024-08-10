@@ -13,7 +13,7 @@ public class KillTask : Task
     public int requiredKillCount;
     private int currentKillCount;
 
-    public override void Initialize()
+    public override void Initialize(Quest quest)
     {
         if (NPC == null || NPC.Count == 0 || targetID == null)
         {
@@ -27,24 +27,25 @@ public class KillTask : Task
         if (randomSpawn)
         {
             selectedNPC = NPC[r];
-            SpawnerManager.Instance.SpawnKillTargets(NPC[r]);
+            SpawnerManager.Instance.SpawnKillTargets(NPC[r], targetID);
         }
         else
         {
             selectedNPC = Instantiate(NPC[r], spawnPosition, Quaternion.identity);
+            Targetable targetable = selectedNPC.GetComponent<Targetable>();
+            if (targetable != null)
+            {
+                targetable.ID = targetID;
+            }
+            else
+            {
+                Debug.LogError("NPC does not have a Targetable script");
+            }
+
         }
 
-        Targetable targetable = selectedNPC.GetComponent<Targetable>();
-        if (targetable != null)
-        {
-            targetable.ID = targetID;
-        }
-        else
-        {
-            Debug.LogError("NPC does not have a Targetable script");
-        }
 
-        base.Initialize();
+        base.Initialize(quest);
         GameEvents.OnTargetableKilled += OnEnemyKilled;
         currentKillCount = 0;
     }
@@ -62,6 +63,7 @@ public class KillTask : Task
         // Check if the enemy has been killed enough times
         if (currentKillCount >= requiredKillCount)
         {
+            Debug.Log("Task completed");
             CompleteTask();
         }
     }
@@ -69,5 +71,6 @@ public class KillTask : Task
     {
         base.CompleteTask();
         GameEvents.OnTargetableKilled -= OnEnemyKilled;
+        taskQuest.OnTaskCompleted();
     }
 }

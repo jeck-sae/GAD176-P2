@@ -46,8 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 293354b2dbda4434ba8f95f600a63217, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tdialogue: {fileID: 11400000, guid: ed6adb43da535e94d90240976ec3db8f, type: 2}
-  InteractionDistance: 5
+  tdialogue: {fileID: 0}
+  Completed: 0
+  InteractionDist: 7
 --- !u!58 &4385889718357833374
 CircleCollider2D:
   m_ObjectHideFlags: 0

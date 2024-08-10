@@ -10,14 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 94a01b194d99cb44fa9fcb4f69ed689c, type: 3}
-  m_Name: DeliveryStart
+  m_Name: DeliveryTavernStart
   m_EditorClassIdentifier: 
-  DialogueID: 
-  DialogueName: DeliveryStart
+  DialogueName: DeliveryTavernStart
   Dialoguequest: {fileID: 0}
   dialogueNodes:
   - dialogueNodeID: 0
-    characterName: 
     dialogueText: Hello, are you intrested in delivery?
     replace: 0
     dialogueText2: 
@@ -43,7 +41,6 @@ MonoBehaviour:
         Charisma: 0
         failDialogueNode: 0
   - dialogueNodeID: 1
-    characterName: 
     dialogueText: 'You need to deliver tavern''s income report, to owner. He is currently
       in '
     replace: 1

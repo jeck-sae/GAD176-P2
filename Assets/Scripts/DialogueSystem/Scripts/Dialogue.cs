@@ -38,7 +38,6 @@ public class DialogueOption
 [System.Serializable]
 public class AdditionalFunctions
 {
-    public bool StartQuest;
     public Quest quest;
     public bool finishTask; // Needs a way to notify the task
     public bool finishDialogue;

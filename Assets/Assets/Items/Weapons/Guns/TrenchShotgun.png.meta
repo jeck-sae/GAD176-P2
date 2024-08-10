@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 120
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,43 +97,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TrenchShotgun_Body
+      name: TrenchShotgun_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 1
-        width: 24
-        height: 510
+        x: 2
+        y: 20
+        width: 19
+        height: 473
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a1334e7a48afe64aa6cc2bf706edc61
-      internalID: 1729752759
+      spriteID: 0f6e5d46b40cd93439111bb20569b398
+      internalID: 43274092
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TrenchShotgun_Grip
+      name: TrenchShotgun_1
       rect:
         serializedVersion: 2
         x: 34
         y: 312
         width: 24
-        height: 96
+        height: 97
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc40184bbc349a048a527467fab06166
-      internalID: 891738179
+      spriteID: ab473215503f13846b0d522aa586e25b
+      internalID: 917028291
       vertices: []
       indices: 
       edges: []
@@ -149,8 +149,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TrenchShotgun_Body: 1729752759
-      TrenchShotgun_Grip: 891738179
+      TrenchShotgun_0: 43274092
+      TrenchShotgun_1: 917028291
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

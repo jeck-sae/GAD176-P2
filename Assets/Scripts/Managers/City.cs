@@ -4,9 +4,10 @@ using UnityEngine;
 public class City : MonoBehaviour
 {
     public string cityName;
+    public Faction faction;
     public float spawnRadius = 50f;
-    public int cityPopulation = 10; // thats more like a village, but who cares
-    public int solders;
+    public int cityPopulation = 15; // thats more like a village, but who cares
+    public int solders = 10;
     public GameObject factionSolder;
     public List<Transform> houses; // List of house
     public List<GameObject> NPC; // List of NPC prefabs to spawn
@@ -43,6 +44,7 @@ public class City : MonoBehaviour
         if (npcBehavior != null)
         {
             npcBehavior.home = assignedHouse;
+            npcBehavior.faction = faction;
         }
         else
         {

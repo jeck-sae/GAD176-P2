@@ -61,13 +61,14 @@ public class DialogueManager : Singleton<DialogueManager>
             if (chosenOption.additionalFunctions.SkillCheck)
             {
                 int modifier = Random.Range(0, 3);
+
                 int check = modifier + PlayerStats.Instance.Charisma.GetValue();
+
                 if (check >= chosenOption.additionalFunctions.Charisma)
                 {
-                    if (chosenOption.additionalFunctions.StartQuest)
+                    if (chosenOption.additionalFunctions.quest != null)
                     {
-                        if (chosenOption.additionalFunctions.quest != null)
-                            QuestManager.Instance.InitializeQuest(chosenOption.additionalFunctions.quest);
+                         QuestManager.Instance.InitializeQuest(chosenOption.additionalFunctions.quest);
                     }
                     if (chosenOption.additionalFunctions.finishTask)
                     {
@@ -92,10 +93,9 @@ public class DialogueManager : Singleton<DialogueManager>
             }
             else
             {
-                if (chosenOption.additionalFunctions.StartQuest)
+                if (chosenOption.additionalFunctions.quest != null)
                 {
-                    if (chosenOption.additionalFunctions.quest != null)
-                        QuestManager.Instance.InitializeQuest(chosenOption.additionalFunctions.quest);
+                     QuestManager.Instance.InitializeQuest(chosenOption.additionalFunctions.quest);
                 }
                 if (chosenOption.additionalFunctions.finishTask)
                 {

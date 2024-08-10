@@ -15,13 +15,24 @@ public class SpawnerManager : Singleton<SpawnerManager>
         DialogueManager.Instance.replacement = true;
     }
 
-    public void SpawnKillTargets(GameObject npc)
+    public void SpawnKillTargets(GameObject npc, string targetID)
     {
         int random = Random.Range(0, KillTaskTargets.Count);
         SpawnTarget target = KillTaskTargets[random];
-        Instantiate(npc, target.SpawnPos.position, Quaternion.identity);
+        GameObject selectedNPC;
+        selectedNPC = Instantiate(npc, target.SpawnPos.position, Quaternion.identity);
         DialogueManager.Instance.replacementText = target.replacementText;
         DialogueManager.Instance.replacement = true;
+
+        Targetable targetable = selectedNPC.GetComponent<Targetable>();
+        if (targetable != null)
+        {
+            targetable.ID = targetID;
+        }
+        else
+        {
+            Debug.LogError("NPC does not have a Targetable script");
+        }
     }
     public void SpawnExplorationTargets(GameObject obj)
     {

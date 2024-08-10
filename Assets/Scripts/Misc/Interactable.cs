@@ -8,7 +8,7 @@ public abstract class Interactable : MonoBehaviour
     Transform player;
     void Awake()
     {
-        player = FindObjectOfType<Player>()?.transform;
+        player = PlayerManager.Instance?.player;
 
         Initialize();
     }

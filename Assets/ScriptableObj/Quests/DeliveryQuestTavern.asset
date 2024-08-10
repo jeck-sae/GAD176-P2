@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b826646f07a1d334d9c18582d8d6d1b5, type: 3}
-  m_Name: DeliveryQuest
+  m_Name: DeliveryQuestTavern
   m_EditorClassIdentifier: 
-  questName: Delivery
+  questName: Deliver tavern's income report
   questDescription: "\rI was asked to deliver documents containing a report on the
     tavern's income, to it's owner."
   memory: []

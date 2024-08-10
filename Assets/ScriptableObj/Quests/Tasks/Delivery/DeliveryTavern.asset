@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e554339517871a40a70c7d7b7ae13dc, type: 3}
-  m_Name: Delivery
+  m_Name: DeliveryTavern
   m_EditorClassIdentifier: 
   isCompleted: 0
   dialogue: {fileID: 11400000, guid: ed6adb43da535e94d90240976ec3db8f, type: 2}

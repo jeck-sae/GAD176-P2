@@ -4,9 +4,11 @@ using UnityEngine;
 public class Task : ScriptableObject
 {
     public bool isCompleted;
-    public virtual void Initialize()
+    protected Quest taskQuest;
+    public virtual void Initialize(Quest quest)
     {
         isCompleted = false;
+        taskQuest = quest;
     }
     public virtual void CheckProgress()
     {

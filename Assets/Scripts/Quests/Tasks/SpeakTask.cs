@@ -8,9 +8,8 @@ public class SpeakToNPCTask : Task
     public List<GameObject> NPC;
     public bool randomSpawn = true;
     public Vector2 spawnPosition;
-    public Quest Taskquest;
 
-    public override void Initialize()
+    public override void Initialize(Quest quest)
     {
         if (NPC == null || NPC.Count == 0 || dialogue == null)
         {
@@ -35,7 +34,7 @@ public class SpeakToNPCTask : Task
         DialogueTrigger dialogueTrigger = selectedNPC.GetComponent<DialogueTrigger>();
         if (dialogueTrigger != null)
         {
-            dialogue.Dialoguequest = Taskquest;
+            dialogue.Dialoguequest = quest;
             dialogueTrigger.tdialogue = dialogue;
         }
         else
@@ -43,7 +42,7 @@ public class SpeakToNPCTask : Task
             Debug.Log("NPC does not have a DialogueTrigger");
         }
 
-        base.Initialize();
+        base.Initialize(quest);
     }
 
     public override void CheckProgress()
