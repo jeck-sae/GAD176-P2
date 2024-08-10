@@ -52,10 +52,11 @@ public class ItemInteractionManager : Singleton<ItemInteractionManager>
 
 
 
+        bool q = Input.GetKeyDown(KeyCode.Q);
         bool rightClick = Input.GetMouseButton(1);
         bool leftClickDown = Input.GetMouseButtonDown(0);
 
-        if (rightClick || leftClickDown)
+        if (rightClick || leftClickDown || q)
         {
             //Raycast UI
             PointerEventData _eventDataCurrentPosition;
@@ -72,7 +73,9 @@ public class ItemInteractionManager : Singleton<ItemInteractionManager>
 
                 var slot = hit.gameObject.GetComponentInParent<ItemSlotUI>();
                 if (!slot) continue;
-                
+
+                if (q)
+                    DropItem(slot.slot);
                 if (leftClickDown)
                     LeftClickedSlot(slot.slot);
                 if (rightClick)
@@ -82,6 +85,16 @@ public class ItemInteractionManager : Singleton<ItemInteractionManager>
         }
     }
 
+
+    void DropItem(ItemSlot slot)
+    {
+        bool ctrl = Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl);
+
+        if (ctrl)
+            InventoryUtils.DropItem(PlayerManager.Instance.player.position, slot, slot.GetAmount());
+        else    
+            InventoryUtils.DropItem(PlayerManager.Instance.player.position, slot, 1);
+    }
 
     void RightClickedSlot(ItemSlot slot)
     {

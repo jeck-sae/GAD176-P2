@@ -4,10 +4,25 @@ using UnityEngine;
 
 public static class InventoryUtils
 {
+    const string DROP_PREFAB_PATH = "Drop";
+
+    public static void CreateDrop(Vector3 position, Item item, int amount)
+    {
+        var obj = GameObject.Instantiate(Resources.Load<GameObject>(DROP_PREFAB_PATH), position, Quaternion.identity);
+        var drop = obj.GetComponent<ItemDrop>();
+        drop.Initialize(item, amount);
+    }
+    public static void DropItem(Vector3 position, ItemSlot slot, int amount)
+    {
+        var obj = GameObject.Instantiate(Resources.Load<GameObject>(DROP_PREFAB_PATH), position, Quaternion.identity);
+        var drop = obj.GetComponent<ItemDrop>();
+        drop.Initialize(slot, amount);
+    }
+
 
     public static int TryLoadItems(ItemSlot[] slots, Item item, int amount) 
         => TryLoadItems<ItemSlot>(slots, item, amount);
-    public static int TryLoadItems<T>(T[] slots, Item item, int amount) where T : ItemSlot
+    public static int TryLoadItems<T>(T[] slots, Item item, int amount) where T : IItemContainer
     {
         for (int i = 0; i < slots.Length; i++)
         {
@@ -29,7 +44,15 @@ public static class InventoryUtils
     }
 
 
-    public static void MoveToSlot(ItemSlot from, ItemSlot to, int amount, bool swapIfIncompatible = false)
+    public static void MoveToContainer(ItemSlot from, IItemContainer to, int amount = int.MaxValue)
+    {
+        int clampedAmount = Mathf.Clamp(amount, 0, from.GetAmount());
+
+        int transferLeftover = to.LoadItems(from.GetItem(), clampedAmount);
+        from.RemoveItems(clampedAmount - transferLeftover);
+    }
+
+    public static void MoveToSlot(ItemSlot from, ItemSlot to, int amount = int.MaxValue, bool swapIfIncompatible = false)
     {
         int clampedAmount = Mathf.Clamp(amount, 0, from.GetAmount());
 

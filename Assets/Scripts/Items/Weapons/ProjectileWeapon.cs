@@ -36,10 +36,9 @@ public class ProjectileWeapon : Weapon
     [SerializeField, DisableInEditorMode] protected int currentAmmo;
     [SerializeField, DisableInEditorMode] protected float nextShotMinTime = 0; //when can the next attack be fired
     [SerializeField, DisableInEditorMode] protected bool isReloading;
-    protected override void Initialize()
+    protected void Awake()
     {
         currentAmmo = maxAmmo;
-        base.Initialize();
         muzzleFlashLight.enabled = false;
     }
 

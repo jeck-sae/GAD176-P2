@@ -107,6 +107,9 @@ public class ItemSlot : IItemContainer
         return leftover;
     }
 
+    /// <summary>
+    /// returns how many items were NOT successfully removed
+    /// </summary>
     public int RemoveItems(int removeAmount)
     {
         if(removeAmount < 0)
@@ -115,20 +118,16 @@ public class ItemSlot : IItemContainer
             return 0;
         }
 
-
-        if (amount - removeAmount <= 0)
+        //if it would remove all items or more
+        if (amount <= removeAmount)
         {
+            int leftover = removeAmount - amount;
+            
             amount = 0;
-            if(item)
-                GameObject.Destroy(item.gameObject);
-
-            //hacky workaround to update the selected item. Could be refactored in the future
-            /*if (this is HotbarSlot && (this as HotbarSlot).IsSelected)
-                (this as HotbarSlot).Select();*/
-
+            if(item) GameObject.Destroy(item.gameObject);
             item = null;
             OnItemChanged?.Invoke();
-            return removeAmount - amount;
+            return leftover;
         }
 
         amount -= removeAmount;
@@ -151,8 +150,8 @@ public class ItemSlot : IItemContainer
             item.transform.rotation = owner.hand.transform.rotation;
         }
 
-        //if (!(this is HotbarSlot))
-            item.gameObject.SetActive(false);
+        item.gameObject.SetActive(owner != null);
+        item.ShowGFX(false);
     }
 
 }
@@ -170,24 +169,21 @@ public class HotbarSlot : ItemSlot
     {
         IsSelected = true;
         OnSelectionChanged?.Invoke();
-        item?.gameObject.SetActive(true);;
-        item?.OnSelect();
+        item?.Select(true);
         OnItemChanged += OnItemUpdated;
     }
 
     protected void OnItemUpdated()
     {
         OnSelectionChanged?.Invoke();
-        item?.gameObject.SetActive(true);;
-        item?.OnSelect();
+        item?.Select(true);
     }
 
     public void Deselect()
     {
         IsSelected = false;
         OnSelectionChanged?.Invoke();
-        item?.gameObject.SetActive(false);
-        item?.OnDeselect();
+        item?.Select(false);
         OnItemChanged -= OnItemUpdated;
     }
 }
