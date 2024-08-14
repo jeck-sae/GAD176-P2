@@ -51,7 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: rifle
   maxStack: 1
-  icon: {fileID: 21300000, guid: 1835a652bce860d40b1be4f1e32aaf2c, type: 3}
+  icon: {fileID: -301491787, guid: 413cec400c318074a83770c13c8d8190, type: 3}
   itemGFX: {fileID: 3978243805297064258}
   owner: {fileID: 0}
   slot:
@@ -67,7 +67,7 @@ MonoBehaviour:
   projectileSpeedVariation: 5
   projectileDirectionVariation: 10
   reloadSpeed: 0.8
-  maxAmmo: 15
+  maxAmmo: 7
   RifleSound: 1
   PistolSound: 0
   ShotGunSound: 0

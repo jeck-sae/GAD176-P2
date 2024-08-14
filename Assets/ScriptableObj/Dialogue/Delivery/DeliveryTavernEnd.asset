@@ -20,10 +20,9 @@ MonoBehaviour:
     replace: 0
     dialogueText2: 
     options:
-    - optionText: I have income report of the Harmony Tavern
+    - optionText: I have income report of the Tavern
       nextDialogueNode: 1
       additionalFunctions:
-        StartQuest: 0
         quest: {fileID: 0}
         finishTask: 0
         finishDialogue: 0
@@ -33,7 +32,6 @@ MonoBehaviour:
     - optionText: Nothing
       nextDialogueNode: 0
       additionalFunctions:
-        StartQuest: 0
         quest: {fileID: 0}
         finishTask: 0
         finishDialogue: 1
@@ -49,7 +47,6 @@ MonoBehaviour:
     - optionText: Here you go
       nextDialogueNode: 2
       additionalFunctions:
-        StartQuest: 0
         quest: {fileID: 0}
         finishTask: 1
         finishDialogue: 0
@@ -60,7 +57,6 @@ MonoBehaviour:
         my work |Charisma|
       nextDialogueNode: 3
       additionalFunctions:
-        StartQuest: 0
         quest: {fileID: 0}
         finishTask: 0
         finishDialogue: 0
@@ -75,7 +71,6 @@ MonoBehaviour:
     - optionText: '|Leave|'
       nextDialogueNode: 0
       additionalFunctions:
-        StartQuest: 0
         quest: {fileID: 0}
         finishTask: 0
         finishDialogue: 1
@@ -90,7 +85,6 @@ MonoBehaviour:
     - optionText: Thank you, it was a pleasure doing business with you
       nextDialogueNode: 0
       additionalFunctions:
-        StartQuest: 0
         quest: {fileID: 0}
         finishTask: 1
         finishDialogue: 1
@@ -106,7 +100,6 @@ MonoBehaviour:
     - optionText: " Well, I didn\u2019t really need the money either..."
       nextDialogueNode: 0
       additionalFunctions:
-        StartQuest: 0
         quest: {fileID: 0}
         finishTask: 1
         finishDialogue: 1

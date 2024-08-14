@@ -133,10 +133,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e7a14466bba13f48a398f99c73a49d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractionDistance: 5
   ID: shotgun
   maxStack: 1
   icon: {fileID: 43274092, guid: 32f8a2a42508d394a98c8218cceb97aa, type: 3}
+  itemGFX: {fileID: 3978243805297064258}
   owner: {fileID: 0}
   slot:
     item: {fileID: 0}
@@ -152,9 +152,9 @@ MonoBehaviour:
   projectileDirectionVariation: 25
   reloadSpeed: 0.8
   maxAmmo: 5
-  RifleSound: 1
+  RifleSound: 0
   PistolSound: 0
-  ShotGunSound: 0
+  ShotGunSound: 1
   GunSmoke: {fileID: 5364880277852587333}
   MuzleFlash: {fileID: 5125863418621531902}
   muzzleFlashLight: {fileID: 3120552627402810329}
@@ -169,7 +169,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1875261028184737229}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -302,7 +302,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1195992959
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 43274092, guid: 32f8a2a42508d394a98c8218cceb97aa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

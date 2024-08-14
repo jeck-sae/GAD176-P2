@@ -5,7 +5,8 @@ public class City : MonoBehaviour
 {
     public string cityName;
     public Faction faction;
-    public float spawnRadius = 50f;
+    public float spawnRadius = 150f;
+    public float randomSpawnRange = 80f;
     public int cityPopulation = 15; // thats more like a village, but who cares
     public int solders = 10;
     public GameObject factionSolder;
@@ -53,7 +54,7 @@ public class City : MonoBehaviour
     }
 
 
-    public void DespawnNPCs()
+    public void DespawnNPCs() //Could be improved with object pooling
     {
         foreach (GameObject npc in spawnedNPCs)
         {
@@ -64,6 +65,6 @@ public class City : MonoBehaviour
 
     Vector2 RandomSpawn()
     {
-        return new Vector2(transform.position.x + Random.Range(-10, 10), transform.position.y + Random.Range(-10, 10));
+        return new Vector2(transform.position.x + Random.Range(-randomSpawnRange, randomSpawnRange), transform.position.y + Random.Range(-randomSpawnRange, randomSpawnRange));
     }
 }

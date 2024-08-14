@@ -21,9 +21,7 @@ public class DialogueNode
     public int dialogueNodeID;
     [TextArea(3, 10)]
     public string dialogueText;
-    public bool replace = false;
-    [TextArea(2, 8)]
-    public string dialogueText2;
+    public ReplaceText replaceText;
     public List<DialogueOption> options;
 }
 
@@ -45,4 +43,11 @@ public class AdditionalFunctions
     public bool SkillCheck;
     public int Charisma;
     public int failDialogueNode; // Reference to the DialogueNode by ID, for failed skill checks
+}
+[System.Serializable]
+public class ReplaceText
+{
+    public bool replace = false;
+    [TextArea(2, 8)]
+    public string dialogueText2;
 }

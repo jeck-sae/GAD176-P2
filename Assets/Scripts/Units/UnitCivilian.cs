@@ -165,7 +165,7 @@ public class UnitCivilian : Unit
         {
             float x = wanderAroundPoint.x + Random.Range(-wanderDistance, wanderDistance);
             float y = wanderAroundPoint.y + Random.Range(-wanderDistance, wanderDistance);
-            wanderDestination = new Vector2(x, y);
+            wanderDestination = new Vector3(x, y, 0) + transform.position;
 
             if (!firstFrameInCurrentState)
                 wanderPauseTimer = wanderPauseDuration + (Random.Range(0, wanderPauseVariation) - wanderPauseVariation / 2);

@@ -152,7 +152,7 @@ public class MonstraAI : Unit
     //Changing unit's stuff
     public override void Damage(float amount, Unit attacker = null)
     {
-        if(attacker != null)
+        if(attacker is Player)
         {
             currentHealth -= amount;
             //play SFX

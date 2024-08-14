@@ -20,7 +20,8 @@ public enum SoundType
     CalmMusic,
     BattleMusic,
     WoodSmash,
-    Cracking
+    Cracking,
+    Rain
 }
 [RequireComponent(typeof(AudioSource))]
 public class AudioManager : Singleton<AudioManager>

@@ -5,6 +5,7 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue tdialogue;
+    public Quest dialogueQuest;
     public bool Completed = false;
     public float InteractionDist = 7f;
 

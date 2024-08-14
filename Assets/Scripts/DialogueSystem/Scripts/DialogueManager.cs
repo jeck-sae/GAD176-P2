@@ -40,7 +40,7 @@ public class DialogueManager : Singleton<DialogueManager>
 
             if(replacement)
             {
-                if (currentNode.replace)
+                if (currentNode.replaceText.replace)
                 {
                     DialogueUI.Instance.DisplayReplacment(currentNode, replacementText);
                     replacementText = null;
@@ -72,7 +72,7 @@ public class DialogueManager : Singleton<DialogueManager>
                     }
                     if (chosenOption.additionalFunctions.finishTask)
                     {
-                        dialogue.Dialoguequest.OnTaskCompleted();
+                        trigger.dialogueQuest.OnTaskCompleted();
                         trigger.Completed = true;
                     }
                     if (chosenOption.additionalFunctions.finishDialogue)
@@ -99,7 +99,7 @@ public class DialogueManager : Singleton<DialogueManager>
                 }
                 if (chosenOption.additionalFunctions.finishTask)
                 {
-                    dialogue.Dialoguequest.OnTaskCompleted();
+                    trigger.dialogueQuest.OnTaskCompleted();
                     trigger.Completed = true;
                 }
                 if (chosenOption.additionalFunctions.finishDialogue)

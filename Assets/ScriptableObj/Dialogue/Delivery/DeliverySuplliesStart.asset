@@ -17,8 +17,9 @@ MonoBehaviour:
   dialogueNodes:
   - dialogueNodeID: 0
     dialogueText: Hello, are you intrested in delivery?
-    replace: 0
-    dialogueText2: 
+    replaceText:
+      replace: 0
+      dialogueText2: 
     options:
     - optionText: Yes, what do you have?
       nextDialogueNode: 1
@@ -40,8 +41,9 @@ MonoBehaviour:
         failDialogueNode: 0
   - dialogueNodeID: 1
     dialogueText: 'You need to deliver supplies to the front line, at '
-    replace: 1
-    dialogueText2: ', find the local captain there and report to him'
+    replaceText:
+      replace: 1
+      dialogueText2: 
     options:
     - optionText: I'll be going then
       nextDialogueNode: 0
@@ -64,8 +66,9 @@ MonoBehaviour:
         failDialogueNode: 3
   - dialogueNodeID: 2
     dialogueText: Alright, good luck to you then
-    replace: 0
-    dialogueText2: 
+    replaceText:
+      replace: 0
+      dialogueText2: 
     options:
     - optionText: '|Leave|'
       nextDialogueNode: 0
@@ -78,8 +81,9 @@ MonoBehaviour:
         failDialogueNode: 0
   - dialogueNodeID: 3
     dialogueText: "\rThis won't work with me"
-    replace: 0
-    dialogueText2: 
+    replaceText:
+      replace: 0
+      dialogueText2: 
     options:
     - optionText: '|Leave|'
       nextDialogueNode: 0

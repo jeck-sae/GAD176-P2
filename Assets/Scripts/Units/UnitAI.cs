@@ -2,6 +2,7 @@ using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -151,7 +152,7 @@ public class UnitAI : Unit
         if (assumeUntil >= Time.time)
         {
             agent.speed = chaseSpeed;
-            agent.SetDestination(targetLastSeenPosition);
+            MoveTo(targetLastSeenPosition);
             
             //postpone alert state (probably bad programming practice, but it is what it is, and it is 3am)
             alertUntil = Time.time + alertDuration; 
@@ -169,9 +170,8 @@ public class UnitAI : Unit
     //moves towards the player and gets slower the closer it gets
     public virtual void ChaseTarget()
     {
-        LookAt(target.transform.position);
         agent.speed = chaseSpeed;
-        agent.SetDestination(target.transform.position);
+        MoveTo(target.transform.position);
         anim.SetBool("Aim", false);
     }
 
@@ -211,7 +211,7 @@ public class UnitAI : Unit
             //New destination
             float x = wanderAroundPoint.x + Random.Range(-wanderDistance, wanderDistance);
             float y = wanderAroundPoint.y + Random.Range(-wanderDistance, wanderDistance);
-            wanderDestination = new Vector2(x, y);
+            wanderDestination = new Vector3(x, y, 0) + transform.position;
 
             if(!firstFrameInCurrentState)
                 wanderPauseTimer = wanderPauseDuration + (Random.Range(0, wanderPauseVariation) - wanderPauseVariation / 2);
@@ -221,9 +221,8 @@ public class UnitAI : Unit
         if (wanderPauseTimer > 0)
             return;
 
-        LookAt(wanderDestination);
         agent.speed = wanderSpeed;
-        agent.SetDestination(wanderDestination);
+        MoveTo(wanderDestination);
     }
 
 
@@ -287,14 +286,19 @@ public class UnitAI : Unit
         float distance = Vector2.Distance(transform.position, gunshotPosition);
         if (distance <= visionRange)
         {
-            if (target = null)
+            if (target == null)
             {
                 // Move to the gunshot
-                agent.SetDestination(gunshotPosition);
-                LookAt(gunshotPosition);
+                MoveTo(gunshotPosition);
+                Debug.Log("I hear the shot");
                 state = UnitState.Alert; // Set AI to alert
                 alertUntil = Time.time + alertDuration; // Stay alert for a while
             }
         }
+    }
+    public void MoveTo(Vector2 tar)
+    {
+        agent.SetDestination(tar);
+        LookAt(tar);
     }
 }

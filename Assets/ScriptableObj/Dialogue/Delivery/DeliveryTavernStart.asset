@@ -17,13 +17,13 @@ MonoBehaviour:
   dialogueNodes:
   - dialogueNodeID: 0
     dialogueText: Hello, are you intrested in delivery?
-    replace: 0
-    dialogueText2: 
+    replaceText:
+      replace: 0
+      dialogueText2: 
     options:
     - optionText: Yes, what do you have?
       nextDialogueNode: 1
       additionalFunctions:
-        StartQuest: 1
         quest: {fileID: 11400000, guid: 8d91713ef446ffa4ebdcb641b7d88653, type: 2}
         finishTask: 0
         finishDialogue: 0
@@ -33,7 +33,6 @@ MonoBehaviour:
     - optionText: No, not today
       nextDialogueNode: 2
       additionalFunctions:
-        StartQuest: 0
         quest: {fileID: 0}
         finishTask: 0
         finishDialogue: 1
@@ -43,13 +42,13 @@ MonoBehaviour:
   - dialogueNodeID: 1
     dialogueText: 'You need to deliver tavern''s income report, to owner. He is currently
       in '
-    replace: 1
-    dialogueText2: '''s tavern. Good luck.'
+    replaceText:
+      replace: 1
+      dialogueText2: ' tavern'
     options:
     - optionText: I'll be going then
       nextDialogueNode: 0
       additionalFunctions:
-        StartQuest: 0
         quest: {fileID: 0}
         finishTask: 0
         finishDialogue: 1

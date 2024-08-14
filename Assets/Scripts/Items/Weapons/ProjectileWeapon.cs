@@ -83,9 +83,9 @@ public class ProjectileWeapon : Weapon
         if (RifleSound)
             AudioManager.PlaySoundAtPoint(SoundType.RifleShot, projectileSpawnpoint.position, 0.9f);
         if (ShotGunSound)
-            AudioManager.PlaySound(SoundType.ShotGunShot, 1f);
+            AudioManager.PlaySoundAtPoint(SoundType.ShotGunShot, projectileSpawnpoint.position, 0.8f);
         if (PistolSound)
-            AudioManager.PlaySound(SoundType.PistolShot, 0.7f);
+            AudioManager.PlaySoundAtPoint(SoundType.PistolShot, projectileSpawnpoint.position, 0.8f);
         for (int i = 0; i < projectilesPerShot; i++)
         {
             var go = Instantiate(projectilePrefab, projectileSpawnpoint.position, GetProjectileDirection());
@@ -96,6 +96,8 @@ public class ProjectileWeapon : Weapon
             GunSmoke.Play();
         if (MuzleFlash != null)
             MuzleFlash.Play();
+        if (owner is Player)
+        CameraShake.Instance.CamShake();
         // Trigger the flash
         StartCoroutine(Flash());
         nextShotMinTime = Time.time + attackSpeed;

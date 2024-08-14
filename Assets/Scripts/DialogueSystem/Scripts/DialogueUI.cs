@@ -40,7 +40,7 @@ public class DialogueUI : Singleton<DialogueUI>
     }
     public void DisplayReplacment(DialogueNode node, string replacment)
     {
-        dialogueText.text = node.dialogueText + replacment + node.dialogueText2;
+        dialogueText.text = node.dialogueText + replacment + node.replaceText.dialogueText2;
     }
     public void CloseDialogueMenu()
     {
