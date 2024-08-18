@@ -56,6 +56,10 @@ public class PlayerInput : MonoBehaviour
                 unit.TryAttacking();
                 anim.SetTrigger("Shot");
             }
+            else
+            {
+                unit.itemInHand.TryUsing();
+            }
             anim.SetBool("Aim", true);
         }
         else

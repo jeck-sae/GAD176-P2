@@ -135,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: shotgun
   maxStack: 1
-  icon: {fileID: 43274092, guid: 32f8a2a42508d394a98c8218cceb97aa, type: 3}
+  icon: {fileID: 1921062534, guid: 413cec400c318074a83770c13c8d8190, type: 3}
   itemGFX: {fileID: 3978243805297064258}
   owner: {fileID: 0}
   slot:

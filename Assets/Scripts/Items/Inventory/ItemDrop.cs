@@ -18,7 +18,7 @@ public class ItemDrop : Interactable
 
     public void Initialize(ItemSlot from, int amount)
     {
-        if (slot.item == null)
+        if (from.item == null)
             Destroy(gameObject);
 
         InventoryUtils.MoveToSlot(from, slot, amount);
@@ -45,6 +45,7 @@ public class ItemDrop : Interactable
     public override void Interact()
     {
         PickUp(PlayerInventory.Instance);
+        AudioManager.PlaySoundAtPoint(SoundType.Item, transform.position, 1);
     }
 
     public void PickUp(IItemContainer moveTo)
@@ -52,5 +53,6 @@ public class ItemDrop : Interactable
         InventoryUtils.MoveToContainer(slot, moveTo, slot.GetAmount());
         if (slot.GetAmount() <= 0)
             Destroy(gameObject);
+
     }
 }
