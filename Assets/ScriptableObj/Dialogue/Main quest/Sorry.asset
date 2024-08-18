@@ -116,9 +116,10 @@ MonoBehaviour:
         failDialogueNode: 0
   - dialogueNodeID: 3
     dialogueText: "Look, we tried\u2014really, we did. But you know how it goes\u2026
-      one all-nighter turns into two, and before you know it and now I'm seeting
-      typing this text with my eyes trying to close. But hey, on the bright side,
-      we\u2019ve got a lot of \u2018learning opportunities\u2019 for you to review"
+      one all-nighter turns into two, and before you know it and now I'm seating
+      here typing this text with my eyes trying to close. But hey, on the bright
+      side, we\u2019ve got a lot of \u2018learning opportunities\u2019 for you to
+      review"
     replaceText:
       replace: 0
       dialogueText2: 
