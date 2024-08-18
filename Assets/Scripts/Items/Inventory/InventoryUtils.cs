@@ -20,9 +20,9 @@ public static class InventoryUtils
     }
 
 
-    public static int TryLoadItems(ItemSlot[] slots, Item item, int amount) 
-        => TryLoadItems<ItemSlot>(slots, item, amount);
-    public static int TryLoadItems<T>(T[] slots, Item item, int amount) where T : IItemContainer
+    public static int TryLoadItem(ItemSlot[] slots, Item item, int amount) 
+        => TryLoadItem<ItemSlot>(slots, item, amount);
+    public static int TryLoadItem<T>(T[] slots, Item item, int amount) where T : IItemContainer
     {
         for (int i = 0; i < slots.Length; i++)
         {
@@ -33,6 +33,7 @@ public static class InventoryUtils
         }
         return amount;
     }
+
 
     public static ItemSlot FindItem(ItemSlot[] slots, string itemID)
     {

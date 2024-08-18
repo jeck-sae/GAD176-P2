@@ -1,11 +1,10 @@
-using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class Targetable : MonoBehaviour
 {
     public string ID;
 
-    [DisableInEditorMode] public float currentHealth;
+    public float currentHealth;
     public float maxHealth = 100;
     public bool isDead;
     public bool isVulnerable = true;

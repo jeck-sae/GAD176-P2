@@ -1,4 +1,3 @@
-using Sirenix.OdinInspector;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -33,9 +32,9 @@ public class ProjectileWeapon : Weapon
 
     [Header("Debug")]
     //these are shown in the inspector, but cannot be modified while the game is not running
-    [SerializeField, DisableInEditorMode] protected int currentAmmo;
-    [SerializeField, DisableInEditorMode] protected float nextShotMinTime = 0; //when can the next attack be fired
-    [SerializeField, DisableInEditorMode] protected bool isReloading;
+    [SerializeField] protected int currentAmmo;
+    [SerializeField] protected float nextShotMinTime = 0; //when can the next attack be fired
+    [SerializeField] protected bool isReloading;
     protected void Awake()
     {
         currentAmmo = maxAmmo;

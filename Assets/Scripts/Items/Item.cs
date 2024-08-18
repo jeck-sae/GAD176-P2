@@ -1,11 +1,10 @@
-using Sirenix.OdinInspector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public abstract class Item : MonoBehaviour, ICloneable
+public class Item : MonoBehaviour, ICloneable
 {
     [Header("Item Info")]
     public string ID;
@@ -107,7 +106,7 @@ public abstract class Item : MonoBehaviour, ICloneable
         itemGFX?.SetActive(show);
     }
 
-    public bool CanStackWith(Item item)
+    public virtual bool CanStackWith(Item item)
     {
         return ID == item.ID;
     }

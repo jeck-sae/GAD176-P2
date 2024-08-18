@@ -5,6 +5,9 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
+
+
+
 [Serializable]
 public class PlayerInventory : Singleton<PlayerInventory>, IGameInterface, IItemContainer
 {
@@ -21,73 +24,72 @@ public class PlayerInventory : Singleton<PlayerInventory>, IGameInterface, IItem
     [SerializeField] protected GameObject inventorySlotsParent;
     [SerializeField] protected GameObject hotbarSlotsParent;
 
-    protected ItemSlot[] slots;
-    protected HotbarSlot[] hotbar;
+    protected ItemSlotCollection<ItemSlot> slots;
+    protected Hotbar hotbar;
 
     protected List<ItemSlotUI> inventorySlots = new List<ItemSlotUI>();
     protected List<HotbarSlotUI> hotbarSlots = new List<HotbarSlotUI>();
 
-    protected int selectedSlotIndex;
-    protected Unit player;
+    protected Unit owner;
 
-    protected HotbarSlot selectedSlot => hotbar[selectedSlotIndex];
-    public Unit GetOwner() => player;
+    protected HotbarSlot selectedSlot => hotbar.selectedSlot;
+    public Unit GetOwner() => owner;
 
-
+    public void SetOwner(Unit owner)
+        => this.owner = owner;
+    
     private void Awake()
     {
-        player = FindObjectOfType<Player>();
-        slots = new ItemSlot[inventorySize];
-        hotbar = new HotbarSlot[hotbarSize];
+        owner = FindObjectOfType<Player>();
+        slots = new ItemSlotCollection<ItemSlot>(inventorySize, owner);
+        hotbar = new Hotbar(hotbarSize, owner);
+        hotbar.SelectedItemChanged += (Item item) => { SelectedItemChanged?.Invoke(item); };
 
         for (int i = 0; i < inventorySize; i++)
         {
-            var newSlot = new ItemSlot(player);
-            slots[i] = newSlot;
-              
             var newSlotUI = Instantiate(inventorySlotPrefab, inventorySlotsParent.transform).GetComponent<ItemSlotUI>();
             inventorySlots.Add(newSlotUI);
 
-            newSlotUI.Initialize(newSlot);
+            newSlotUI.Initialize(slots.GetSlots()[i]);
         }
         for (int i = 0; i < hotbarSize; i++)
         {
-            var newSlot = new HotbarSlot(player);
-            hotbar[i] = newSlot;
-
             var newSlotUI = Instantiate(hotbarSlotPrefab, hotbarSlotsParent.transform).GetComponent<HotbarSlotUI>();
             hotbarSlots.Add(newSlotUI);
 
-            newSlotUI.Initialize(newSlot);
+            newSlotUI.Initialize(hotbar.GetSlots()[i]);
         }
 
-
-        selectedSlotIndex = 0;
-        selectedSlot.Select();
-        SelectedItemChanged?.Invoke(selectedSlot.item);
-        selectedSlot.OnItemChanged += OnSelectedSlotItemChanged;
     }
 
     private void Update()
     {
         if (Input.mouseScrollDelta.y == 1)
-            SelectHotbarSlot((selectedSlotIndex + hotbar.Length + 1) % hotbar.Length);
+            hotbar.MoveSelection(1);
         else if (Input.mouseScrollDelta.y == -1)
-            SelectHotbarSlot((selectedSlotIndex + hotbar.Length - 1) % hotbar.Length);
+            hotbar.MoveSelection(-1);
         
         if (Input.GetKeyDown(KeyCode.Alpha1))
-            SelectHotbarSlot(0);
+            hotbar.SelectHotbarSlot(0);
         if (Input.GetKeyDown(KeyCode.Alpha2))
-            SelectHotbarSlot(1);
+            hotbar.SelectHotbarSlot(1);
         if (Input.GetKeyDown(KeyCode.Alpha3))
-            SelectHotbarSlot(2);
+            hotbar.SelectHotbarSlot(2);
         if (Input.GetKeyDown(KeyCode.Alpha4))
-            SelectHotbarSlot(3);
+            hotbar.SelectHotbarSlot(3);
         if (Input.GetKeyDown(KeyCode.Alpha5))
-            SelectHotbarSlot(4);
+            hotbar.SelectHotbarSlot(4);
 
     }
 
+    public void SelectHotbarSlot(HotbarSlot slot)
+    {
+        hotbar.SelectHotbarSlot(slot);
+    }
+    public void SelectHotbarSlot(int slotIndex)
+    {
+        hotbar.SelectHotbarSlot(slotIndex);
+    }
 
     public void Show()
     {
@@ -108,33 +110,72 @@ public class PlayerInventory : Singleton<PlayerInventory>, IGameInterface, IItem
     }
 
 
+    public int LoadItems(Item item, int amount)
+    {
+        amount = hotbar.LoadItems(item, amount);
+        amount = slots.LoadItems(item, amount);
+
+        return amount;
+    }
+
+    public int ContainsItem(string id)
+    {
+        return hotbar.ContainsItem(id) + slots.ContainsItem(id);
+    }
+
+    public int RemoveItem(string id, int amount)
+    {
+        amount = slots.RemoveItem(id, amount);
+        amount = hotbar.RemoveItem(id, amount);
+        return amount;
+    }
+
+}
+
+
+public class Hotbar : ItemSlotCollection<HotbarSlot>
+{
+
+    protected int selectedSlotIndex;
+    public event Action<Item> SelectedItemChanged;
+
+    public Hotbar(int size, Unit owner = null, int defaultSlot = 0) : base(size, owner)
+    {
+        if(owner == null)
+            SetOwner(GameObject.FindObjectOfType<Player>());
+        
+        selectedSlotIndex = defaultSlot;
+
+        selectedSlot.Select();
+        SelectedItemChanged?.Invoke(selectedSlot.item);
+        selectedSlot.OnItemChanged += OnSelectedSlotItemChanged;
+    }
+
     public void SelectHotbarSlot(HotbarSlot slot)
-        => SelectHotbarSlot(Array.IndexOf(hotbar, slot));
+        => SelectHotbarSlot(Array.IndexOf(slots, slot));
+    public void MoveSelection(int moveBy)
+    {
+        SelectHotbarSlot((selectedSlotIndex + slots.Length + moveBy) % slots.Length);
+    }
     public void SelectHotbarSlot(int slotIndex)
     {
-        if (slotIndex != selectedSlotIndex && slotIndex >= 0 && slotIndex < hotbar.Length)
+        if (slotIndex != selectedSlotIndex && slotIndex >= 0 && slotIndex < slots.Length)
         {
             selectedSlot?.Deselect();
             selectedSlot.OnItemChanged -= OnSelectedSlotItemChanged;
-            
+
             selectedSlotIndex = slotIndex;
             selectedSlot.Select();
             SelectedItemChanged?.Invoke(selectedSlot.item);
             selectedSlot.OnItemChanged += OnSelectedSlotItemChanged;
         }
     }
+    public HotbarSlot selectedSlot => slots[selectedSlotIndex];
+
+
     protected void OnSelectedSlotItemChanged()
     {
         SelectedItemChanged?.Invoke(selectedSlot.item);
-    }
-
-
-    public int LoadItems(Item item, int amount)
-    {
-        amount = InventoryUtils.TryLoadItems(hotbar, item, amount);
-        amount = InventoryUtils.TryLoadItems(slots, item, amount);
-
-        return amount;
     }
 
 

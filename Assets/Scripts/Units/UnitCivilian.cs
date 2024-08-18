@@ -1,4 +1,3 @@
-using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
@@ -35,7 +34,6 @@ public class UnitCivilian : Unit
     protected bool activeAtNight;
     [HideInInspector] public NavMeshAgent agent;
 
-    [ShowInInspector, ReadOnly]
     protected UnitState state;
     protected bool firstFrameInCurrentState;
     private UnitState lastFrameState;

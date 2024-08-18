@@ -1,4 +1,3 @@
-using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
@@ -36,7 +35,6 @@ public class UnitAI : Unit
     protected Vector3 targetLastSeenPosition;
     [HideInInspector]public NavMeshAgent agent;
 
-    [ShowInInspector, ReadOnly]
     protected UnitState state;
     protected bool firstFrameInCurrentState;
     private UnitState lastFrameState;
