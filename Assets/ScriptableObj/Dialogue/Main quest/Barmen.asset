@@ -1,0 +1,146 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94a01b194d99cb44fa9fcb4f69ed689c, type: 3}
+  m_Name: Barmen
+  m_EditorClassIdentifier: 
+  Dialoguequest: {fileID: 0}
+  dialogueNodes:
+  - dialogueNodeID: 0
+    dialogueText: "|The barman wipes down the counter as you approach, lowering his
+      voice.|\nLooking for someone, aren\u2019t you? I might have heard something
+      that could help you\u2026"
+    replaceText:
+      replace: 0
+      dialogueText2: 
+    options:
+    - optionText: "I\u2019m looking for a spy. Where is he?"
+      nextDialogueNode: 1
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+    - optionText: "I could use some help, but I don\u2019t have time for games|Charisma|"
+      nextDialogueNode: 2
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 1
+        Charisma: 6
+        failDialogueNode: 1
+  - dialogueNodeID: 1
+    dialogueText: "|The barman nods, his tone serious.|\nThe spy\u2019s in the prison,
+      locked up tight. Getting to him won\u2019t be easy. But if you\u2019re looking
+      for the key\u2026 there\u2019s a way."
+    replaceText:
+      replace: 0
+      dialogueText2: 
+    options:
+    - optionText: What do I need to do?
+      nextDialogueNode: 3
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+    - optionText: Where can I find this key?
+      nextDialogueNode: 3
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+  - dialogueNodeID: 2
+    dialogueText: "Alright, no games. The spy\u2019s in the prison, but there\u2019s
+      a way to get to him. Some deserters up north in the mansion ruins\u2014they\u2019ve
+      got a copy of the key. Stole it when they raided a supply convoy before they
+      fled"
+    replaceText:
+      replace: 0
+      dialogueText2: 
+    options:
+    - optionText: Where are these deserters now?
+      nextDialogueNode: 3
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+    - optionText: How do I get the key from them?
+      nextDialogueNode: 3
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+  - dialogueNodeID: 3
+    dialogueText: "They\u2019re still up north, but the city\u2019s special group
+      is moving out to strike them soon. If you hurry, you might join them and get
+      that key"
+    replaceText:
+      replace: 0
+      dialogueText2: 
+    options:
+    - optionText: Where can I find this special group?
+      nextDialogueNode: 4
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+    - optionText: "I\u2019ll head out right now"
+      nextDialogueNode: 0
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 1
+        finishDialogue: 1
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+  - dialogueNodeID: 4
+    dialogueText: "|The barman points to the door.|\nThey\u2019ll be at the north
+      gate. Hurry, or you\u2019ll miss them."
+    replaceText:
+      replace: 0
+      dialogueText2: 
+    options:
+    - optionText: "I\u2019ll catch them. Thanks"
+      nextDialogueNode: 0
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 1
+        finishDialogue: 1
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+    - optionText: "If I miss them, I\u2019ll figure something out"
+      nextDialogueNode: 0
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 1
+        finishDialogue: 1
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0

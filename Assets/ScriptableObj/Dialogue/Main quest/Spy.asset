@@ -13,4 +13,341 @@ MonoBehaviour:
   m_Name: Spy
   m_EditorClassIdentifier: 
   Dialoguequest: {fileID: 0}
-  dialogueNodes: []
+  dialogueNodes:
+  - dialogueNodeID: 0
+    dialogueText: "|You find Adler chained to a wall in a dark, damp cell. His body
+      is broken, bruises and cuts covering his once-proud figure. His breathing is
+      shallow, his voice barely above a whisper. He looks up at you with eyes that
+      have seen too much, yet still, there\u2019s a flicker of defiance left.|\nSo\u2026
+      you found me. But I'm afraid\u2026 you\u2019re too late."
+    replaceText:
+      replace: 0
+      dialogueText2: 
+    options:
+    - optionText: Who did this to you?
+      nextDialogueNode: 1
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+    - optionText: "I need information. Where\u2019s Orlov?"
+      nextDialogueNode: 2
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+    - optionText: "Hang in there. I\u2019m here to help"
+      nextDialogueNode: 3
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+  - dialogueNodeID: 1
+    dialogueText: "|Adler's gaze shifts to the shadows, as if seeing his tormentors
+      in the dark.|\nThey\u2026 they wanted information\u2026 but I didn\u2019t tell
+      them\u2026 everything\u2026 Just enough to keep them from\u2026 killing me
+      outright. But it doesn\u2019t matter\u2026 now\u2026"
+    replaceText:
+      replace: 0
+      dialogueText2: 
+    options:
+    - optionText: What did you tell them?
+      nextDialogueNode: 4
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+    - optionText: Who were they? Do they know about Orlov?
+      nextDialogueNode: 5
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+    - optionText: I need to know where Orlov is. Can you tell me?
+      nextDialogueNode: 2
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+  - dialogueNodeID: 2
+    dialogueText: "|Adler\u2019s eyes flutter shut for a moment, and he grimaces
+      in pain as he forces himself to speak.|\n\"Orlov\u2026 He\u2019s gone north\u2026
+      to a village\u2026 in the woods\u2026 It\u2019s abandoned, but\u2026 it\u2019s
+      not safe\u2026 You\u2019ll find him there, but\u2026 be careful\u2026 there\u2019s
+      something else\u2026 something worse\u2026\""
+    replaceText:
+      replace: 0
+      dialogueText2: 
+    options:
+    - optionText: "What do you mean? What\u2019s in the village?"
+      nextDialogueNode: 6
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+    - optionText: Why would he go there?
+      nextDialogueNode: 7
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+    - optionText: "I\u2019ll head north. Save your strength"
+      nextDialogueNode: 8
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+  - dialogueNodeID: 3
+    dialogueText: "|Adler tries to smile, but it\u2019s more a grimace of pain.|\n\"No\u2026
+      there\u2019s no\u2026 helping me\u2026 I\u2019ve done my part\u2026 now it\u2019s
+      up to you\u2026 Find Orlov\u2026 end this\u2026"
+    replaceText:
+      replace: 0
+      dialogueText2: 
+    options:
+    - optionText: "I\u2019ll finish what you started"
+      nextDialogueNode: 8
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+    - optionText: "Tell me where he is. I\u2019ll take care of the rest"
+      nextDialogueNode: 2
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+  - dialogueNodeID: 4
+    dialogueText: "Just\u2026 enough to mislead them\u2026 I told them he was\u2026
+      headed south\u2026 They\u2019ll be searching\u2026 in the wrong direction\u2026
+      You\u2026 you\u2019re the only one who knows the truth\u2026 now\u2026\u2026"
+    replaceText:
+      replace: 0
+      dialogueText2: 
+    options:
+    - optionText: Good thinking. Now tell me where he really went
+      nextDialogueNode: 2
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+    - optionText: "They\u2019ll pay for what they did to you"
+      nextDialogueNode: 5
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+    - optionText: Save your strength. Just tell me what I need to know
+      nextDialogueNode: 8
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+  - dialogueNodeID: 5
+    dialogueText: "|Adler\u2019s voice trembles, a mix of fear and exhaustion.\n\"They\u2026
+      they knew he was dangerous\u2026 They\u2019re scared of him\u2026 Scared of
+      what he knows\u2026 But they don\u2019t know where he is\u2026 Only you do\u2026
+      only you\u2026"
+    replaceText:
+      replace: 0
+      dialogueText2: 
+    options:
+    - optionText: "I\u2019ll finish the job. Where is he?"
+      nextDialogueNode: 6
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+    - optionText: "You\u2019ve done enough. Rest now"
+      nextDialogueNode: 8
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+  - dialogueNodeID: 6
+    dialogueText: "|Adler shudders, his eyes wide with terror.|\nIn the village\u2026
+      there\u2019s a something\u2026 a monster like no other\u2026 It\u2019s why
+      the village is\u2026 abandoned\u2026 No one goes there\u2026 not anymore\u2026
+      Orlov\u2026 he must be desperate\u2026 to hide there\u2026"
+    replaceText:
+      replace: 0
+      dialogueText2: 
+    options:
+    - optionText: A monster? What is it?
+      nextDialogueNode: 9
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+    - optionText: Why would Orlov risk going there?
+      nextDialogueNode: 7
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 1
+        finishDialogue: 1
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+    - optionText: "I\u2019m not afraid of any monster. I\u2019ll find him"
+      nextDialogueNode: 10
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+  - dialogueNodeID: 7
+    dialogueText: "|Adler\u2019s breathing grows more ragged, and he struggles to
+      get the words out.|\nOrlov\u2026 he\u2019s running out of time\u2026 out of
+      options\u2026 The village\u2026 it\u2019s the last place they\u2019d\u2026
+      look\u2026 But the monster\u2026 it\u2019s a death sentence\u2026 if you\u2019re
+      not careful\u2026"
+    replaceText:
+      replace: 0
+      dialogueText2: 
+    options:
+    - optionText: There must be another reason he went there
+      nextDialogueNode: 9
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+    - optionText: "I\u2019m not afraid of any monster. I\u2019ll find him"
+      nextDialogueNode: 10
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+  - dialogueNodeID: 8
+    dialogueText: "|Adler\u2019s eyes begin to glaze over, the light fading as he
+      nods weakly.\n\"Go\u2026 north\u2026 find him\u2026 before they find you too\u2026
+      remember... if it starts to rain blood... look for shelter\r... and\u2026 if
+      you see Orlov\u2026 tell him\u2026  I\u2019m sorry\u2026"
+    replaceText:
+      replace: 0
+      dialogueText2: 
+    options:
+    - optionText: "I\u2019ll finish this, Adler. Rest now"
+      nextDialogueNode: 0
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 1
+        finishDialogue: 1
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+  - dialogueNodeID: 9
+    dialogueText: "|Adler\u2019s voice drops to a whisper, his eyes haunted.|\nNo
+      one knows\u2026 what it really is\u2026 Some say it\u2019s\u2026 a creature
+      of the fog\u2026 others\u2026 a demon\u2026 But it\u2019s deadly\u2026 you
+      can\u2019t\u2026 you can\u2019t fight it\u2026 You\u2019ll need\u2026 more
+      than just skill\u2026 to survive\u2026"
+    replaceText:
+      replace: 0
+      dialogueText2: 
+    options:
+    - optionText: "I\u2019ve faced worse. I\u2019ll be fine"
+      nextDialogueNode: 10
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+    - optionText: "Thanks for the warning. I\u2019ll be ready"
+      nextDialogueNode: 8
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+  - dialogueNodeID: 10
+    dialogueText: "|Adler\u2019s eyes widen with fear as he struggles to sit up,
+      his voice a desperate rasp.|\n\"No\u2026 you don\u2019t understand\u2026 You
+      should be afraid\u2026 When the blood rain falls\u2026 that\u2019s when it
+      comes\u2026 The sky turns red\u2026 the rain\u2026 it\u2019s thick, like blood\u2026
+      and when it starts\u2026 you need to run\u2026 find shelter\u2026 because once
+      it\u2019s here\u2026 there\u2019s no escaping it\u2026"
+    replaceText:
+      replace: 0
+      dialogueText2: 
+    options:
+    - optionText: "I\u2019ll be careful. I know what to do"
+      nextDialogueNode: 8
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+    - optionText: Blood rain? What kind of nightmare is this?
+      nextDialogueNode: 9
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
