@@ -8,9 +8,7 @@ public class Quest : ScriptableObject
     public string questName;
     [TextArea(3, 10)]
     public string questDescription;
-    public bool startsWithDialoge;
     [SerializeField] protected int progress;
-    public List<string> memory;
     public List<Task> tasks;
 
     public void TaskInitialize()

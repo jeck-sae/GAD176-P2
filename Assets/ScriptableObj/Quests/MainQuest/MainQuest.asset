@@ -17,5 +17,6 @@ MonoBehaviour:
     location is unknown, but there\u2019s a spy in the town\u2014someone who might
     know where to find him. If the spy isn\u2019t available, you\u2019ll have to
     rely on the locals."
+  progress: 1
   tasks:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 4e20ac91ebc12ca45bc19f2bd66a9f9c, type: 2}
