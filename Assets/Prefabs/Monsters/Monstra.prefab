@@ -275,6 +275,7 @@ GameObject:
   - component: {fileID: 840359591766578442}
   - component: {fileID: 3055502287172449754}
   - component: {fileID: 2457567045853905111}
+  - component: {fileID: 7865613873072436176}
   m_Layer: 6
   m_Name: Monstra
   m_TagString: AI
@@ -317,6 +318,7 @@ MonoBehaviour:
   isDead: 0
   isVulnerable: 1
   Remains: {fileID: 0}
+  blood: {fileID: 0}
   faction: 5
   itemInHand: {fileID: 0}
   hand: {fileID: 0}
@@ -351,8 +353,8 @@ MonoBehaviour:
   TryscareInterval: 20
   circleSpeed: 0.4
   radius: 60
-  ShowRadius: 30
-  attackSpeed: 20
+  ShowRadius: 40
+  attackSpeed: 15
   retreatDistance: 50
   timeToRecover: 10
   target: {x: 0, y: 0, z: 0}
@@ -368,7 +370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50376e24295a8fa48a5d4e560f9170b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  damage: 50
 --- !u!195 &840359591766578442
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -447,11 +449,46 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 1}
   m_Size: {x: 10, y: 4}
+  m_Direction: 1
+--- !u!70 &7865613873072436176
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2510182939926086954}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 1}
+  m_Size: {x: 8.2, y: 3.8}
   m_Direction: 1
 --- !u!1 &2919178121368491294
 GameObject:

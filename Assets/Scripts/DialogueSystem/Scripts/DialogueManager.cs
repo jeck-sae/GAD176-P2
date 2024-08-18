@@ -40,7 +40,7 @@ public class DialogueManager : Singleton<DialogueManager>
 
             if(replacement)
             {
-                if (currentNode.replace)
+                if (currentNode.replaceText.replace)
                 {
                     DialogueUI.Instance.DisplayReplacment(currentNode, replacementText);
                     replacementText = null;
@@ -50,10 +50,8 @@ public class DialogueManager : Singleton<DialogueManager>
         }
     }
 
-    public void ChooseOption(int chosenButton)
+    public void ChooseOption(int optionIndex)
     {
-        int optionIndex = chosenButton;
-
         if (optionIndex >= 0 && optionIndex < currentNode.options.Count)
         {
             var chosenOption = currentNode.options[optionIndex];
@@ -72,7 +70,8 @@ public class DialogueManager : Singleton<DialogueManager>
                     }
                     if (chosenOption.additionalFunctions.finishTask)
                     {
-                        dialogue.Dialoguequest.OnTaskCompleted();
+                        if (trigger.dialogueQuest != null)
+                        trigger.dialogueQuest.OnTaskCompleted();
                         trigger.Completed = true;
                     }
                     if (chosenOption.additionalFunctions.finishDialogue)
@@ -85,7 +84,7 @@ public class DialogueManager : Singleton<DialogueManager>
                         DisplayCurrentNode();
                     }
                 }
-                else
+                else // if skill check faills shows a fail node
                 {
                     currentNode = dialogue.GetDialogueNodeByID(chosenOption.additionalFunctions.failDialogueNode);
                     DisplayCurrentNode();
@@ -99,7 +98,8 @@ public class DialogueManager : Singleton<DialogueManager>
                 }
                 if (chosenOption.additionalFunctions.finishTask)
                 {
-                    dialogue.Dialoguequest.OnTaskCompleted();
+                    if (trigger.dialogueQuest != null)
+                    trigger.dialogueQuest.OnTaskCompleted();
                     trigger.Completed = true;
                 }
                 if (chosenOption.additionalFunctions.finishDialogue)

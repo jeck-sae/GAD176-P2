@@ -1,4 +1,3 @@
-using Sirenix.OdinInspector;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -8,6 +7,7 @@ public class ProjectileWeapon : Weapon
 {
 
     [Header("Projectiles Info")]
+    public string ammoId = "rifle_ammo";
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] Transform projectileSpawnpoint;
     public float projectileSpeed = 50;
@@ -33,9 +33,9 @@ public class ProjectileWeapon : Weapon
 
     [Header("Debug")]
     //these are shown in the inspector, but cannot be modified while the game is not running
-    [SerializeField, DisableInEditorMode] protected int currentAmmo;
-    [SerializeField, DisableInEditorMode] protected float nextShotMinTime = 0; //when can the next attack be fired
-    [SerializeField, DisableInEditorMode] protected bool isReloading;
+    [SerializeField] protected int currentAmmo;
+    [SerializeField] protected float nextShotMinTime = 0; //when can the next attack be fired
+    [SerializeField] protected bool isReloading;
     protected void Awake()
     {
         currentAmmo = maxAmmo;
@@ -47,15 +47,21 @@ public class ProjectileWeapon : Weapon
         if (currentAmmo == maxAmmo)
             return;
 
+        int reloadAmount = maxAmmo - currentAmmo;
+        if (owner is Player)
+            reloadAmount -= PlayerInventory.Instance.RemoveItem(ammoId, reloadAmount);
+
         //TODO: add animation/sound
-        isReloading = true;
-        CustomCoroutine.WaitThenExecute(reloadSpeed, DoReload);
+        StartCoroutine(DoReload(reloadAmount));
     }
 
-    //end of the reload animation
-    protected void DoReload()
+
+    protected IEnumerator DoReload(int reloadAmount)
     {
-        currentAmmo = maxAmmo;
+        isReloading = true;
+        yield return new WaitForSeconds(reloadSpeed);
+
+        currentAmmo += reloadAmount;
         isReloading = false;
     }
 
@@ -83,9 +89,9 @@ public class ProjectileWeapon : Weapon
         if (RifleSound)
             AudioManager.PlaySoundAtPoint(SoundType.RifleShot, projectileSpawnpoint.position, 0.9f);
         if (ShotGunSound)
-            AudioManager.PlaySound(SoundType.ShotGunShot, 1f);
+            AudioManager.PlaySoundAtPoint(SoundType.ShotGunShot, projectileSpawnpoint.position, 0.8f);
         if (PistolSound)
-            AudioManager.PlaySound(SoundType.PistolShot, 0.7f);
+            AudioManager.PlaySoundAtPoint(SoundType.PistolShot, projectileSpawnpoint.position, 0.8f);
         for (int i = 0; i < projectilesPerShot; i++)
         {
             var go = Instantiate(projectilePrefab, projectileSpawnpoint.position, GetProjectileDirection());
@@ -96,6 +102,8 @@ public class ProjectileWeapon : Weapon
             GunSmoke.Play();
         if (MuzleFlash != null)
             MuzleFlash.Play();
+        if (owner is Player)
+        CameraShake.Instance.CamShake();
         // Trigger the flash
         StartCoroutine(Flash());
         nextShotMinTime = Time.time + attackSpeed;

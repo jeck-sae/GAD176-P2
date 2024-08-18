@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using UnityEngine.Rendering;
 
 public enum SoundType
 {
@@ -20,14 +19,15 @@ public enum SoundType
     CalmMusic,
     BattleMusic,
     WoodSmash,
-    Cracking
+    Cracking,
+    Rain
 }
 [RequireComponent(typeof(AudioSource))]
 public class AudioManager : Singleton<AudioManager>
 {
     [SerializeField] private SoundList[] soundList;
     public AudioSource audioSource;
-    public AudioSource MusicAudioSource;// for plaing music
+    public AudioSource MusicAudioSource;// for playing music
     private void Start()
     {
         PlayMusic(SoundType.CalmMusic, 0.2f);
@@ -85,11 +85,9 @@ public class AudioManager : Singleton<AudioManager>
             audioSource.volume -= startVolume * Time.deltaTime / duration;
             yield return null;
         }
-
         audioSource.Stop();
         audioSource.volume = startVolume; // Resets the volume
     }
-
 }
 [Serializable]
 public struct SoundList

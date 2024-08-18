@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4020278293620314913}
   - component: {fileID: 7195929575488863461}
   - component: {fileID: 5950924010474221737}
+  - component: {fileID: -6145383793593295683}
   m_Layer: 7
   m_Name: WoodCornerBig
   m_TagString: Untagged
@@ -193,3 +194,35 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.5344167, y: 1.1383085}
   m_EdgeRadius: 0
+--- !u!114 &-6145383793593295683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8993046901982383841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000d9a3dffcebc65d788198b6b85f6d6d99
+  m_ShapePath:
+  - {x: -2.857143, y: -2.857143, z: 0}
+  - {x: -2.857143, y: 2.857143, z: 0}
+  - {x: 2.857143, y: 2.857143, z: 0}
+  - {x: 2.8570766, y: 1.719342, z: 0}
+  - {x: -1.7152294, y: 1.7185633, z: 0}
+  - {x: -1.7109272, y: -2.857381, z: 0}
+  m_ShapePathHash: 812186088
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 40016
+  m_LocalBounds:
+    m_Center: {x: 0, y: -0.00011897087, z: 0}
+    m_Extent: {x: 2.857143, y: 2.8572621, z: 0}

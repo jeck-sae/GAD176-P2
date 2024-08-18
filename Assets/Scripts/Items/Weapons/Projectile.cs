@@ -1,13 +1,12 @@
-using Sirenix.OdinInspector;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
 public partial class Projectile : MonoBehaviour
 {
     //these values are set by the weapon shooting them
-    [ReadOnly] public float damage;
-    [ReadOnly] public float speed;
-    [ReadOnly] public Unit shotBy;
+    public float damage;
+    public float speed;
+    public Unit shotBy;
     [SerializeField] GameObject impactEffect;
 
     public virtual void Initialize(Unit shotBy, float damage, float speed, float duration)

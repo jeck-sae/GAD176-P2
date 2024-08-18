@@ -22,15 +22,14 @@ public class KillTask : Task
         }
 
         int r = Random.Range(0, NPC.Count);
-        GameObject selectedNPC;
 
         if (randomSpawn)
         {
-            selectedNPC = NPC[r];
             SpawnerManager.Instance.SpawnKillTargets(NPC[r], targetID);
         }
         else
         {
+            GameObject selectedNPC;
             selectedNPC = Instantiate(NPC[r], spawnPosition, Quaternion.identity);
             Targetable targetable = selectedNPC.GetComponent<Targetable>();
             if (targetable != null)
@@ -69,8 +68,11 @@ public class KillTask : Task
     }
     public override void CompleteTask()
     {
-        base.CompleteTask();
-        GameEvents.OnTargetableKilled -= OnEnemyKilled;
-        taskQuest.OnTaskCompleted();
+        if (!isCompleted)
+        {
+            base.CompleteTask();
+            GameEvents.OnTargetableKilled -= OnEnemyKilled;
+            taskQuest.OnTaskCompleted();
+        }
     }
 }

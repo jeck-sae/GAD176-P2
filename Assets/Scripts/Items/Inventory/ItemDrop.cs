@@ -18,10 +18,15 @@ public class ItemDrop : Interactable
 
     public void Initialize(ItemSlot from, int amount)
     {
+        if (slot.item == null)
+            Destroy(gameObject);
+
         InventoryUtils.MoveToSlot(from, slot, amount);
         slot.item.transform.parent = transform;
         sr.sprite = slot.item.icon;
         name = "drop: " + slot.item.ID;
+        //slot.item.ShowGFX(true);
+        //slot.item.gameObject.SetActive(true);
     }
 
     public void Initialize(Item item, int amount)
@@ -31,6 +36,8 @@ public class ItemDrop : Interactable
         slot.item.transform.parent = transform;
         sr.sprite = slot.item.icon;
         name = "drop: " + slot.item.ID;
+        //item.ShowGFX(true);
+        //slot.item.gameObject.SetActive(true);
     }
 
 

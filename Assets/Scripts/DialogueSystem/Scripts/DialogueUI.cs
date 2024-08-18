@@ -8,7 +8,6 @@ using System;
 public class DialogueUI : Singleton<DialogueUI>
 {
     public GameObject DialogueMenu;
-    public TextMeshProUGUI characterNameText;
     public TextMeshProUGUI dialogueText;
     public List<Button> optionButtons;// List of buttons for options
 
@@ -40,7 +39,7 @@ public class DialogueUI : Singleton<DialogueUI>
     }
     public void DisplayReplacment(DialogueNode node, string replacment)
     {
-        dialogueText.text = node.dialogueText + replacment + node.dialogueText2;
+        dialogueText.text = node.dialogueText + replacment + node.replaceText.dialogueText2;
     }
     public void CloseDialogueMenu()
     {

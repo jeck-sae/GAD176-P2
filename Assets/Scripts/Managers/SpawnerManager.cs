@@ -6,11 +6,22 @@ public class SpawnerManager : Singleton<SpawnerManager>
     public List<SpawnTarget> SpeakTaskTargets;
     public List<SpawnTarget> KillTaskTargets;
     public List<SpawnTarget> ExplorationTargets;
-    public void SpawnSpeakTargets(GameObject npc)
+    public void SpawnSpeakTargets(GameObject npc, Dialogue dialogue, Quest quest)
     {
         int random = Random.Range(0, SpeakTaskTargets.Count);
         SpawnTarget target = SpeakTaskTargets[random];
-        Instantiate(npc, target.SpawnPos.position, Quaternion.identity);
+        GameObject selectedNPC;
+        selectedNPC = Instantiate(npc, target.SpawnPos.position, Quaternion.identity);
+        DialogueTrigger dialogueTrigger = selectedNPC.GetComponent<DialogueTrigger>();
+        if (dialogueTrigger != null)
+        {
+            dialogueTrigger.dialogueQuest = quest;
+            dialogueTrigger.tdialogue = dialogue;
+        }
+        else
+        {
+            Debug.Log("NPC does not have a DialogueTrigger");
+        }
         DialogueManager.Instance.replacementText = target.replacementText;
         DialogueManager.Instance.replacement = true;
     }

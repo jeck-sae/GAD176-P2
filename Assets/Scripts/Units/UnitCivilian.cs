@@ -1,4 +1,3 @@
-using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
@@ -35,7 +34,6 @@ public class UnitCivilian : Unit
     protected bool activeAtNight;
     [HideInInspector] public NavMeshAgent agent;
 
-    [ShowInInspector, ReadOnly]
     protected UnitState state;
     protected bool firstFrameInCurrentState;
     private UnitState lastFrameState;
@@ -165,7 +163,7 @@ public class UnitCivilian : Unit
         {
             float x = wanderAroundPoint.x + Random.Range(-wanderDistance, wanderDistance);
             float y = wanderAroundPoint.y + Random.Range(-wanderDistance, wanderDistance);
-            wanderDestination = new Vector2(x, y);
+            wanderDestination = new Vector3(x, y, 0) + transform.position;
 
             if (!firstFrameInCurrentState)
                 wanderPauseTimer = wanderPauseDuration + (Random.Range(0, wanderPauseVariation) - wanderPauseVariation / 2);
@@ -204,23 +202,14 @@ public class UnitCivilian : Unit
                 }
         }
     }
-
     protected bool IsValidThreat(Targetable potentialThreat)
     {
-        if (!potentialThreat) return false;
+        if (!threat) return false;
 
-        float distance = Vector3.Distance(potentialThreat.transform.position, transform.position);
-        if (distance >= visionRange) return false;
-
-        Vector2 direction = (potentialThreat.transform.position - transform.position).normalized;
-        float angle = Vector2.Angle(transform.up, direction);
-        if (angle > fieldOfView / 2)
+        if (threat is Unit && !FactionManager.Instance
+            .IsEnemyOf(faction, (threat as Unit).faction))
             return false;
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, distance, GameManager.LevelLayer | GameManager.ShootThroughLayer);
-        if (hit.collider)
-            return false;
-
-        return true;
+        return (threat);
     }
 }

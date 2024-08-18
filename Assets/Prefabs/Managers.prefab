@@ -63,7 +63,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DialogueMenu: {fileID: 0}
-  characterNameText: {fileID: 0}
   dialogueText: {fileID: 0}
   optionButtons:
   - {fileID: 0}
@@ -109,6 +108,7 @@ Transform:
   - {fileID: 1871958030368529423}
   - {fileID: 7332225883011346416}
   - {fileID: 8291493427958121276}
+  - {fileID: 8357095830585823518}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1271495666882098272
@@ -190,8 +190,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 8357095830585823518}
+  m_Children: []
   m_Father: {fileID: 5372954150679201198}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &668938592687792288
@@ -268,7 +267,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8291493427958121276}
+  m_Father: {fileID: 5372954150679201198}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2231967208837149734
 MonoBehaviour:

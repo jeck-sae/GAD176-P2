@@ -1,0 +1,287 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94a01b194d99cb44fa9fcb4f69ed689c, type: 3}
+  m_Name: Captain
+  m_EditorClassIdentifier: 
+  Dialoguequest: {fileID: 0}
+  dialogueNodes:
+  - dialogueNodeID: 0
+    dialogueText: "|The captain stands in front of a tattered map, his face is weary,
+      etched with the lines of too many battles. As you enter, he looks up, his eyes
+      sharp despite the exhaustion.|\nWe have a problem, and I need someone capable
+      to handle it. A conscript battalion deserted a few days ago. Their leader,
+      a man named Orlov, is dangerous\u2014not because of his skill, but because
+      of what he might do next."
+    replaceText:
+      replace: 0
+      dialogueText2: 
+    options:
+    - optionText: What do you need me to do?
+      nextDialogueNode: 1
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+    - optionText: Why did they desert?
+      nextDialogueNode: 2
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+    - optionText: What if Orlov joins the enemy?
+      nextDialogueNode: 3
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+  - dialogueNodeID: 1
+    dialogueText: "Your mission is simple, but not easy. Infiltrate Eisenhafen, find
+      Orlov, and eliminate him. We can\u2019t afford to leave this to chance. His
+      exact location is unknown, but there\u2019s a spy in the town\u2014someone
+      who might know where to find him. If the spy isn\u2019t available, you\u2019ll
+      have to rely on the locals. It\u2019s a dangerous job, but you\u2019re the
+      only one who can do it."
+    replaceText:
+      replace: 0
+      dialogueText2: 
+    options:
+    - optionText: How do you expect me to track him?
+      nextDialogueNode: 4
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+    - optionText: "What if he\u2019s just trying to survive?"
+      nextDialogueNode: 5
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+    - optionText: "I\u2019ll take care of it. How do I get into Eisenhafen?"
+      nextDialogueNode: 6
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+  - dialogueNodeID: 2
+    dialogueText: "|The captain\u2019s expression remains impassive.|\nThey were
+      conscripts, not trained soldiers. The fog, the endless fighting, the horror\u2014they
+      broke under the pressure. Orlov led them into desertion. Survival, maybe. Betrayal,
+      certainly. But what\u2019s done is done. Our concern is what might happen next."
+    replaceText:
+      replace: 0
+      dialogueText2: 
+    options:
+    - optionText: Seems like they were pushed too far
+      nextDialogueNode: 7
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+    - optionText: Desertion is unforgivable. They need to be dealt with
+      nextDialogueNode: 8
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+    - optionText: So Orlov deserted. What now?
+      nextDialogueNode: 1
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+  - dialogueNodeID: 3
+    dialogueText: "Orlov knows too much about our operations. If he joins the enemy,
+      they\u2019ll gain a tactical advantage we can\u2019t afford to give them. That\u2019s
+      why you need to find him before he makes that decision\u2014or worse, before
+      they make it for him."
+    replaceText:
+      replace: 0
+      dialogueText2: 
+    options:
+    - optionText: "I\u2019ll find him and take care of it"
+      nextDialogueNode: 6
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+    - optionText: What if I could convince him to come back?
+      nextDialogueNode: 7
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+  - dialogueNodeID: 4
+    dialogueText: "Your best chance is in Eisenhafen. Our spy there, Adler, might
+      know where Orlov is hiding. If Adler\u2019s compromised, you\u2019ll have to
+      gather information from the townsfolk\u2014discreetly. They may know more than
+      they let on, but trust is a rare commodity there"
+    replaceText:
+      replace: 0
+      dialogueText2: 
+    options:
+    - optionText: "Understood. I\u2019ll find him"
+      nextDialogueNode: 6
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+    - optionText: What can you tell me about Eisenhafen?
+      nextDialogueNode: 9
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+  - dialogueNodeID: 5
+    dialogueText: "|The captain\u2019s voice hardens, a steely edge cutting through
+      his words.|\nThis isn\u2019t about morality; it\u2019s about eliminating a
+      threat. Orlov\u2019s intentions are irrelevant. What matters is that he\u2019s
+      out there, a potential danger to us all. We cannot afford to leave this unresolved."
+    replaceText:
+      replace: 0
+      dialogueText2: 
+    options:
+    - optionText: "Understood. I\u2019ll take him out"
+      nextDialogueNode: 6
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+  - dialogueNodeID: 6
+    dialogueText: "Good. Infiltrate Eisenhafen, locate Adler, or gather information
+      from the townspeople. Once you\u2019ve found Orlov, eliminate him. This is
+      not a task for hesitation\u2014failure is not an option."
+    replaceText:
+      replace: 0
+      dialogueText2: 
+    options:
+    - optionText: "I\u2019ll get it done|Leave|"
+      nextDialogueNode: 0
+      additionalFunctions:
+        quest: {fileID: 11400000, guid: 229393f002ff40c4b9f1aee511002166, type: 2}
+        finishTask: 1
+        finishDialogue: 1
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+    - optionText: You can count on me|Leave|
+      nextDialogueNode: 0
+      additionalFunctions:
+        quest: {fileID: 11400000, guid: 229393f002ff40c4b9f1aee511002166, type: 2}
+        finishTask: 1
+        finishDialogue: 1
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+  - dialogueNodeID: 7
+    dialogueText: "Sympathy is a luxury we cannot afford in times like these. The
+      fog has driven stronger men mad, but that doesn\u2019t excuse treachery. Orlov
+      chose to desert, and that choice has consequences."
+    replaceText:
+      replace: 0
+      dialogueText2: 
+    options:
+    - optionText: "I\u2019ll see it through"
+      nextDialogueNode: 6
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+  - dialogueNodeID: 8
+    dialogueText: "Exactly. Desertion is a crime, and in wartime, the punishment
+      is swift and final. But this isn\u2019t just about punishing a traitor; it\u2019s
+      about neutralizing a threat. Orlov\u2019s knowledge and skills are too dangerous
+      to leave unchecked."
+    replaceText:
+      replace: 0
+      dialogueText2: 
+    options:
+    - optionText: "I\u2019ll handle it"
+      nextDialogueNode: 6
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+    - optionText: "I\u2019ll make sure he pays for his betrayal"
+      nextDialogueNode: 6
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0
+  - dialogueNodeID: 9
+    dialogueText: Eisenhafen is a small town, but heavily fortified and deep within
+      enemy lines. The fog is denser here, a perfect cover for spies and traitors
+      alike.
+    replaceText:
+      replace: 0
+      dialogueText2: 
+    options:
+    - optionText: "I\u2019ll be on guard"
+      nextDialogueNode: 6
+      additionalFunctions:
+        quest: {fileID: 0}
+        finishTask: 0
+        finishDialogue: 0
+        SkillCheck: 0
+        Charisma: 0
+        failDialogueNode: 0

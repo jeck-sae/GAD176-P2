@@ -20,7 +20,6 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
             }
         }
     }
-
     protected static void FindInstance()
     {
         if (m_Instance == null)
@@ -28,7 +27,6 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
             m_Instance = (T)FindObjectOfType(typeof(T));
         }
     }
-
     private void OnApplicationQuit()
     {
         m_ShuttingDown = true;

@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94a01b194d99cb44fa9fcb4f69ed689c, type: 3}
   m_Name: KillStart
   m_EditorClassIdentifier: 
-  DialogueName: KillStart
   Dialoguequest: {fileID: 0}
   dialogueNodes:
   - dialogueNodeID: 0
     dialogueText: "You look like someone who knows how to handle a blade. I\u2019ve
       got a job that needs doing, if you\u2019ve got the stomach for it."
-    replace: 0
-    dialogueText2: 
+    replaceText:
+      replace: 0
+      dialogueText2: 
     options:
     - optionText: What kind of job?
       nextDialogueNode: 1
@@ -51,8 +51,9 @@ MonoBehaviour:
   - dialogueNodeID: 1
     dialogueText: "There\u2019s a man in the next town over. He\u2019s... made life
       difficult for some folks who pay well to see him gone. Permanently."
-    replace: 0
-    dialogueText2: 
+    replaceText:
+      replace: 0
+      dialogueText2: 
     options:
     - optionText: Consider it done
       nextDialogueNode: 6
@@ -75,8 +76,9 @@ MonoBehaviour:
   - dialogueNodeID: 2
     dialogueText: "Fair enough. But remember, in this world, the only thing that
       matters is what you can do to survive. I\u2019m offering you a chance to thrive"
-    replace: 0
-    dialogueText2: 
+    replaceText:
+      replace: 0
+      dialogueText2: 
     options:
     - optionText: "I'll take the job, what\u2019s the target?"
       nextDialogueNode: 1
@@ -97,10 +99,11 @@ MonoBehaviour:
         Charisma: 0
         failDialogueNode: 0
   - dialogueNodeID: 3
-    dialogueText: "Generous, considering the risk. 200 gold coins upfront, another
-      200 when you bring proof the job\u2019s done. Interested"
-    replace: 0
-    dialogueText2: 
+    dialogueText: Generous, considering the risk. 200 gold coins upfront, another
+      200 when you're done. Interested
+    replaceText:
+      replace: 0
+      dialogueText2: 
     options:
     - optionText: I'm in. Where is the target?
       nextDialogueNode: 6
@@ -123,8 +126,9 @@ MonoBehaviour:
   - dialogueNodeID: 4
     dialogueText: "\rI can't tell you, I don't know myself. We don't ask our clients
       for the reason"
-    replace: 0
-    dialogueText2: 
+    replaceText:
+      replace: 0
+      dialogueText2: 
     options:
     - optionText: Alright
       nextDialogueNode: 5
@@ -137,8 +141,9 @@ MonoBehaviour:
         failDialogueNode: 0
   - dialogueNodeID: 5
     dialogueText: So what do you say, yes or no?
-    replace: 0
-    dialogueText2: 
+    replaceText:
+      replace: 0
+      dialogueText2: 
     options:
     - optionText: Yes
       nextDialogueNode: 6
@@ -160,8 +165,9 @@ MonoBehaviour:
         failDialogueNode: 0
   - dialogueNodeID: 6
     dialogueText: "Good. You\u2019ll find him in "
-    replace: 1
-    dialogueText2: 
+    replaceText:
+      replace: 1
+      dialogueText2: 
     options:
     - optionText: "I\u2019ll be back soon"
       nextDialogueNode: 0
@@ -175,8 +181,9 @@ MonoBehaviour:
   - dialogueNodeID: 7
     dialogueText: "You\u2019ve got guts, I\u2019ll give you that. Fine. 500 it is.
       But I expect you to deliver, or there\u2019ll be hell to pay"
-    replace: 0
-    dialogueText2: 
+    replaceText:
+      replace: 0
+      dialogueText2: 
     options:
     - optionText: Where is the target?
       nextDialogueNode: 6
@@ -190,8 +197,9 @@ MonoBehaviour:
   - dialogueNodeID: 8
     dialogueText: "Don\u2019t push your luck. 200 now, 200 later. Take it or leave
       it"
-    replace: 0
-    dialogueText2: 
+    replaceText:
+      replace: 0
+      dialogueText2: 
     options:
     - optionText: "Fine, I\u2019ll take it"
       nextDialogueNode: 6

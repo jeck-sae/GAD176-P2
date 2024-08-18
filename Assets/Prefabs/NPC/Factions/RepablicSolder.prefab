@@ -80,7 +80,7 @@ MonoBehaviour:
   maxHealth: 35
   isDead: 0
   isVulnerable: 1
-  Remains: {fileID: 0}
+  Remains: {fileID: 8215103062528791934, guid: bd63ebdcd32b4e040a259f69122ab68c, type: 3}
   faction: 1
   itemInHand: {fileID: 0}
   hand: {fileID: 8216459502388505666}
@@ -129,7 +129,7 @@ MonoBehaviour:
   rotationSpeed: 110
   visionRange: 30
   fieldOfView: 120
-  chaseSpeed: 8
+  chaseSpeed: 6
   alertDuration: 5
   assumingTime: 4
   wanderDistance: 10

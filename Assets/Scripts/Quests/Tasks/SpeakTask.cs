@@ -22,25 +22,24 @@ public class SpeakToNPCTask : Task
 
         if (randomSpawn)
         {
-            selectedNPC = NPC[r];
-            SpawnerManager.Instance.SpawnSpeakTargets(NPC[r]);
+            SpawnerManager.Instance.SpawnSpeakTargets(NPC[r], dialogue, quest);
 
         }
         else
         {
             selectedNPC = Instantiate(NPC[r], spawnPosition, Quaternion.identity);
+            DialogueTrigger dialogueTrigger = selectedNPC.GetComponent<DialogueTrigger>();
+            if (dialogueTrigger != null)
+            {
+                dialogueTrigger.dialogueQuest = quest;
+                dialogueTrigger.tdialogue = dialogue;
+            }
+            else
+            {
+                Debug.Log("NPC does not have a DialogueTrigger");
+            }
         }
 
-        DialogueTrigger dialogueTrigger = selectedNPC.GetComponent<DialogueTrigger>();
-        if (dialogueTrigger != null)
-        {
-            dialogue.Dialoguequest = quest;
-            dialogueTrigger.tdialogue = dialogue;
-        }
-        else
-        {
-            Debug.Log("NPC does not have a DialogueTrigger");
-        }
 
         base.Initialize(quest);
     }

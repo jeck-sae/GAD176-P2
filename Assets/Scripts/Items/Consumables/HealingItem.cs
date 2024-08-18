@@ -46,7 +46,7 @@ public class HealingItem : Item
 
     protected bool CanUse()
     {
-        return owner.currentHealth < owner.maxHealth;
+        return owner && owner.currentHealth < owner.maxHealth;
     }
 
     protected void Heal()

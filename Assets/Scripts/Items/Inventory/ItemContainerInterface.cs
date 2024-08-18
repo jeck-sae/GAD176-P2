@@ -4,31 +4,32 @@ using System.ComponentModel;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ItemContainerInterface : MonoBehaviour, IGameInterface, IItemContainer
+public class ItemContainerInterface : MonoBehaviour, IGameInterface
 {
     [SerializeField] GameObject interfaceObject;
 
     [SerializeField] GameObject slotPrefab;
     [SerializeField] Transform slotUIParent;
 
+    ItemSlotCollection<ItemSlot> currentCollection;
     List<GameObject> slotsUI = new List<GameObject>();
 
-    ItemSlot[] currentSlots;
-
-    public void DisplaySlots(ItemSlot[] slots)
+    public void DisplaySlots(ItemSlotCollection<ItemSlot> collection)
     {
         foreach(var slotUI in slotsUI)
             Destroy(slotUI.gameObject);
         slotsUI.Clear();
 
-        currentSlots = slots;
-        foreach (var slot in slots)
+        currentCollection = collection;
+        foreach (var slot in collection.GetSlots())
         {
             var newSlotUI = Instantiate(slotPrefab, slotUIParent);
             newSlotUI.GetComponent<ItemSlotUI>().Initialize(slot);
             slotsUI.Add(newSlotUI);
         }
     }
+
+
 
     public void Show()
     {
@@ -40,13 +41,4 @@ public class ItemContainerInterface : MonoBehaviour, IGameInterface, IItemContai
         interfaceObject.SetActive(false);
     }
 
-    public Unit GetOwner()
-    {
-        return null;
-    }
-
-    public int LoadItems(Item item, int amount)
-    {
-        return InventoryUtils.TryLoadItems(currentSlots, item, amount);
-    }
 }

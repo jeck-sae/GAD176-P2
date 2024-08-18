@@ -1,22 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraShake : MonoBehaviour
+public class CameraShake : Singleton<CameraShake>
 {
-    #region Singleton
-
-    public static CameraShake CameraShakeInstance;
-
-    private void Awake()
-    {
-        if (CameraShakeInstance != null)
-        {
-            Debug.LogWarning("More than one instance");
-            return;
-        }
-        CameraShakeInstance = this;
-    }
-    #endregion
     public Animator anim;
     public void CamShake()
     {

@@ -222,7 +222,7 @@ MonoBehaviour:
   maxHealth: 50
   isDead: 0
   isVulnerable: 1
-  Remains: {fileID: 0}
+  Remains: {fileID: 8215103062528791934, guid: bd63ebdcd32b4e040a259f69122ab68c, type: 3}
   faction: 0
   itemInHand: {fileID: 0}
   hand: {fileID: 6111399628480239870}
@@ -276,6 +276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tdialogue: {fileID: 11400000, guid: 31c51fd61f8a03443bb61067ffc70b66, type: 2}
+  dialogueQuest: {fileID: 0}
   Completed: 0
   InteractionDist: 5
 --- !u!1001 &2621332395198487574

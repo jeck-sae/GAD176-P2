@@ -1,11 +1,10 @@
-using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class Targetable : MonoBehaviour
 {
     public string ID;
 
-    [DisableInEditorMode] public float currentHealth;
+    public float currentHealth;
     public float maxHealth = 100;
     public bool isDead;
     public bool isVulnerable = true;
@@ -31,7 +30,6 @@ public class Targetable : MonoBehaviour
 
 
         currentHealth -= amount;
-        //play SFX
         AudioManager.PlaySoundAtPoint(SoundType.Damage, gameObject.transform.position, 0.8f);
 
         if (currentHealth <= 0)
@@ -59,7 +57,7 @@ public class Targetable : MonoBehaviour
     public virtual void Die()
     {
         isDead = true;
-        //play SFX
+        Instantiate(Remains, gameObject.transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

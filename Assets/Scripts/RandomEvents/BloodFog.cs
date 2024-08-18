@@ -22,6 +22,8 @@ public class BloodFog : MonoBehaviour
     void Start()
     {
         player = PlayerManager.Instance.player;
+        rainEffect.Stop();
+        bloodFogEffect.Stop();
         ScheduleNextEvent();
     }
 
@@ -43,6 +45,7 @@ public class BloodFog : MonoBehaviour
         BloodFofActive = true;
         //DayNightCycle.Instance.stop = true;
         StartRain();
+        AudioManager.PlaySound(SoundType.Rain, 0.2f);
         Debug.Log("Start");
     }
 
@@ -104,6 +107,6 @@ public class BloodFog : MonoBehaviour
         // Clear the event and schedule the next one
         BloodFofActive = false;
         //DayNightCycle.Instance.stop = false;
-        ScheduleNextEvent();
+        //ScheduleNextEvent();
     }
 }
