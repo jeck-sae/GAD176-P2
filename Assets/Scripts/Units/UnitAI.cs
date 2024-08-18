@@ -8,7 +8,7 @@ using UnityEngine.AI;
 
 public class UnitAI : Unit
 {
-    public enum UnitState { Fighting, Chasing, Idling, Alert }
+    public enum UnitState { Idling, Fighting, Chasing, Alert }
 
     [Tooltip("How far the unit can see")]
     public float visionRange = 10;
@@ -52,6 +52,7 @@ public class UnitAI : Unit
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        state = UnitState.Idling;
         GunShots.OnGunshotFired += RespondToGunshot;
     }
     void OnDestroy()

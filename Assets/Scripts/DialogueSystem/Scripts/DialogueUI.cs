@@ -8,7 +8,6 @@ using System;
 public class DialogueUI : Singleton<DialogueUI>
 {
     public GameObject DialogueMenu;
-    public TextMeshProUGUI characterNameText;
     public TextMeshProUGUI dialogueText;
     public List<Button> optionButtons;// List of buttons for options
 

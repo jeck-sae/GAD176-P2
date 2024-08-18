@@ -50,10 +50,8 @@ public class DialogueManager : Singleton<DialogueManager>
         }
     }
 
-    public void ChooseOption(int chosenButton)
+    public void ChooseOption(int optionIndex)
     {
-        int optionIndex = chosenButton;
-
         if (optionIndex >= 0 && optionIndex < currentNode.options.Count)
         {
             var chosenOption = currentNode.options[optionIndex];
@@ -72,6 +70,7 @@ public class DialogueManager : Singleton<DialogueManager>
                     }
                     if (chosenOption.additionalFunctions.finishTask)
                     {
+                        if (trigger.dialogueQuest != null)
                         trigger.dialogueQuest.OnTaskCompleted();
                         trigger.Completed = true;
                     }
@@ -85,7 +84,7 @@ public class DialogueManager : Singleton<DialogueManager>
                         DisplayCurrentNode();
                     }
                 }
-                else
+                else // if skill check faills shows a fail node
                 {
                     currentNode = dialogue.GetDialogueNodeByID(chosenOption.additionalFunctions.failDialogueNode);
                     DisplayCurrentNode();
@@ -99,6 +98,7 @@ public class DialogueManager : Singleton<DialogueManager>
                 }
                 if (chosenOption.additionalFunctions.finishTask)
                 {
+                    if (trigger.dialogueQuest != null)
                     trigger.dialogueQuest.OnTaskCompleted();
                     trigger.Completed = true;
                 }

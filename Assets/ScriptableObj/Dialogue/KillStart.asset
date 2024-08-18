@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94a01b194d99cb44fa9fcb4f69ed689c, type: 3}
   m_Name: KillStart
   m_EditorClassIdentifier: 
-  DialogueName: KillStart
   Dialoguequest: {fileID: 0}
   dialogueNodes:
   - dialogueNodeID: 0
@@ -100,8 +99,8 @@ MonoBehaviour:
         Charisma: 0
         failDialogueNode: 0
   - dialogueNodeID: 3
-    dialogueText: "Generous, considering the risk. 200 gold coins upfront, another
-      200 when you bring proof the job\u2019s done. Interested"
+    dialogueText: Generous, considering the risk. 200 gold coins upfront, another
+      200 when you're done. Interested
     replaceText:
       replace: 0
       dialogueText2: 

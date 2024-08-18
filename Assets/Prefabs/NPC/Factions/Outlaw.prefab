@@ -129,7 +129,7 @@ MonoBehaviour:
   rotationSpeed: 110
   visionRange: 30
   fieldOfView: 120
-  chaseSpeed: 8
+  chaseSpeed: 6
   alertDuration: 5
   assumingTime: 4
   wanderDistance: 10

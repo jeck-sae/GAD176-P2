@@ -12,7 +12,6 @@ public class Targetable : MonoBehaviour
 
     [Header("Visual Effects")]
     public GameObject Remains;
-    public ParticleSystem blood;
 
     protected void Awake()
     {
@@ -32,8 +31,6 @@ public class Targetable : MonoBehaviour
 
 
         currentHealth -= amount;
-        if(blood!= null)
-        blood.Play();
         AudioManager.PlaySoundAtPoint(SoundType.Damage, gameObject.transform.position, 0.8f);
 
         if (currentHealth <= 0)

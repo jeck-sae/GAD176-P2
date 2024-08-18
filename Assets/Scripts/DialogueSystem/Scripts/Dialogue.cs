@@ -5,16 +5,11 @@ using UnityEngine;
 public class Dialogue : ScriptableObject
 {
     [Header("Dialogue")]
-    public string DialogueName;
     [HideInInspector]public Quest Dialoguequest;
     public List<DialogueNode> dialogueNodes;
-
     public DialogueNode GetDialogueNodeByID(int id)
-    {
-        return dialogueNodes.Find(node => node.dialogueNodeID == id);
-    }
+    {return dialogueNodes.Find(node => node.dialogueNodeID == id);}
 }
-
 [System.Serializable]
 public class DialogueNode
 {
@@ -24,7 +19,6 @@ public class DialogueNode
     public ReplaceText replaceText;
     public List<DialogueOption> options;
 }
-
 [System.Serializable]
 public class DialogueOption
 {
@@ -36,18 +30,18 @@ public class DialogueOption
 [System.Serializable]
 public class AdditionalFunctions
 {
-    public Quest quest;
-    public bool finishTask; // Needs a way to notify the task
-    public bool finishDialogue;
+    public Quest quest; // starts an attached quest if there is one
+    public bool finishTask; // completes the attached task if there is one
+    public bool finishDialogue; // closes dialogue menu
     [Header("SkillCheck")]
-    public bool SkillCheck;
-    public int Charisma;
+    public bool SkillCheck; // makes a skill check
+    public int Charisma; // charisma needed to pass the skill check
     public int failDialogueNode; // Reference to the DialogueNode by ID, for failed skill checks
 }
 [System.Serializable]
 public class ReplaceText
 {
-    public bool replace = false;
-    [TextArea(2, 8)]
+    public bool replace = false; // it will summ up an existet text with a replacment text from spawner manager
+    [TextArea(2, 8)]             // Formula for replacment: dialogueText + replacement text + dialogueText2
     public string dialogueText2;
 }
