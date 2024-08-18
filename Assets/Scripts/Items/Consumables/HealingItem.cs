@@ -19,10 +19,10 @@ public class HealingItem : Item
     }
     protected override void OnStartUsing()
     {
-        healAtTime = Time.time + timeToHeal;
-        
         if (!CanUse())
             return;
+
+        healAtTime = Time.time + timeToHeal;
 
         if (instant)
         {
