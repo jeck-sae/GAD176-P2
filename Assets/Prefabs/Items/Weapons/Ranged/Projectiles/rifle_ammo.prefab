@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7205057121677435388}
   - component: {fileID: 8958874201288469817}
   m_Layer: 0
-  m_Name: shotgun_ammo
+  m_Name: rifle_ammo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,9 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b889486f37829154aab2d60661749145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: shotgun_ammo
+  ID: rifle_ammo
   maxStack: 64
-  icon: {fileID: -1843347508, guid: d76c0a5abd12cae42a67f94fcabe0913, type: 3}
+  icon: {fileID: -1248575638, guid: d76c0a5abd12cae42a67f94fcabe0913, type: 3}
   itemGFX: {fileID: 4345328922138888021}
   owner: {fileID: 0}
   slot:
@@ -125,7 +125,7 @@ SpriteRenderer:
   m_SortingLayerID: -1195992959
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1843347508, guid: d76c0a5abd12cae42a67f94fcabe0913, type: 3}
+  m_Sprite: {fileID: -1248575638, guid: d76c0a5abd12cae42a67f94fcabe0913, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

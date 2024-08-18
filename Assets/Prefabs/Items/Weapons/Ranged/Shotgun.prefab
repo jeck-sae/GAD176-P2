@@ -143,6 +143,7 @@ MonoBehaviour:
   attackDistance: 10
   attackSpeed: 0.7
   damage: 70
+  ammoId: shotgun_ammo
   projectilePrefab: {fileID: 2427048261281759586, guid: e1c7c16057ad8ee48a6733dcefc36f48, type: 3}
   projectileSpawnpoint: {fileID: 7139740121453513471}
   projectileSpeed: 70

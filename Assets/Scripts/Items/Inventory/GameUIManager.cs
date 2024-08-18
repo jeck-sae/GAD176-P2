@@ -171,6 +171,8 @@ public class GameUIManager : Singleton<GameUIManager>
 
         if(showInventory)
             PlayerInventory.Instance?.Show();
+        else
+            PlayerInventory.Instance?.Hide();
         
         interfaceBackground?.SetActive(true);
         interfaceOpen = true;

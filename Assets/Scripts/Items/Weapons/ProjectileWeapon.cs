@@ -7,6 +7,7 @@ public class ProjectileWeapon : Weapon
 {
 
     [Header("Projectiles Info")]
+    public string ammoId = "rifle_ammo";
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] Transform projectileSpawnpoint;
     public float projectileSpeed = 50;
@@ -46,15 +47,21 @@ public class ProjectileWeapon : Weapon
         if (currentAmmo == maxAmmo)
             return;
 
+        int reloadAmount = maxAmmo - currentAmmo;
+        if (owner is Player)
+            reloadAmount -= PlayerInventory.Instance.RemoveItem(ammoId, reloadAmount);
+
         //TODO: add animation/sound
-        isReloading = true;
-        CustomCoroutine.WaitThenExecute(reloadSpeed, DoReload);
+        StartCoroutine(DoReload(reloadAmount));
     }
 
-    //end of the reload animation
-    protected void DoReload()
+
+    protected IEnumerator DoReload(int reloadAmount)
     {
-        currentAmmo = maxAmmo;
+        isReloading = true;
+        yield return new WaitForSeconds(reloadSpeed);
+
+        currentAmmo += reloadAmount;
         isReloading = false;
     }
 

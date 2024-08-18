@@ -57,7 +57,7 @@ public class ItemSlotCollection<T> : IItemContainer where T : ItemSlot, new()
 
     public int RemoveItem(string id, int amount)
     {
-        for (int i = slots.Length; i >= 0; i--) 
+        for (int i = slots.Length - 1; i >= 0; i--) 
         {
             if (amount <= 0)
                 break;

@@ -61,11 +61,10 @@ public class ItemSlot : IItemContainer
     public int RemoveItem(string id, int amount)
     {
         if (ContainsItem(id) == 0)
-            return 0;
+            return amount;
 
         int remove = Mathf.Min(amount, ContainsItem(id));
-        RemoveItems(remove);
-        return remove;
+        return RemoveItems(remove);
     }
 
     /// <summary>
