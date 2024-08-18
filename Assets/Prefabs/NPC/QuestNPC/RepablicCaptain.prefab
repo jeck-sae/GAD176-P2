@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tdialogue: {fileID: 11400000, guid: bd5b7c45e2e64904ba973765cd09e0c6, type: 2}
-  dialogueQuest: {fileID: 11400000, guid: 229393f002ff40c4b9f1aee511002166, type: 2}
+  dialogueQuest: {fileID: 0}
   Completed: 0
   InteractionDist: 7
   icon: {fileID: 4556903360823828082}

@@ -5,15 +5,15 @@ using UnityEngine;
 public class LookAtPlayer : MonoBehaviour
 {
 
-    [SerializeField] private Transform target;
-
-   // public float speed = 5f;
+    // [SerializeField] private Transform target;
+    [SerializeField] private Transform player;
+    // public float speed = 5f;
 
 
 
     void Start()
     {
-        
+        player = PlayerManager.Instance.player;
     }
 
     
@@ -27,7 +27,9 @@ public class LookAtPlayer : MonoBehaviour
 
         //transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * speed);
 
-        Vector3 direction = target.position - transform.position;
+        //Vector3 direction = target.position - transform.position;
+
+        Vector3 direction = player.position - transform.position;
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
