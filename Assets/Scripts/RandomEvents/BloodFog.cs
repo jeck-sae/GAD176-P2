@@ -107,6 +107,6 @@ public class BloodFog : MonoBehaviour
         // Clear the event and schedule the next one
         BloodFofActive = false;
         //DayNightCycle.Instance.stop = false;
-        ScheduleNextEvent();
+        //ScheduleNextEvent();
     }
 }
